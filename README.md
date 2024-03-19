@@ -38,7 +38,7 @@ Microsoft社は、 .NET Framework 4.5 のサポートを2022年4月26日に終�
 本ソースコードの再ビルドに当たっては、.NET Framework 4.8 へ変更しています。
 
 また、本ソースコードの画面デザインは、Microsoft.VisualBasic.PowerPacks.Vs に依存しています。
-2024年3月時点において、Microsoftはこのパッケージの利用を推奨しておらず、公式の配布は停止されています。
+2024年3月時点において、Microsoft社はこのパッケージの利用を推奨しておらず、公式の配布は停止されています。
 Visual Studio 2022 には、Microsoft.VisualBasic.PowerPacks.Vs はインストールすることができず、
 そのため、このソースコードの画面デザインは Visual Studio 2022 では編集・変更することができません。
 
