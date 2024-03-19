@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="StyleSheet.css"/>
+    <title>用語解説|MANDARA10ヘルプ</title>
+</head>
+<body>
+<div id="contentsArea">  
+    <a name="top"></a>
+    <h1>用語解説</h1>
+    <div class="indent2">
+        <h4>あ</h4>
+        <ul>
+            <li><a href="#位相構造">位相構造</a></li>
+            <li><a href="#緯度経度座標系・平面直角座標系">緯度経度座標系・平面直角座標系</a></li>
+            <li><a href="#オブジェクト">オブジェクト</a></li>
+            <li><a href="#オブジェクトグループ">オブジェクトグループ</a></li>
+        </ul>
+    </div>
+    <hr />
+    <a name="位相構造"></a>
+    <h2>位相構造</h2>
+        <div class="indent2">面形状のオブジェクトでは、隣接するオブジェクト同士は中間のラインを共有しています。このような隣接関係や結合関係を記述したものが位相構造で、GISに特有のものといえるでしょう。ただし、シェープファイルなど位相構造を有しないファイル形式もあります。
+        </div>
+    <hr />
+
+    <a name="緯度経度座標系・平面直角座標系"></a>
+    <h2>緯度経度座標系・平面直角座標系</h2>
+        <div class="indent2">地図の地球上での絶対位置を指定するためには、座標系を設定する必要があります。緯度経度座標系のデータとは、地球上緯度・経度の座標を使用したデータをとなります。<br />
+            一方平面直角座標系は、日本の公共測量などで使われている座標系で、全国を19の系番号に分けています。系番号ごとの範囲は、国土地理院のホームページ等をご覧下さい。<br />
+<a href="http://www.gsi.go.jp/LAW/heimencho.html">http://www.gsi.go.jp/LAW/heimencho.html</a>
+        </div>
+    <hr />
+
+    <a name="オブジェクト"></a>
+    <h2>オブジェクト</h2>
+        <div class="indent2">MANDARAで扱う地図データの基本単位をオブジェクトと呼びます。それぞれのオブジェクトには地図ファイル内で重複しない固有の名前（オブジェクト名）を付けます。このオブジェクト名が属性データとリンクさせる際のキーとなります。<br />
+            <h3>オブジェクトの形状</h3><div class="indent2">
+                オブジェクトの形状には次の3種類があります。地図ファイルには異なる形状のオブジェクトを含むことができます。
+                <ul class="bold">
+                    <li>面オブジェクト<div class="indent1NormalWeight">市町村など広がりのあるオブジェクトで、境界となる閉じたラインから作られています。</div></li>
+                    <li>線オブジェクト<div class="indent1NormalWeight">鉄道など、閉じていないラインで構成されています。ループ状のオブジェクトを線オブジェクトとして登録する場合にはオブジェクトグループの設定で形状を線にしておきます。</div></li>
+                    <li>点オブジェクト<div class="indent1NormalWeight">特定の地点を指す、広がりのないオブジェクトです。</div></li>
+                </ul>
+            </div>
+            <h3>オブジェクトの種類</h3><div class="indent2">
+                オブジェクトの種類には次の2種類があります。
+                <ul class="bold">
+                    <li>通常のオブジェクト<div class="indent1NormalWeight">ラインを参照して自身を構成しています。</div></li>
+                    <li>集成オブジェクト<div class="indent1NormalWeight">他のオブジェクトを参照して、自身を構成しています。</div></li>
+                </ul>
+            </div>
+            <h3>オブジェクト名の設定</h3><div class="indent2">
+                オブジェクト名はマップエディタで設定します。設定した名称が属性データと地図データを結合する際のキーとなりますので、同一地図ファイル中で重複したオブジェクト名を付けることはできません。<br />
+                1つのオブジェクトに対して、市町村名と行政コードなど、同時に複数の名称を設定することができます。これをオブジェクト名リストと呼び、オブジェクトグループごとに数が決められます。<br />
+                時空間編集モードでは、一つのオブジェクトに有効期間の異なる複数のオブジェクト名を設定することかでき、期間が異なっている場合に限り、同一のオブジェクト名を設定することもできます。<br />
+                「ヵ」と「ヶ」など、間違えやすい文字、龍や竜などの新旧自体は、オプション設定で同一とみなすように設定することができます。<br />
+            </div>
+            <h3>オブジェクトの属性</h3><div class="indent2">
+                オブジェクトの属性とは、オブジェクトの性質を示すデータであり、次の3種類があります。
+                <ul class="bold">
+                    <li>空間属性<div class="indent1NormalWeight">使用するラインや代表点など、オブジェクトの空間形状を示す属性で、マップエディタで設定します。</div></li>
+                    <li>初期属性データ<div class="indent1NormalWeight">地図ファイル中のオブジェクトに記憶される属性をいいます。マップエディタで設定します。</div></li>
+                    <li>属性データ<div class="indent1NormalWeight">設定画面に取り込まれた属性を指します。MANDARAタグを使って取り込んだり、属性データ編集画面で作成したりします。</div></li>
+                </ul>
+            </div>          
+        </div>
+    <hr />
+
+
+    <a name="オブジェクトグループ"></a>
+    <h2>オブジェクトグループ</h2>
+        <div class="indent2">
+            MANDARAの地図ファイルでは、点、線、面形状のオブジェクトを混在させることができますが、オブジェクトの種類ごとにグループを作ると編集が効率的になります。そこで使われるのがオブジェクトグループです。<br />
+            異なる形状のオブジェクトは別のオブジェクトグループに設定する必要があります。同一形状のオブジェクトであっても、初期属性データ数やオブジェクト名リストが異なったり、性質が異なる場合は別のオブジェクトグループを作成します。<br />
+            オブジェクトグループの設定では、オブジェクトの形状、種類、初期属性データ数、オブジェクト名リストなどの設定を行います。<br />
+        </div>
+    <hr />
+
+    <a name=""></a>
+    <h2></h2>
+        <div class="indent2">
+        </div>
+    <hr />
+
+    <a name=""></a>
+    <h2></h2>
+        <div class="indent2">
+        </div>
+    <hr />
+
+    <a name=""></a>
+    <h2></h2>
+        <div class="indent2">
+        </div>
+    <hr />
+
+</div>
+<div id="footerArea">
+    <div class="button" style="position:absolute;top:4px;left:10px"><a href="#top"><b>▲ページトップへ</b></a></div>
+    <div class="button" style="position:absolute;top:4px;left:140px"><a href="index.html">ヘルプ目次</a></div>
+    <div class="button" style="position:absolute;top:4px;left:270px"><a href="settingwindow.html">起動・設定画面</a></div>
+    <div class="button" style="position:absolute;top:4px;left:400px"><a href="propertydata.html">属性データの作成</a></div>
+    <div class="button" style="position:absolute;top:4px;left:530px"><a href="outputwindow.html">出力画面</a></div>
+    <div class="button" style="position:absolute;top:30px;left:10px"><a href="mapeditor.html">マップエディタ</a></div>
+    <div class="button" style="position:absolute;top:30px;left:140px"><a href="subwindow.html">サブウインドウ</a></div>
+    <div class="button" style="position:absolute;top:30px;left:270px"><a href="glossary.html">用語解説</a></div>
+    <div class="button" style="position:absolute;top:30px;left:400px"><a href="about.html">MANDARAとは</a></div>
+</div>
+</body>
+</html>

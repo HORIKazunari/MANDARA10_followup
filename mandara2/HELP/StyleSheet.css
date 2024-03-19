@@ -1,0 +1,116 @@
+﻿body {font-size:14px;
+
+    margin: 0;  
+    padding: 0  1em 56px 1em; 
+}
+
+div#footerArea {  
+    position: fixed !important;  
+    position: absolute;  
+    bottom: 0;  
+    left: 0;  
+    width: 100%;  
+    height: 56px;  
+    background-color: #6EAACE;  
+    color: #fff;
+    padding:0 0 0 1em;
+} 
+* html div#contentsArea{  
+    height: 100%;  
+    overflow: auto;  
+    padding-left:1em;
+    text-indent:-1em;
+}  
+div.button {
+    color: #000000;
+    position: absolute;
+    border: solid;
+    border-color: #000000;
+    border-width: 1px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 1px;
+    text-align: center;
+    padding:0 0 0 0;
+    width:120px;
+    text-align:center;
+}     
+* html body{  
+    overflow: hidden;  
+} 
+ A:link { text-decoration:none; color:blue }
+ A:visited { text-decoration:none; color:blue }
+ A:active { text-decoration:none; color:blue }
+ A:hover { text-decoration:underline; color:#880088 }
+h1{font-size:150%;
+	padding: .5em .75em;
+	background-color: #d0ffc0;
+	border-bottom: 1px solid #ccc;
+}
+h2{font-size:120%;
+    padding: .3em .3em;
+    background-color: #e0e0ff;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+h3{font-size:110%;
+    padding: 0 0.5em;
+    margin: .2em 1em;
+    background-color: #e0e0ff;
+}
+h4{font-size:105%;
+   margin-left:1em;
+   margin-right:1em;
+   display:inline;
+}
+
+
+.indent1 {
+	padding-left: 1em;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+}
+.indent2 {
+	padding-left: 2em;
+    padding-bottom: 0.5em;
+    padding-top: 0.1em;
+}
+table, td{ 
+    margin-left: 2em;
+    margin-bottom:1em;
+    border-collapse:collapse;
+    border: 1px #1C79C6 solid;
+    padding:2px;
+}
+th{
+    border-collapse:collapse;
+    border: 1px #1C79C6 solid;
+    padding:2px;
+    text-align:center;
+    background-color:#e0e0e0;
+    font-weight:bold;
+}
+
+ul{
+margin: 0 0 0 1em;
+padding: 0 0 0 0;
+}
+
+li{
+margin: 0 0 0 1em;
+padding: 5px 0 0 0;
+}
+
+.indent1NormalWeight{
+    font-weight:normal;
+}
+.indent2NormalWeight{
+    padding-left: 2em;
+    font-weight:  normal;
+}
+ul.bold{
+    font-weight:bolder;
+}
+
+
+

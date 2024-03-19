@@ -1,0 +1,937 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="StyleSheet.css"/>
+    <title>属性データの作成|MANDARA10ヘルプ</title>
+</head>
+<body>
+    <div id="contentsArea">  
+    <a name="Top"></a>
+    <h1>属性データの作成方法</h1>
+    <h4>目次</h4>
+        <ul>
+            <li><a href="#what">属性データとは</a></li>
+            <li><a href="#tag">ExcelでMANDARAタグをつけて作成する</a>
+                <ul>
+                    <li><a href="#matrix">Excelで都道府県の地理行列を作ろう</a></li>
+                    <li><a href="#settingTag">MANDARAタグをつけよう</a></li>
+                    <li><a href="#sendData">MANDARAに属性データを送ろう</a></li>
+                    <li><a href="#tagList">MANDARAタグ一覧</a>
+                        <ul>
+                            <li><a href="#tagMAP">MAPタグ</a></li>
+                            <li><a href="#tagCOMMENT">COMMENTタグ</a></li>
+                            <li><a href="#tagMISSING">MISSINGタグ</a></li>
+                            <li><a href="#tagLAYER">LAYERタグ</a></li>
+                            <li><a href="#tagTYPE">TYPEタグ</a></li>
+                            <li><a href="#tagTIME">TIMEタグ</a></li>
+                            <li><a href="#tagSHAPE">SHAPEタグ</a></li>
+                            <li><a href="#tagDUMMY">DUMMYタグ</a></li>
+                            <li><a href="#tagDUMMY_GROUP">DUMMY_GROUPタグ</a></li>
+                            <li><a href="#tagTITLE">TITLEタグ</a></li>
+                            <li><a href="#tagUNIT">UNITタグ</a></li>
+                            <li><a href="#tagDATA_MISSING">DATA_MISSINGタグ</a></li>
+                            <li><a href="#tagNOTE">NOTEタグ</a></li>
+                            <li><a href="#tagCAT">CATタグ</a></li>
+                            <li><a href="#tagSTR">STRタグ</a></li>
+                            <li><a href="#tagURL">URL_NAME/URLタグ</a></li>
+                            <li><a href="#tagLATLON">LAT/LONタグ</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#tagChange">Ver9以前からのタグ変更</a></li>
+                </ul>
+            </li>
+            <li><a href="#propertyEditor">属性データ編集機能を使用する</a>
+                <ul>
+                    <li><a href="#makeNewData">属性データ編集機能で新しく属性データを作る</a></li>
+                    <li><a href="#propertyEditorWindows">属性データ編集画面</a>
+                        <ul>
+                            <li><a href="#frmGridAddDefData">初期属性追加</a></li>
+                            <li><a href="#frmGridGPX">GPXファイル読み込み</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </li>
+        </ul>
+
+    <a name="what"></a>
+        <h2>属性データとは</h2>
+        <div class="indent1">MANDARAの主要な機能は、作成した地図データに対して様々な属性を与え、地図に表すことです。<br />
+            <br />
+            【マップエディタ】で作成した地図データのオブジェクトは、それぞれ点オブジェクト、線オブジェクト、面オブジェクトなどの、幾何学的な属性を有しています。<br />
+            <br />
+            MANDARAでは、それぞれのオブジェクトをただ表示するだけでなく、いろいろなテーマに様々に加工して表示させることができます。そうした地図を「主題図」と呼びます。<br />
+            <br />
+            地図データは幾何学的属性を持つだけですが、主題図を作るために、その他様々な属性を与えるのが、属性データです。<br />
+            <br />
+            属性データを作成する方法には、次の３種類があり、いずれも設定画面から操作します。<br />
+            <br />
+            <h4>①「白地図・初期属性データ表示」機能で表示する。</h4>
+                <div class="indent2">地図ファイルをマップエディタ上で直接作成した場合で、オブジェクトに初期属性データとして設定した場合に使います。</div>
+            <h4>②表計算ソフト上に「MANDARAタグ」を追加して読み込む。</h4>
+                <div class="indent2">Excelなどの表計算ソフトにMANDARA特有の約束事である「MANDARAタグ」を入力し、そのデータをクリップボードにコピーし（またはCSVファイルに保存し）、MANDARAに送ります。この方法はPCの使用に慣れた人にお勧めする方法です。</div>
+            <h4>③「属性データ編集機能」を使用して作成する。</h4>
+                <div class="indent2">表計算ソフトの使用法に慣れていない人にお勧めする方法で、MANDARAのタグを知らなくても属性データを作成できます。</div>
+            <br />
+            複雑なデータになると②③を併用して作成することになります。<br />
+            <br />
+            それでは、都道府県別の日本地図が入った地図ファイル、 「japan.mpfz」 を利用した属性データの作成方法を順番に解説します。<br />
+            <br />
+        </div>
+    <a name="tag"></a>
+    <h1>ExcelでMANDARAタグをつけて作成する</h1>
+     <a name="matrix"></a>
+    <h2>Excelで都道府県の地理行列を作ろう</h2>
+        <div class="indent1">
+            　ここでは「japan.mpfz」 を利用して、都道府県別のデータを表示してみます。はじめに、Excel上で縦に都道府県名を並べ、横方向にそれぞれの都道府県の人口、面積、人口密度をセルに入力しておきます。ここでは、単位もつけておきます。こうしたデータを地理行列と呼びます。<br />
+            <br />
+            　都道府県名では、「埼玉県」だけでなく、「埼玉」「13」（13は埼玉県の都道府県番号）でも可能です。「JAPAN.MPFZ」という地図ファイルには、3種類のオブジェクト名が設定してあるからです。オブジェクト名は地図ファイルごとに異なります。<br />
+        </div>
+        <table>
+            <tr><td style="width:80px"></td><td style="width:80px">人口</td><td style="width:80px">面積</td><td style="width:80px">人口密度</td></tr>
+            <tr><td></td><td>万人</td><td>ｋ㎡</td><td>人／ｋ㎡</td></tr>
+            <tr><td>北海道</td><td><div style="text-align:right">563</div></td><td><div style="text-align:right">83519</div></td><td><div style="text-align:right">68</div></td></tr>
+            <tr><td class="auto-style1">青森県</td><td class="auto-style1"><div style="text-align:right">152</div></td><td class="auto-style1"><div style="text-align:right">9619</div></td><td class="auto-style1"><div style="text-align:right">158</div></td></tr>
+            <tr><td>岩手県</td><td><div style="text-align:right">143</div></td><td><div style="text-align:right">15279</div></td><td><div style="text-align:right">94</div></td></tr>
+            <tr><td colspan="4" ><div style="text-align:center">・<br />・<br />・<br /></div></td></tr>
+            <tr><td>沖縄県</td><td><div style="text-align:right">1118</div></td><td><div style="text-align:right">12254</div></td><td><div style="text-align:right">1523</div></td></tr>
+        </table>
+
+    <a name="settingTag"></a>
+    <h2>MANDARAタグをつけよう</h2>
+        <div class="indent1">
+            　地理行列を入力するだけでは、まだMANDARAに送ることはできません。送る前に、MANDARAに送るための約束事を示す、MANDARAタグを付け加えます（下の表の太字）。<br />
+            <br />
+            タグは必ず半角ローマ字で記入します（大文字でも小文字でも構いません）。<br />
+        </div>
+        <table>
+            <tr><td style="width:80px"><b>MAP</b></td><td style="width:80px"><b>JAPAN</b></td><td style="width:80px"><b></b></td><td style="width:80px"><b></b></td></tr>
+            <tr><td><b>TITLE</b></td><td>人口</td><td>面積</td><td>人口密度</td></tr>
+            <tr><td><b>UNIT</b></td><td>万人</td><td>ｋ㎡</td><td>人／ｋ㎡</td></tr>
+            <tr><td>北海道</td><td><div style="text-align:right">563</div></td><td><div style="text-align:right">83519</div></td><td><div style="text-align:right">68</div></td></tr>
+            <tr><td>青森県</td><td><div style="text-align:right">152</div></td><td><div style="text-align:right">9619</div></td><td><div style="text-align:right">158</div></td></tr>
+            <tr><td>岩手県</td><td><div style="text-align:right">143</div></td><td><div style="text-align:right">15279</div></td><td><div style="text-align:right">94</div></td></tr>
+            <tr><td colspan="4" ><div style="text-align:center">・<br />・<br />・<br /></div></td></tr>
+            <tr><td>沖縄県</td><td><div style="text-align:right">1118</div></td><td><div style="text-align:right">12254</div></td><td><div style="text-align:right">1523</div></td></tr>
+        </table>
+        <h4>MAP</h4>
+            <div class="indent2">地図ファイルを指定するタグです。ここでは日本地図japan.mpfzを指定するので、横のセルに｢JAPAN｣と記します。拡張子は省略可能です。</div>
+        <h4>TITLE</h4>
+            <div class="indent2">右側にデータのタイトルが続くことを示すタグです。</div>
+        <h4>UNIT</h4>
+            <div class="indent2">右側にデータの単位が続くことを示すタグです。</div>
+    
+    <a name="sendData"></a>    
+    <h2>MANDARAに属性データを送ろう</h2>
+        <div class="indent1">
+          表にタグをつけたら、データをMANDARAに送ります。そのためには、
+            <ol type="1">
+                <li>Excelの表の左上から右下の部分までを選択し、コピーします。</li>
+                <li>MANDARAを実行します。</li>
+                <li>起動画面の<b>「クリップボードからデータを読み込む」</b>を選択し、<b>OK</b>をクリックします。</li>
+                <li>読み込まれると、起動画面になります。</li>
+            </ol>
+            すでにMANDARAでデータを読み込んでいる場合は<b>[ファイル]＞[クリップボードからデータの読み込み]</b>を選びます。
+
+        </div>
+
+    <a name="tagList"></a>
+    <h2>MANDARAタグ一覧</h2>
+        <h3>全体にかかるタグ</h3>
+        <table >
+            <tr>
+                <th style="width:150px" >タグ</th>
+                <th style="width:300px">機能</th>
+            </tr>
+            <tr>
+                <td ><a href="#tagMAP">MAP</a></td>
+                <td>地図ファイルの指定</td>
+            </tr>
+            <tr>
+                <td ><a href="#tagCOMMENT">COMMENT</a></td>
+                <td>属性データ全体の注釈</td>
+            </tr>
+            <tr>
+                <td ><a href="#tagMISSING">MISSING</a></td>
+                <td>属性データ全体の欠損値指定</td>
+            </tr>
+        </table>
+
+        
+        <h3>レイヤにかかるタグ</h3>
+        <table>
+            <tr>
+                <th style="width:150px" >タグ</th>
+                <th style="width:300px">機能</th>
+            </tr>
+            <tr>
+                <td><a href="#tagLAYER">LAYER</a></td>
+                <td>レイヤ構造化の指定</td>
+            </tr>
+            <tr>
+                <td><a href="#tagTYPE">TYPE</a></td>
+                <td>レイヤの種類の指定</td>
+            </tr>
+            <tr>
+                <td><a href="#tagTIME">TIME</a></td>
+                <td>レイヤの時期の設定</td>
+            </tr>
+            <tr>
+                <td><a href="#tagSHAPE">SHAPE</a></td>
+                <td>レイヤのオブジェクトの形状の指定</td>
+            </tr>
+            <tr>
+                <td><a href="#tagDUMMY">DUMMY</a></td>
+                <td>属性データをもたない、外形だけを表示するダミーオブジェクトの指定</td>
+            </tr>
+            <tr>
+                <td><a href="#tagDUMMY_GROUP">DUMMY_GROUP</a></td>
+                <td>ダミーオブジェクトをオブジェクトグループごとに指定</td>
+            </tr>
+            <tr>
+                <td><a href="#tagCOMMENT">COMMENT</a></td>
+                <td>レイヤの注釈</td>
+            </tr>
+        </table>
+
+        
+        <a name="dataItemTag"></a>
+        <h3>データ項目にかかるタグ</h3>
+        <table>
+            <tr>
+                <th style="width:150px" >タグ</th>
+                <th style="width:300px">機能</th>
+            </tr>
+            <tr>
+                <td><a href="#tagTITLE">TITLE</a></td>
+                <td>データ項目のタイトルの指定</td>
+            </tr>
+            <tr>
+                <td><a href="#tagMAP">UNIT</a></td>
+                <td>データ項目の単位の指定</td>
+            </tr>
+            <tr>
+                <td><a href="#tagDATA_MISSING">DATA_MISSING</a></td>
+                <td>データ項目の欠損値の指定</td>
+            </tr>
+            <tr>
+                <td><a href="#tagNOTE">NOTE</a></td>
+                <td>データ項目の注の指定</td>
+            </tr>
+        </table>
+
+        
+        <h3>データ項目の特性に関するタグ</h3>
+        <table>
+            <tr>
+                <th style="width:150px" >タグ</th>
+                <th style="width:300px">機能</th>
+            </tr>
+            <tr>
+                <td><a href="#tagCAT">CAT</a></td>
+                <td>データ項目がカテゴリーデータ（名義尺度）であることを示す</td>
+            </tr>
+            <tr>
+                <td><a href="#tagSTR">STR</a></td>
+                <td>データ項目が文字であることを示す</td>
+            </tr>
+            <tr>
+                <td><a href="#tagURL">URL_NAME/URL</a></td>
+                <td>データ項目がURLの名称/URLであることを示す</td>
+            </tr>
+            <tr>
+                <td><a href="#tagLATLON">LAT/LON</a></td>
+                <td>地点定義レイヤまたは移動データレイヤで使用し、データ項目が緯度/経度であることを示す</td>
+            </tr>
+            <tr>
+                <td><a href="#tagTrip">PLACE/ARRIVAL/DEPARTURE</a></td>
+                <td>移動データレイヤで使用し、データ項目が滞在場所/到着時間/出発時間であることを示す</td>
+            </tr>
+        </table>
+
+     <a name="tagMAP"></a>
+        <h3>MAPタグ</h3>
+        <ul>
+            <li>MAPタグでは、属性データで使用する地図ファイルを1つ、または複数指定します。</li>
+            <li>ここで複数の地図ファイルを指定した場合、各レイヤは、MAPタグで指定した地図ファイルから、レイヤで使う地図ファイルを選択することができます。</li>
+            <li>指定は必須です。</li>
+        </ul>
+        <h4>文法</h4>
+        <table>
+            <tr><td style="width:100px"><b>MAP</b></td><td>地図ファイル1</td><td>（地図ファイル2）</td><td>･･･</td><td>（地図ファイルn）</td></tr>
+        </table>
+        <h4>例-1つの地図ファイルを指定した場合</h4>
+        <table>
+            <tr><td style="width:100px"><b>MAP</b></td><td class="auto-style2">JAPAN</td></tr>
+        </table>
+        <table>
+            <tr><td style="width:100px"><b>MAP</b></td><td>日本市町村</td></tr>
+        </table>
+        <h4>例-複数の地図ファイルを指定した場合</h4>
+        <table>
+            <tr><td style="width:100px"><b>MAP</b></td><td>日本緯度経度</td><td>WORLD</td></tr>
+        </table>
+        <h4>注意事項</h4>
+        <ul>
+            <li>MAPタグは属性データ中でデータの最初の行に記述します。</li>
+            <li>MANDARAは、MAPタグを見つけると、自動的に[ドキュメント]フォルダの[MANDARA10\MAP]フォルダの中から指定されたファイルを検索し、見つかった場合はそのまま読み込みます。見つからなかった場合は、ユーザーに地図ファイルを指定するように促します。</li>
+            <li>MAPファイルの拡張子は不要です。同名で拡張子の異なる地図ファイルが見つかった場合の優先順位は、①MPFZ、②MPFX、③MPFとなります。</li>
+            <li>複数指定した場合、座標系の設定してある地図ファイルと、設定していない地図ファイルを混在させることはできません。</li>
+            <li>複数指定した場合、「地図ファイル1」に指定した緯度経度座標系の地図ファイルに、「地図ファイル2」以降の地図ファイルの測地系・投影法は合わせられます。</li>
+            <li>「地図ファイル1」に平面直角座標系の地図ファイルを指定した場合は、「地図ファイル2」以降の地図ファイルも同じ系番号の平面直角座標系の地図ファイルである必要があります。</li>
+        </ul>
+    <a name="tagCOMMENT"></a>
+        <h3>COMMENTタグ</h3>
+        <ul>
+            <li>COMMENTタグでは、属性データ全体の注釈、またはレイヤの注釈を指定します。</li>
+            <li>複数行に分けて記述することができます。</li>
+            <li>指定はオプションです。</li>
+        </ul>
+        <h4>文法</h4>
+        <table>
+            <tr><td style="width:100px"><b>COMMENT</b></td><td>注釈内容</td></tr>
+        </table>
+        <h4>例-データ全体の注釈</h4>
+        <table>
+            <tr><td style="width:100px">MAP</td><td>JAPAN</td></tr>
+            <tr><td ><b>COMMENT</b></td><td>このデータは都道府県別のデータです。</td></tr>
+            <tr><td ><b>COMMENT</b></td><td>2016年10月1日作成。</td></tr>
+        </table>
+        <h4>例-レイヤの注釈</h4>
+        <table>
+            <tr><td style="width:100px">MAP</td><td>JAPAN</td></tr>
+            <tr><td >LAYER</td><td>都道府県別店舗数</td></tr>
+            <tr><td ><b>COMMENT</b></td><td>経済センサスより作成。</td></tr>
+        </table>
+
+    <a name="tagMISSING"></a>
+        <h3>MISSINGタグ</h3>
+        <ul>
+            <li>データ項目中の空白セルが欠損値であることを宣言、または解除します。</li>
+            <li>ONの場合は、空白セルを欠損値扱いとし、それ以外の場合は0として扱います。</li>
+            <li>指定はオプションです。指定しない場合はOFFの状態となっています。</li>
+        </ul>
+        <h4>文法</h4>
+        <table>
+            <tr><td style="width:100px"><b>MISSING</b></td><td>ON または OFF</td></tr>
+        </table>
+        <h4>例</h4>
+        <div class="indent2">この例では、アンドラの国民総生産は欠損値として読み込まれます。<br />
+        欠損値となった場合は、平均値の計算から除外されたり、地図化した場合に欠損値の凡例が表示されます。
+        </div>
+        <table>
+            <tr>
+            <td style="width:100px">MAP</td>
+            <td>WORLD</td>
+            </tr>
+            <tr>
+            <td><strong>MISSING</strong></td>
+            <td><strong>ON</strong></td>
+            </tr>
+            <tr>
+            <td>TITLE</td>
+            <td>国民総生産</td>
+            </tr>
+            <tr>
+            <td>UNIT</td>
+            <td>百万米ドル</td>
+            </tr>
+            <tr>
+            <td>アイスランド</td>
+            <td>7175</td>
+            </tr>
+            <tr>
+            <td>アイルランド</td>
+            <td>62040</td>
+            </tr>
+            <tr>
+            <td>アンドラ</td>
+            <td></td>
+            </tr>
+            <tr>
+            <td>イギリス</td>
+            <td>1152136</td>
+            </tr>
+        </table>
+        <h4>注意事項</h4>
+        <ul>
+            <li>これはVer9以前のタグで、10以降では非推奨です。データ項目ごとに指定するDATA_MISSINGを使用して下さい。</li>
+            <li></li>
+        </ul>
+
+     <a name="tagLAYER"></a>
+        <h3>LAYERタグ</h3>
+        <ul>
+            <li>レイヤタグは、属性データをレイヤ構造化します。</li>
+            <li>データ全体でレイヤが1つの場合は省略可能です。</li>
+            <li>MAPタグで複数の地図ファイルが指定してある場合は、レイヤで使用する地図ファイルを指定します。</li>
+            <li>地図ファイルの指定が省略された場合は、MAPタグで最初に指定した地図ファイルが使われます。</li>
+        </ul>
+        <h4>文法</h4>
+        <table>
+            <tr><td style="width:100px"><b>LAYER</b></td><td style="width:100px">レイヤ名</td><td>（使用する地図ファイル）</td></tr>
+        </table>
+        <h4>例1-データの種類ごとにレイヤ分けしたケース</h4>
+        <table>
+            <tr><td style="width:100px">MAP</td><td>JAPAN</td></tr>
+            <tr><td ><b>LAYER</b></td><td>人口</td></tr>
+            <tr><td >TITLE</td><td>2010年人口</td></tr>
+            <tr><td >UNIT</td><td>万人</td></tr>
+            <tr><td >北海道</td><td>551</td></tr>
+            <tr><td colspan="2" style="text-align:center"">･･･</td></tr>
+            <tr><td><b>LAYER</b></td><td>チェーン店</td></tr>
+            <tr><td >TITLE</td><td>ローソン店舗数</td></tr>
+            <tr><td >UNIT</td><td>店</td></tr>
+            <tr><td >北海道</td><td>500</td></tr>
+            <tr><td colspan="2" style="text-align:center"">･･･</td></tr>
+        </table>
+        <h4>例2-データの時期ごとにレイヤ分けしたケース</h4>
+        <table>
+            <tr><td style="width:100px">MAP</td><td style="width:100px">日本市町村</td><td style="width:100px""></td><td style="width:100px"></td></tr>
+            <tr><td ><b>LAYER</b></td><td>2010年データ</td><td></td><td></td></tr>
+            <tr><td >TIME</td><td>2010</td><td>10</td><td>1</td></tr>
+            <tr><td >TITLE</td><td>2010年人口</td><td></td><td></td></tr>
+            <tr><td >UNIT</td><td>万人</td><td></td><td></td></tr>
+            <tr><td >埼玉県さいたま市</td><td>122</td><td></td><td></td></tr>
+            <tr><td colspan="4" style="text-align:center"">･･･</td></tr>
+            <tr><td ><b>LAYER</b></td><td>2000年データ</td><td></td><td></td></tr>
+            <tr><td >TIME</td><td>2000</td><td>10</td><td>1</td></tr>
+            <tr><td >TITLE</td><td>2000年人口</td><td></td><td></td></tr>
+            <tr><td >UNIT</td><td>万人</td><td></td><td></td></tr>
+            <tr><td >埼玉県浦和市</td><td>40</td><td></td><td></td></tr>
+            <tr><td colspan="4" style="text-align:center"">･･･</td></tr>
+        </table>
+        <h4>例3-複数の地図ファイルを使用したケース</h4>
+        <div class="indent2">
+            次の例では、MAPタグで地図ファイル「日本市町村鉄道緯度経度」と「豊島区」を指定しています。上のLAYERタグでは地図ファイル名を省略しており、その場合は最初に指定した地図ファイル「日本市町村鉄道緯度経度」が使われます。下のLAYERタグでは地図ファイル「豊島区」が指定されています。
+        </div>
+        <table>
+            <tr><td style="width:100px">MAP</td><td style="width:100px">日本市町村鉄道緯度経度</td><td style="width:100px">豊島区</td><td style="width:100px"></td></tr>
+            <tr><td ><b>LAYER</b></td><td>市町村2010年データ</td><td></td><td></td></tr>
+            <tr><td >TIME</td><td>2010</td><td>10</td><td>1</td></tr>
+            <tr><td >TITLE</td><td>2010年人口</td><td></td><td></td></tr>
+            <tr><td >UNIT</td><td>万人</td><td></td><td></td></tr>
+            <tr><td >埼玉県さいたま市</td><td>122</td><td></td><td></td></tr>
+            <tr><td colspan="4" style="text-align:center"">･･･</td></tr>
+            <tr><td ><b>LAYER</b></td><td>豊島区町丁データ</td><td>豊島区</td><td></td></tr>
+            <tr><td >TITLE</td><td>データ</td><td></td><td></td></tr>
+            <tr><td >UNIT</td><td>％</td><td></td><td></td></tr>
+            <tr><td >東池袋１丁目</td><td>40</td><td></td><td></td></tr>
+            <tr><td >東池袋２丁目</td><td>30</td><td></td><td></td></tr>
+            <tr><td colspan="4" style="text-align:center"">･･･</td></tr>
+        </table>
+        <h4>注意事項</h4>
+        <ul>
+            <li>1つのレイヤには、同じ形状のオブジェクトを含める必要があります。</li>
+            <li>レイヤ中には、形状が同じであれば、異なるオブジェクトグループのオブジェクトを含めることができます。</li>
+            <li>レイヤ中には、異なる地図ファイルのオブジェクトを含めることはできません。</li>
+        </ul>
+        
+     <a name="tagTYPE"></a>
+        <h3>TYPEタグ</h3>
+        <ul>
+            <li>TYPEタグでは、レイヤの種類を、通常のレイヤ、地点定義レイヤ、メッシュレイヤ、移動主体定義レイヤ、移動データレイヤから指定します。</li>
+            <li>指定はオプションです。指定しない場合は通常のレイヤになります。</li>
+            <li>レイヤの種類によって、使用するパラメータす異なります。</li>
+        </ul>
+        <h4>文法</h4>
+        <table>
+            <tr><td style="width:100px"><b>TYPE</b></td><td>レイヤの種類タグ</td><td>（パラメータ1）</td><td>（パラメータ2）</td></tr>
+        </table>
+        <h4>レイヤの種類の指定</h4>
+        <table>
+            <tr><th style="width:150px">レイヤの種類タグ</th><th style="width:130px">名称</th><th>機能</th><th>パラメータ</th></tr>
+            <tr><td ><b>NORMAL</b></td><td>通常のレイヤ</td><td>下記以外の、地図ファイル中のオブジェクトを使用したレイヤです。</td><td>パラメータは使用しません。</td></tr>
+            <tr><td><b>POINT</b></td><td>地点定義レイヤ</td><td>データ中に経緯度を入れ、表示するレイヤです。</td><td>パラメータ1では、経緯度の測地系を指定します。パラメータ2は使用しません。</td></tr>
+            <tr><td ><b>MESH</b></td><td>メッシュレイヤ</td><td>地域メッシュコードから、メッシュデータを表示するレイヤです。</td><td>パラメータ1では、メッシュの種類を指定します。パラメータ2では、経緯度の測地系をしていします。</td></tr>
+            <tr><td ><b>TRIP_DEFINITION</b></td><td>移動主体定義レイヤ</td><td>移動データレイヤで使われる、移動主体を定義するレイヤです。地図表示はできません。</td><td>パラメータは使用しません。</td></tr>
+            <tr><td ><b>TRIP</b></td><td>移動データレイヤ</td><td>移動データを表示するレイヤです。</td><td>パラメータ1では、経緯度の測地系を指定します。パラメータ2は使用しません。</td></tr>
+        </table>
+         <h4>経緯度の測地系の指定</h4>
+        <div class="indent2">
+            日本測地系の場合は<b>「日本」</b>、世界測地系の場合は<b>「世界」</b>とします。省略した場合は世界測地系になります。
+        </div>
+        <a name="tagMESH"></a>
+         <h4>メッシュレイヤのメッシュの種類の指定</h4>
+        <table>
+            <tr><th >メッシュの指定</th><th>メッシュの名称</th><th>メッシュの桁数</th><th>備考</th></tr>
+            <tr><td style="text-align:center"><b>1</b></td><td>1次メッシュ</td><td style="text-align:center">4</td><td>1/20万地勢図の範囲</td></tr>
+            <tr><td style="text-align:center"><b>2</b></td><td>2次メッシュ</td><td style="text-align:center">6</td><td>1/2.5万地形図の範囲</td></tr>
+            <tr><td style="text-align:center"><b>3<br />1km</b></td><td>3次メッシュ</td><td style="text-align:center">8</td><td>2次メッシュを縦横10等分したサイズ</td></tr>
+            <tr><td style="text-align:center"><b>4<br />1/2<br />500m</b></td><td>4次メッシュ</td><td style="text-align:center">9</td><td>3次メッシュを4分割サイズ</td></tr>
+            <tr><td style="text-align:center"><b>5<br />1/4<br />250m</b></td><td>5次メッシュ</td><td style="text-align:center">10</td><td>4次メッシュを4分割したサイズ</td></tr>
+            <tr><td style="text-align:center"><b>1/8</b></td><td>1/8メッシュ</td><td style="text-align:center">11</td><td>5次メッシュを4分割したサイズ</td></tr>
+            <tr><td style="text-align:center"><b>1/10</b></td><td>1/10メッシュ</td><td style="text-align:center">10</td><td>3次メッシュを縦横10等分したサイズ</td></tr>
+        </table>
+        <h4>例1-通常のレイヤ</h4>
+        <div class="indent2">
+            TYPEタグを省略した場合は通常のレイヤになります。
+        </div>
+        <table>
+            <tr><td style="width:100px">LAYER</td><td>データ</td><td style="width:100px"></td></tr>
+            <tr><td ><b>TYPE</b></td><td><b>NORMAL</b></td><td></td></tr>
+        </table>
+        <h4>例2-地点定義レイヤ</h4>
+        <ul>
+            <li>地点定義レイヤでは、TYPEタグでPOINTを指定するとともに、パラメータに測地系を指定します。下の例では世界測地系にしてありますが、省略した場合は世界測地系になります。</li>
+            <li>地点定義レイヤでは、下に地点のオブジェクト名を続け、TITLEタグのデータ項目にLONタグとLATタグをつけ、地点の経度・緯度を指定する必要があります。</li>
+            <li>地点定義レイヤでは、指定した地図ファイル中のオブジェクトを使用しない場合でも、緯度経度座標系の地図ファイルを指定する必要があります。</li>
+        </ul>
+        <table>
+            <tr><td style="width:100px">MAP</td><td style="width:100px">日本緯度経度</td><td style="width:100px"></td></tr>
+            <tr><td >LAYER</td><td>気象台・測候所</td><td></td></tr>
+            <tr><td ><b>TYPE</b></td><td><b>POINT</b></td><td><b>世界</b></td></tr>
+            <tr><td >TITLE</td><td><b>LON</b></td><td><b>LAT</b></td></tr>
+            <tr><td >UNIT</td><td><b></b></td><td></td></tr>
+            <tr><td >稚内</td><td>141.6783</td><td>45.415</td></tr>
+            <tr><td >北見枝幸</td><td>142.585</td><td>44.94</td></tr>
+        </table>
+        
+        <h4>例3-メッシュレイヤ</h4>
+        <ul>
+            <li>地点定義レイヤでは、オブジェクト名にメッシュコードを指定します。下では、TYPEタグで世界測地系の3次メッシュが指定され、8桁のメッシュコードが入っています。</li>
+            <li>地点定義レイヤでは、指定した地図ファイル中のオブジェクトを使用しない場合でも、緯度経度座標系の地図ファイルを指定する必要があります。</li>
+        </ul>
+        <table>
+            <tr><td style="width:100px">MAP</td><td style="width:100px">日本緯度経度</td><td style="width:100px"></td><td style="width:100px"></td></tr>
+            <tr><td >LAYER</td><td>3次メッシュ</td><td></td><td></td></tr>
+            <tr><td ><b>TYPE</b></td><td><b>MESH</b></td><td><b>3</b></td><td><b>世界</b></td></tr>
+            <tr><td >TITLE</td><td>最大土地利用</td><td></td><td></td></tr>
+            <tr><td >UNIT</td><td>CAT</td><td></td><td></td></tr>
+            <tr><td ><b>53404685</b></td><td>河川地及び湖沼</td><td></td><td></td></tr>
+            <tr><td ><b>53404686</b></td><td>建物用地</td><td></td><td></td></tr>
+        </table>
+    <a name="tagTrip"></a>
+        <h4>例4-移動主体定義レイヤと移動データレイヤ</h4>
+        <ul>
+            <li>移動主体定義レイヤと移動データレイヤは、データ中に同時に存在する必要があります。</li>
+            <li>移動主体定義レイヤは、移動主体の属性に関する情報を含むレイヤで、地図ファイル中のオブジェクトとは無関係です。レイヤ中に1つだけ指定できます。それ自体は表示できませんが、移動データレイヤの移動ラインに移動者の属性を表示できます。</li>
+            <li>移動データレイヤは、移動の経路をつなげていきます。</li>
+            <li>PLACEタグでは、滞在地点を地図ファイル中のオブジェクトから指定します。緯度経度座標系の地図ファイルの場合は、LON/LATタグを使って経緯度で指定することも可能です。</li>
+            <li>ARRIVALタグでは、滞在地点に到着した時間を西暦年-月-日-時間-分-秒の14桁で示します。ただし、秒を省略して12桁でも可能です。</li>
+            <li>DEPARTUREタグでは、滞在地点を出発した時間を示します。表記はARRIVALタグと同じです。</li>
+            <li>移動データレイヤ中の移動主体は、移動主体定義レイヤで設定した主体名を使います。</li>
+        </ul>
+        <table>
+            <tr><td style="width:100px">MAP</td><td style="width:150px">日本市町村</td><td style="width:150px"></td><td style="width:100px"></td></tr>
+            <tr><td >LAYER</td><td>移動者</td><td></td><td></td></tr>
+            <tr><td ><b>TYPE</b></td><td><b>TRIP_DEFINITION</b></td><td></td><td></td></tr>
+            <tr><td >TITLE</td><td>世帯番号</td><td>性別</td><td></td></tr>
+            <tr><td >UNIT</td><td></td><td>CAT</td><td></td></tr>
+            <tr><td ><b>山田太郎</b></td><td>1</td><td>男</td><td></td></tr>
+            <tr><td ><b>山田花子</b></td><td>1</td><td>女</td><td></td></tr>
+            <tr><td >LAYER</td><td>2003年4月1日（月曜日）の行動</td><td></td><td></td></tr>
+            <tr><td >TIME</td><td>2003</td><td>4</td><td>1</td></tr>
+            <tr><td ><b>TYPE</b></td><td><b>TRIP</b></td><td></td><td></td></tr>
+            <tr><td >TITLE</td><td><b>PLACE</b></td><td><b>ARRIVAL</b></td><td><b>DEPARTURE</b></td></tr>
+            <tr><td >UNIT</td><td></td><td></td><td></td></tr>
+            <tr><td ><B>山田太郎</B></td><td>さいたま市中央区</td><td>200304070000</td><td>200304070630</td></tr>
+            <tr><td ><B>山田太郎</B></td><td>さいたま市中央区</td><td>200304070630</td><td>200304070730</td></tr>
+            <tr><td ><B>山田太郎</B></td><td>さいたま市大宮区</td><td>200304070750</td><td>200304070800</td></tr>
+        </table>
+
+     <a name="tagTIME"></a>
+        <h3>TIMEタグ</h3>
+        <ul>
+            <li>TIMEタグは、時空間モードで作成された地図ファイルを使用する場合に、レイヤの時期を右側に年月日で指定します。</li>
+            <li>月、日を省略した場合は、1月1日に設定されます。</li>
+            <li>レイヤ中のオブジェクトは、指定した時期に指定されたオブジェクト名で地図ファイル中に存在する必要があります。</li>
+        </ul>
+        <h4>文法</h4>
+        <table>
+            <tr><td style="width:100px"><b>TIME</b></td><td style="width:100px">年</td><td style="width:100px">月</td><td style="width:100px">日</td></tr>
+        </table>
+        <h4>例</h4>
+        <table>
+            <tr><td style="width:100px">MAP</td><td style="width:100px">日本市町村</td><td style="width:100px"></td><td style="width:100px"></td></tr>
+            <tr><td >LAYER</td><td>2010年データ</td><td></td><td></td></tr>
+            <tr><td ><b>TIME</b></td><td>2010</td><td>10</td><td>1</td></tr>
+            <tr><td >TITLE</td><td>2010年人口</td><td></td><td></td></tr>
+            <tr><td >UNIT</td><td>万人</td><td></td><td></td></tr>
+            <tr><td >埼玉県さいたま市</td><td>122</td><td></td><td></td></tr>
+            <tr><td colspan="4" style="text-align:center"">･･･</td></tr>
+            <tr><td >LAYER</td><td>2000年データ</td><td></td><td></td></tr>
+            <tr><td ><b>TIME</b></td><td>2000</td><td>10</td><td>1</td></tr>
+            <tr><td >TITLE</td><td>2000年人口</td><td></td><td></td></tr>
+            <tr><td >UNIT</td><td>万人</td><td></td><td></td></tr>
+            <tr><td >埼玉県浦和市</td><td>40</td><td></td><td></td></tr>
+            <tr><td colspan="4" style="text-align:center"">･･･</td></tr>
+        </table>
+
+        
+     <a name="tagSHAPE"></a>
+        <h3>SHAPEタグ</h3>
+        <ul>
+            <li>レイヤ中のオブジェクトの形状は、点・線・面の3種類に分かれており、地図ファイルが作成された際に決められますが、SHAPEタグではその形状を変更できます。</li>
+            <li>変更できるのは、面オブジェクトを線、面を点、線を点、の3つのケースです。</li>
+            <li>省略した場合は、地図ファイルのオブジェクトの形状が使われます。</li>
+        </ul>
+        <h4>文法</h4>
+        <table>
+            <tr><td style="width:100px"><b>SHAPE</b></td><td style="width:100px">形状</td></tr>
+        </table>
+        <div class="indent2">形状の指定は、点の場合<b>POINT</b>、線の場合<b>LINE</b>、面の場合<b>POLYGON</b>となります。</div>
+        <h4>例</h4>
+        <div class="indent2">下の場合は、本来面形状の北海道が、代表点のみの点形状データとして扱われます。</div>
+        <table>
+            <tr><td style="width:100px">MAP</td><td>JAPAN</td></tr>
+            <tr><td ><b>SHAPE</b></td><td><b>POINT</b></td></tr>
+            <tr><td >TITLE</td><td>人口</td></tr>
+            <tr><td >UNIT</td><td>万人</td></tr>
+            <tr><td >北海道</td><td>551</td></tr>
+        </table>
+         <h4>注意事項</h4>
+        <ul>
+            <li>地図ファイル中で点形状のオブジェクトは、線や面形状にすることはできません。</li>
+        </ul>
+        
+     <a name="tagDUMMY"></a>
+        <h3>DUMMYタグ</h3>
+        <ul>
+            <li>DUMMYタグは、属性値を持たない、輪郭線のみを表示したいオブジェクトを指定します。</li>
+            <li>複数の行に分けて使うことも可能です。</li>
+            <li>読み込み後に設定する場合は、出力画面の<a href="outputwindows.html#frmPrint_DummyObjectGroup">ダミーオブジェクト・グループ変更から行います。</a></li>
+        </ul>
+        <h4>文法</h4>
+        <table>
+            <tr><td style="width:100px"><b>DUMMY</b></td><td>オフジェクト名1</td><td>（オフジェクト名2）</td><td>･･･</td><td>（オフジェクト名n）</td></tr>
+        </table>
+        <h4>例</h4>
+        <div class="indent2">次の例では、北海道と青森県の輪郭線が表示されます。</div>
+        <table>
+            <tr><td style="width:100px">MAP</td><td style="width:100px">日本緯度経度</td><td style="width:100px"></td></tr>
+            <tr><td ><b>DUMMY</b></td><td>北海道</td><td>青森県</td></tr>
+            <tr><td >TITLE</td><td>標高</td><td>全年平均気温</td></tr>
+            <tr><td >UNIT</td><td>m</td><td>℃</td></tr>
+            <tr><td >稚内</td><td>3</td><td>6.6</td></tr>
+            <tr><td >北見枝幸</td><td>7</td><td>5.8</td></tr>
+        </table>
+        
+     <a name="tagDUMMY_GROUP"></a>
+        <h3>DUMMY_GROUPタグ</h3>
+        <ul>
+            <li>DUMMY_GROUPタグは、オブジェクトグループごとにダミーオブジェクトを指定します。</li>
+            <li>複数の行に分けて使うことも可能です。</li>
+            <li>読み込み後に設定する場合は、出力画面の<a href="outputwindows.html#frmPrint_DummyObjectGroup">ダミーオブジェクト・グループ変更から行います。</a></li>
+        </ul>
+        <h4>文法</h4>
+        <table>
+            <tr><td style="width:100px"><b>DUMMY_GROUP</b></td><td>オフジェクトグループ名1</td><td>（オフジェクトグループ名2）</td><td>･･･</td><td>（オフジェクトグループ名n）</td></tr>
+        </table>
+        <h4>例</h4>
+        <div class="indent2">次の例では、全都道府県の輪郭線が表示されます。</div>
+        <table>
+            <tr><td style="width:100px">MAP</td><td style="width:100px">日本緯度経度</td><td style="width:100px"></td></tr>
+            <tr><td ><b>DUMMY_GROUP</b></td><td>都道府県</td><td></td></tr>
+            <tr><td >TITLE</td><td>標高</td><td>全年平均気温</td></tr>
+            <tr><td >UNIT</td><td>m</td><td>℃</td></tr>
+            <tr><td >稚内</td><td>3</td><td>6.6</td></tr>
+            <tr><td >北見枝幸</td><td>7</td><td>5.8</td></tr>
+        </table>
+        
+     <a name="tagTITLE"></a>
+        <h3>TITLEタグ</h3>
+        <ul>
+            <li>TITLEタグは、属性データ項目のタイトル行を指定します。</li>
+            <li>TITLEタグはレイヤに一箇所のみ指定します。</li>
+        </ul>
+        <h4>文法</h4>
+        <table>
+            <tr><td style="width:100px"><b>TITLE</b></td><td>データ項目1のタイトル</td><td>データ項目2のタイトル</td><td>･･･</td><td>データ項目nのタイトル</td></tr>
+        </table>
+        <h4>例</h4>
+        <table>
+            <tr><td style="width:100px">MAP</td><td class="auto-style2">JAPAN</td><td></td></tr>
+            <tr><td ><b>TITLE</b></td><td>人口</td><td>面積</td></tr>
+        </table>
+
+     <a name="tagUNIT"></a>
+        <h3>UNITタグ</h3>
+        <ul>
+            <li>UNITタグは属性データ項目の単位行を指定します。</li>
+            <li>UNITタグはレイヤに一箇所のみ指定します。</li>
+        </ul>
+        <h4>文法</h4>
+        <table>
+             <tr><td style="width:100px"><b>UNIT</b></td><td>データ項目1の単位</td><td>データ項目2の単位</td><td>･･･</td><td>データ項目nの単位</td></tr>
+       </table>
+        <h4>例</h4>
+        <table>
+            <tr><td style="width:100px">MAP</td><td class="auto-style2">JAPAN</td><td></td></tr>
+            <tr><td >TITLE</td><td>人口</td><td>面積</td></tr>
+            <tr><td ><b>UNIT</b></td><td>人</td><td>平方キロメートル</td></tr>
+        </table>
+   
+     <a name="tagDATA_MISSING"></a>
+        <h3>DATA_MISSINGタグ</h3>
+        <ul>
+            <li>DATA_MISSINGタグは、データ項目ごとに空白セルが欠損値かどうかを指定します。</li>
+            <li>DATA_MISSINGタグは、レイヤに一箇所のみ指定します。</li>
+            <li>ONの場合は、空白セルを欠損値扱いとし、それ以外の場合は0として扱います。</li>
+        </ul>
+        <h4>文法</h4>
+        <table>
+             <tr><td style="width:100px"><b>DATA_MISSING</b></td><td>データ項目1の欠損値設定</td><td>データ項目2の欠損値設定</td><td>･･･</td><td>データ項目nの欠損値設定</td></tr>
+        </table>
+        <h4>例</h4>
+        <table>
+            <tr><td style="width:100px">MAP</td><td class="auto-style2">JAPAN</td><td></td></tr>
+            <tr><td >TITLE</td><td>人口</td><td>面積</td></tr>
+            <tr><td >UNIT</td><td>人</td><td>平方キロメートル</td></tr>
+            <tr><td ><B>DATA_MISSING</B></td><td>ON</td><td>OFF</td></tr>
+        </table>
+        
+     <a name="tagNOTE"></a>
+        <h3>NOTEタグ</h3>
+        <ul>
+            <li>NOTEタグは、データ項目ごとの注釈を設定します。</li>
+            <li>NOTEタグは、レイヤに一箇所のみ指定します。</li>
+        </ul>
+        <h4>文法</h4>
+        <table>
+             <tr><td style="width:100px"><b>NOTE</b></td><td>データ項目1の注釈</td><td>データ項目2の注釈</td><td>･･･</td><td>データ項目nの注釈</td></tr>
+        </table>
+        <h4>例</h4>
+        <table>
+            <tr><td style="width:100px">MAP</td><td class="auto-style2">JAPAN</td><td></td></tr>
+            <tr><td >TITLE</td><td>人口</td><td>面積</td></tr>
+            <tr><td >UNIT</td><td>人</td><td>平方キロメートル</td></tr>
+            <tr><td ><b>NOTE</b></td><td>資料：国勢調査</td><td>資料：国土地理院</td></tr>
+        </table>
+
+    <a name="tagCAT"></a>
+        <h3>CATタグ</h3>
+        <ul>
+            <li>CATタグは、UNITタグの単位記入欄に記述するタグで、当該データ項目がカテゴリーデータ（名義尺度）であることを指定します。</li>
+            <li>データが人口や面積のように、連続して変化するデータでなく、0と1、a、b、cといった、特定の値しかとらないようなデータの場合に使います。 文字列を使うこともできます。</li>
+        </ul>
+        <h4>文法</h4>
+        <table>
+             <tr><td style="width:100px"><b>UNIT</b></td><td><b>CAT</b></td></tr>
+        </table>
+        <h4>例</h4>
+        <table>
+            <tr><td style="width:100px">TITLE</td><td>地域</td></tr>
+            <tr><td style="width:100px"><b>UNIT</b></td><td><b>CAT</b></td></tr>
+            <tr><td style="width:100px">北海道</td><td>北海道</td></tr>
+            <tr><td style="width:100px">青森県</td><td>東北地方</td></tr>
+            <tr><td style="width:100px">岩手県</td><td>東北地方</td></tr>
+        </table>
+
+
+    <a name="tagSTR"></a>
+        <h3>STRタグ</h3>
+        <ul>
+            <li>STRタグは、UNITタグの単位記入欄に記述するタグで、当該データ項目が文字であることを指定します。</li>
+            <li>数値で表すことができないデータで、オブジェクト間で共通性のない文字を示す場合に使用します。</li>
+        </ul>
+        <h4>文法</h4>
+        <table>
+            <tr><td style="width:100px"><b>UNIT</b></td><td><b>STR</b></td></tr>
+        </table>
+        <h4>例</h4>
+        <table>
+            <tr><td style="width:100px">TITLE</td><td>県庁所在地</td></tr>
+            <tr><td ><b>UNIT</b></td><td><b>STR</b></td></tr>
+            <tr><td >北海道</td><td>札幌市</td></tr>
+            <tr><td >青森県</td><td>青森市</td></tr>
+            <tr><td >岩手県</td><td>盛岡市</td></tr>
+        </table>
+
+    <a name="tagURL"></a>
+        <h3>URL_NAME/URLタグ</h3>
+        <ul>
+            <li>どちらもTITLEタグの中で使用し、URL_NAMEタグはデータ項目がWebサイトの名称、URLタグはURLであることを示し、二つが一体となって使用します。</li>
+            <li>読み込まれた後は、設定画面のデータ項目欄には表示されません。出力画面でオブジェクトをクリックした際に表示されます。</li>
+        </ul>
+        <h4>文法</h4>
+        <table>
+             <tr><td style="width:100px"><b>TITLE</b></td><td style="width:100px"><b>URL_NAME</b></td><td style="width:100px"><b>URL</b></td></tr>
+        </table>
+        <h4>例</h4>
+        <table>
+            <tr><td style="width:100px">TITLE</td><td>URL_NAME</td><td>URL</td></tr>
+            <tr><td >UNIT</td><td></td><td></td></tr>
+            <tr><td >北海道</td><td>道庁</td><td>http://www.pref.hokkaido.lg.jp/</td></tr>
+        </table>
+
+
+    <a name="tagLATLON"></a>
+        <h3>LAT/LONタグ</h3>
+        <ul>
+            <li>LAT/LONタグは、地点定義レイヤまたは移動データレイヤのTITLEタグ欄で使用し、データ項目が緯度/経度であることを示す</li>
+            <li></li>
+        </ul>
+        <h4>文法</h4>
+        <table>
+             <tr><td style="width:100px"><b>TITLE</b></td><td style="width:100px"><b>LON</b></td><td style="width:100px"><b>LAT</b></td></tr>
+        </table>
+        <h4>例</h4>
+        <table>
+            <tr><td style="width:100px">MAP</td><td style="width:100px">日本緯度経度</td><td style="width:100px"></td></tr>
+            <tr><td ><b>TYPE</b></td><td><b>POINT</b></td><td><b>世界</b></td></tr>
+            <tr><td >TITLE</td><td><b>LON</b></td><td><b>LAT</b></td></tr>
+            <tr><td >UNIT</td><td><b></b></td><td></td></tr>
+            <tr><td >稚内</td><td>141.6783</td><td>45.415</td></tr>
+            <tr><td >北見枝幸</td><td>142.585</td><td>44.94</td></tr>
+        </table>
+                <h4>注意事項</h4>
+        <ul>
+            <li>LON、LATタグの、データ項目中の位置・順序については、指定はありません。</li>
+        </ul>
+    <a name="tagChange"></a>
+    <h2>Ver9以前からのタグ変更</h2>
+        <div class="indent2">バージョン10では、MANDARAタグの追加・変更がありました。</div>
+        <h4>新規</h4>
+        <ul>
+            <li><a href="#tagSHAPE">SHAPE</a></li>
+            <li><a href="#tagTYPE">TYPE</a></li>
+            <li><a href="#tagDATA_MISSING">DATA_MISSING</a></li>
+            <li><a href="#tagNOTE">NOTE</a></li>
+            <li><a href="#tagLATLON">LAT/LON</a></li>
+            <li><a href="#tagTrip">PLACE/ARRIVAL/DEPARTURE</a></li>
+        </ul>
+        <h4>修正</h4>
+        <ul>
+            <li><a href="#tagLAYER">LAYER</a><div class="indent1">以前はLAYERタグの第2パラメータにTRIP_DEFINITION、TRIPを記述していましたが、<a href="#tagTYPE">TYPE</a>タグで設定するようになりました。また、LAYERタグの第2パラメータは、使用する地図ファイルを設定することになりました。</div></li>
+            <li>DUMMY～END<div class="indent1">以前はDUMMYとENDタグにはさまれた範囲のオブジェクト名がダミーオブジェクトに設定されましたが、<a href="#tagDUMMY">DUMMY</a>タグの右側に設定したオブジェクト名がダミーオブジェクトに設定されるようになり、ENDタグは使わないことになりました。</div></li>
+            <li>DUMMY_GROUP～END<div class="indent1">以前はDUMMY_GROUPとENDタグにはさまれた範囲のオブジェクト名がダミーオブジェクトグループに設定されましたが、<a href="#tagDUMMY_GROUP">DUMMY_GROUP</a>タグの右側に設定したオブジェクト名がダミーオブジェクトグループに設定されるようになり、ENDタグは使わないことになりました。</div></li>
+         </ul>
+
+    <a name="propertyEditor"></a>
+    <h1>属性データ編集機能を使用する</h1>
+        <div class="indent2">MANDARAタグを使用する方法は、タグを覚える必要がありますが、MANDARA付属の属性データ編集機能を使用すると、タグを使わずに属性データを作成できます。また、作成した属性データを修正することができます。</div>
+        <h4>属性データ編集画面への入り方</h4>
+        <ul>
+            <li>起動画面から<div class="indent1">起動画面の<b>新しくデータを作成</b>を選ぶと、最初から属性データを作成できます。</div></li>
+            <li>設定画面から<div class="indent1">設定画面の<b>[編集]＞[属性データ編集]から進みます。</b></div></li>
+        </ul>
+    <a name="makeNewData"></a>
+    <h2>属性データ編集機能で新しく属性データを作る</h2>
+        <ol>
+            <li>属性データ編集画面に入ると、表計算ソフト風の画面となります。そこでまず使用する地図ファイルを<b>追加</b>をクリックして選択します。ここでは都道府県別日本地図が入っている、「japan.mpfz」を選択します。</li>
+            <li><b>入力フォーム上で右クリック</b>し、<b>オブジェクト数の設定</b>と<b>データ項目数の設定</b>を行います。都道府県別データを入力する場合は、オブジェクト数に47を入れ、データ項目数には必要分を入力しておきます。</li>
+            <li>画面右側のレイヤの種類では<b>通常のレイヤ</b>を選択します。</li>
+            <li>左側の緑色の部分にはオブジェクト名を入れます。「japan.mpfz」を使用した場合は、都道府県名となります。オブジェクト名は手で入力するほか、貼り付けることもできます。オブジェクト名が分からない場合は、<b>オブジェクト名コピーパネル</b>で探すこともできます。</li>
+            <li>データ項目と単位を設定します。必要に応じて欠損値の扱いや注も設定します。</li>
+           <li>データの中身を入力して表を完成させます。完成したら<b>OK</b>をクリックします。</li>
+            <li>設定画面に移ります。表示の設定をして地図を描画します。作成した属性データを保存するには、設定画面の<b>[ファイル]＞[名前をつけて保存]</b>を行います。 </li>
+         </ol>
+    <a name="propertyEditorWindows"></a>
+    <h1>属性データ編集画面</h1>
+        <h3>上側の情報</h3>
+        <h4>地図ファイル</h4>
+        <ul class="bold">
+            <li>差し替え<div class="indent1NormalWeight">選択している地図ファイルを他の地図ファイルに差し替えます。</div></li>
+            <li>削除<div class="indent1NormalWeight">選択している地図ファイルをリストから削除します。各レイヤで使用されていない必要があります。</div></li>
+            <li>追加<div class="indent1NormalWeight">使用する地図ファイルを追加します。先頭にある地図ファイルと、座標系が互換性がある必要があります。</div></li>
+        </ul>
+        <h4>検索</h4>
+        <div class="indent2">データ内で検索を行います。<b>前、次</b>で前後のデータを検索します。</div>
+        <h4><a href="#frmGridAddDefData">初期属性追加</a></h4>
+        <div class="indent2">使用している地図ファイルに設定されている初期属性データからデータを追加します。</div>
+        <h4>オブジェクト名コピーパネル</h4>
+        <div class="indent2">オブジェクト名コピーパネルを表示し、現在選択されているレイヤで使用している地図ファイルから、オブジェクト名を検索し、コピーします。</div>
+        <h4>エラー情報</h4>
+        <div class="indent2">データの設定にエラーが見つかった場合に表示されます。</div>
+        <h4><a href="#frmGridGPX">GPXファイルから移動データレイヤ作成</a></h4>
+        <div class="indent2">GPXファイルから移動データレイヤを作成します。GPXファイルとは、GPSで座標を記録したデータです。移動データレイヤを作成した場合は、移動データ主体定義レイヤを作成し、移動主体を定義する作成する必要があります。</div>
+        <h4>OK</h4>
+        <div class="indent2">編集を終えて確定する場合にクリックします。新規に作成したデータの場合はそのまま設定画面に移ります。既存のデータを修正した場合は、新旧データ項目対応設定画面が出るので、新旧の対応を指定してください。ここで対応させると、データの数値を変更しても凡例の設定が受け継がれます。</div>
+        <h3>右側の情報</h3>
+        <h4>レイヤで使用する地図ファイル</h4><div class="indent2">レイヤごとに異なる地図ファイルを使用できます。使用する地図ファイルは上側の<b>地図ファイル</b>欄で追加します。</div>
+        <h4>レイヤの種類</h4><div class="indent2"><b>通常のレイヤ、地点定義レイヤ、メッシュレイヤ、移動主体定義レイヤ、移動データレイヤ</b>から選択します。それそれの内容は、<a href="#tagTYPE">TYPEタグ</a>を参照して下さい。</div>
+        <h4>レイヤの形状</h4><div class="indent2"><b>未設定、点、線、面</b>からレイヤの形状を選択します。それそれの内容は、<a href="#tagSHAPE">SHAPEタグ</a>を参照して下さい。</div>
+        <h4>メッシュ</h4><div class="indent2">レイヤの種類がメッシュレイヤの場合に表示されます。メッシュの種類については<a href="#tagMESH">メッシュレイヤ</a>を参照して下さい。</div>
+        <h4>時間設定</h4><div class="indent2">使用する地図ファイルが時空間モード地図ファイルの場合に表示されます。レイヤの時期を年月日で指定します。</div>
+        <h4>座標の測地系</h4><div class="indent2">レイヤの種類がメッシュレイヤまたはポイントレイヤの場合に表示されます。メッシュまたはポイントの座標の測地系を指定します。</div>
+        <h4>レイヤコメント</h4><div class="indent2">レイヤのコメントを設定します。</div>
+        <h3>グリッドのレイヤ・タブ</h3>
+        <div class="indent2">レイヤの選択やレイヤに関する処理を行います。右クリックするとメニューが出ます。</div>
+        <ul class="bold">
+            <li>レイヤ名の変更<div class="indent1NormalWeight">レイヤ名を変更します。</div></li>
+            <li>レイヤの移動<div class="indent1NormalWeight">レイヤを指定した位置に移動します。</div></li>
+            <li>新しいレイヤの挿入<div class="indent1NormalWeight">新しくレイヤを作成して指定の位置に挿入します。</div></li>
+            <li>レイヤの削除<div class="indent1NormalWeight">編集中のレイヤを削除します。</div></li>
+        </ul>
+        <h3>グリッドの上部</h3>
+        <div class="indent2">グリッド上部のグレー・緑色部分は、データ項目に関する情報で、<a href="#dataItemTag">TITLE,UNIT,DATA_MISSING,NOTEタグ</a>に対応しています。</div>
+        <h4>データの種類</h4><div class="indent2">データ項目の種類をリストから選択します。タイトル欄または単位欄に種類に応じたタグが追加されます。</div>
+        <ul class="bold">
+            <li>通常のデータ<div class="indent1NormalWeight">通常の数値データを意味します。</div></li>
+            <li>カテゴリーデータ<div class="indent1NormalWeight">データ項目をカテゴリーデータに設定します。単位の部分が<b>CAT</b>となります。</div></li>
+            <li>文字データ<div class="indent1NormalWeight">データ項目を文字データに設定します。単位の部分が<b>STR</b>となります。</div></li>
+            <li>URLのアドレス<div class="indent1NormalWeight">指定したデータ項目をWebサイトのURLに設定します。タイトル欄が<b>URL</b>となります。</div></li>
+            <li>URLの名称<div class="indent1NormalWeight">指定したデータ項目をWebサイトの名称に設定します。タイトル欄が<b>URL_NAME</b>となります。</div></li>
+        </ul>
+        <h4>空白セル</h4><div class="indent2">データ項目でセルが空白だった場合、欠損値扱いにするか、または空白にするか選択します。<a href="#tagDATA_MISSING">DATA_MISSINGタグ</a>に相当します。</div>
+        <h4>タイトル</h4><div class="indent2">データ項目のタイトルを設定します。<a href="#tagTITLE">TITLEタグ</a>に相当します。</div>
+        <h4>単位</h4><div class="indent2">データ項目の単位を設定します。<a href="#tagUNIT">UNITタグ</a>に相当します。</div>
+        <h4>注</h4><div class="indent2">データ項目の注を設定します。<a href="#tagNOTE">NOTEタグ</a>に相当します。</div>
+        <h3>グリッドの左側</h3>
+        <div class="indent2">グリッドの左の緑色部分にオブジェクト名を縦方向に入れます。</div>
+        <h3>グリッド中の操作</h3>
+        <h4>入力方法</h4><div class="indent2">入力したいセルを選び、もう一度クリックすると、文字を入力することができます。その状態で矢印キーを押すと、指定した方向に入力セルが移動します。</div>
+        <h4>右クリックメニュー</h4>
+        <ul class="bold">
+            <li>元に戻す<div class="indent1NormalWeight">前の入力などを取り消して元に戻します。</div></li>
+            <li>コピー/貼り付け/切り取り<div class="indent1NormalWeight">クリップボードにコピーなどの処理を行います。</div></li>
+            <li>オブジェクト数の指定<div class="indent1NormalWeight">レイヤでのオブジェクト数（縦方向）を指定します。</div></li>
+            <li>属性データ数の指定<div class="indent1NormalWeight">レイヤでのデータ項目数（横方向）を指定します。</div></li>
+            <li>オブジェクトの挿入/属性データの挿入<div class="indent1NormalWeight">指定箇所にオブジェクト、属性データの入力欄を挿入します。</div></li>
+            <li>行高変更/列幅変更<div class="indent1NormalWeight">行の高さ、列の幅を指定します。</div></li>
+            <li>オブジェクトの削除/属性データの削除<div class="indent1NormalWeight">指定箇所のオブジェクト、属性データの入力欄を削除します。</div></li>
+            </ul>
+        <h4>グリッド移動のキー操作</h4>
+        <ul class="bold">
+            <li>↓↑←→<div class="indent1NormalWeight">上下左右に移動</div></li>
+            <li>Shift＋↓↑←→<div class="indent1NormalWeight">上下左右に移動しながら選択</div></li>
+            <li>Ctrl＋↓↑←→<div class="indent1NormalWeight">上下左右端にジャンプ</div></li>
+            <li>Tab<div class="indent1NormalWeight">右に移動</div></li>
+            <li>Shift＋Tab<div class="indent1NormalWeight">左に移動</div></li>
+        </ul>
+        <hr />
+        <a name="frmGridAddDefData"></a>
+        <h1>初期属性追加</h1>
+        <div class="indent2">属性データ編集画面の<b>初期属性追加</b>ボタンから、地図ファイル中の初期属性データを追加します。</div>
+        <h3>新しいレイヤにオブジェクトグループ単位で追加</h3>
+        <div class="indent2">地図ファイルを選択して、新しいレイヤを作成して、オブジェクトグループごとに初期属性データを追加します。</div>
+        <h4>地図ファイル</h4><div class="indent2">属性データ編集画面に読み込まれている地図ファイルから選択します。</div>
+        <h4>レイヤ名</h4><div class="indent2">作成する新しいレイヤ名を設定します。</div>
+        <h4>オブジェクトグループ</h4><div class="indent2">選択した地図ファイル中で、初期属性データを取得したいオブジェクトグループを選択します。</div>
+        <h4>時期設定</h4><div class="indent2">時空間モードで作られた地図ファイルの場合は、取得する時期を設定します。</div>
+        <h4>初期属性データ項目</h4><div class="indent2">選択されたオブジェクトグループに設定されている初期属性データ項目が表示されるので、取得したい項目を選択します。オブジェクトグループで初期属性データが設定されていない場合は、何も表示されません。</div>
+        <h3>現在のレイヤのオブジェクトに追加</h3>
+        <div class="indent2">選択中のレイヤに含まれるオブジェクトに、初期属性データを追加します。</div>
+        <h4>オブジェクトグループ</h4><div class="indent2">選択中のレイヤに含まれるオブジェクトのオブジェクトグループ一覧が表示されるので、選択します。</div>
+        <h4>初期属性データ項目</h4><div class="indent2">選択したオブジェクトグループのもつ初期属性データが表示されるので、データ項目として取得したい項目を選択します。オブジェクトグループで初期属性データが設定されていない場合は、何も表示されません。</div>
+        <hr />
+        <a name="frmGridGPX"></a>
+        <h1>GPXファイルから移動データレイヤ作成</h1>
+        <div class="indent2">属性データ編集画面の<b>GPXファイルから移動データレイヤ作成</b>ボタンから入ります。GPSデータのファイルのGPXファイルを読み込んで、移動データレイヤを作成します。移動データレイヤの地点を指定する場合、地図ファイル中のオブジェクトの代表点を使う<a href="#tagtagTrip">PLACE</a>タグがありますが、GPXファイルから作成した場合は、緯度経度の<a href="#tagLATLON">LAT/LON</a>タグが使われます。</div>
+        <div class="indent2">到着時間と出発時間を示すARRIVALタグとDEPARTUREタグには、同じ時間が入り、秒までの14桁で設定されます。</div>
+        <h4>GPXファイル選択</h4><div class="indent2">GPXファイルを選択します。</div>
+        <h4>レイヤ名</h4><div class="indent2">移動データレイヤのレイヤ名を設定します。</div>
+        <h4>主体名</h4><div class="indent2">GPXデータの主体名を指定します。主体名は、移動主体定義レイヤで定義されるものです。</div>
+        <h4>GPS標高取得</h4><div class="indent2">GPXファイル内のeleqタグに含まれるGPX標高を取得します。</div>
+        <h4>時間間隔取得</h4><div class="indent2">GPXファイル内のtimeタグの前後の時間差から地点間の時間間隔を取得します。</div>
+        <h4>距離間隔取得</h4><div class="indent2">GPXファイルの緯度経度から、前後での移動距離を計算して取得します。</div>
+        <h4>速度取得</h4><div class="indent2">距離間隔と時間間隔から、速度を計算して取得します。</div>
+        <h4></h4><div class="indent2"></div>
+</div>
+        
+    <div id="footerArea">
+        <div class="button" style="position:absolute;top:4px;left:10px"><a href="#top"><b>▲ページトップへ</b></a></div>
+        <div class="button" style="position:absolute;top:4px;left:140px"><a href="index.html">ヘルプ目次</a></div>
+        <div class="button" style="position:absolute;top:4px;left:270px"><a href="settingwindow.html">起動・設定画面</a></div>
+        <div class="button" style="position:absolute;top:4px;left:400px"><a href="propertydata.html">属性データの作成</a></div>
+        <div class="button" style="position:absolute;top:4px;left:530px"><a href="outputwindow.html">出力画面</a></div>
+        <div class="button" style="position:absolute;top:30px;left:10px"><a href="mapeditor.html">マップエディタ</a></div>
+        <div class="button" style="position:absolute;top:30px;left:140px"><a href="subwindow.html">サブウインドウ</a></div>
+        <div class="button" style="position:absolute;top:30px;left:270px"><a href="glossary.html">用語解説</a></div>
+        <div class="button" style="position:absolute;top:30px;left:400px"><a href="about.html">MANDARAとは</a></div>
+    </div>
+</body>
+</html>

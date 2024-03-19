@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34616.47
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "mandara10", "mandara2\mandara10.vbproj", "{E09079BE-21B2-476F-8786-34F2442DA7CE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E09079BE-21B2-476F-8786-34F2442DA7CE}.Debug|x64.ActiveCfg = Debug|x64
+		{E09079BE-21B2-476F-8786-34F2442DA7CE}.Debug|x64.Build.0 = Debug|x64
+		{E09079BE-21B2-476F-8786-34F2442DA7CE}.Debug|x86.ActiveCfg = Debug|x86
+		{E09079BE-21B2-476F-8786-34F2442DA7CE}.Debug|x86.Build.0 = Debug|x86
+		{E09079BE-21B2-476F-8786-34F2442DA7CE}.Release|x64.ActiveCfg = Release|x64
+		{E09079BE-21B2-476F-8786-34F2442DA7CE}.Release|x64.Build.0 = Release|x64
+		{E09079BE-21B2-476F-8786-34F2442DA7CE}.Release|x86.ActiveCfg = Release|x86
+		{E09079BE-21B2-476F-8786-34F2442DA7CE}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {87E5ACFE-0835-4BD7-9597-D714AF179C63}
+	EndGlobalSection
+EndGlobal

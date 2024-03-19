@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link rel="stylesheet" type="text/css" href="StyleSheet.css"/>
+    <title>ヘルプ目次|MANDARA10ヘルプ</title>
+</head>
+<body>
+<div id="contentsArea">  
+    <a name="Top"></a>
+    <a name="mandaraTop"></a>
+    <h1>地理情報分析支援システム MANDARA　ヘルプ目次</h1>
+    <ul>
+        <li><a href="#introduction"> 地理情報分析支援システム MANDARA</a></li>
+        <li><a href="settingwindow.html">起動画面と設定画面</a>
+            <ul>
+                <li><a href="settingwindow.html#frmStartUp">起動画面</a></li>
+                <li><a href="settingwindow.html#settingWindow">設定画面</a></li>
+                <li><a href="settingwindow.html#selectMode">表示方法の選択</a></li>
+                <li><a href="settingwindow.html#menu">メニュー</a></li>
+            </ul>
+        </li>
+        <li><a href="propertydata.html">属性データの作成</a>
+            <ul>
+                <li><a href="propertydata.html#what">属性データとは</a></li>
+                <li><a href="propertydata.html#matrix">Excelで都道府県の地理行列を作ろう</a></li>
+                <li><a href="propertydata.html#settingTag">MANDARAタグをつけよう</a></li>
+                <li><a href="propertydata.html#sendData">MANDARAに属性データを送ろう</a></li>
+                <li><a href="propertydata.html#tagList">MANDARAタグ一覧</a></li>
+                <li><a href="propertydata.html#tagChange">Ver9以前からのタグ変更</a></li>
+                <li><a href="propertydata.html#propertyEditor">属性データ編集機能を使用する</a></li>
+                <li><a href="propertydata.html#propertyEditorWindows">属性データ編集画面</a></li>
+            </ul>
+        </li>
+        <li><a href="outputwindow.html">出力画面</a></li>
+        <li><a href="mapeditor.html">マップエディタ</a></li>
+        <li><a href="subwindow.html">各種サブウインドウ</a></li>
+        <li><a href="glossary.html">用語解説</a></li>
+        <li><a href="about.html">MANDARAについて</a>
+            <ul>
+                <li><a href="about.html#os">対応OS/環境</a></li>
+                <li><a href="about.html#uninstall">アンインストール</a></li>
+                <li><a href="about.html#support">サポート</a></li>
+                <li><a href="about.html#copyright">著作権など</a></li>
+            </ul>
+        </li>
+    </ul>
+    <a name="introduction"></a>
+    <h1>地理情報分析支援システム MANDARA</h1>
+
+   <h3>パソコンで自分の作った地図にデータを表示してみたい！と思っても、なかなか適当なソフトはないものです。そこで開発したのがこのMANDARAです。</h3>
+  
+    <ul>
+        <li>エクセル等の表計算ソフト上の地域統計データを地図化することに適した無料のGISソフトです。</li>
+        <li>中学生から教員・企業・研究者まで、幅広いユーザー層を持ちます。地図を使って分析を行うさまざまな分野でご利用いただいています。</li>
+        <li>地図データについては、全国の市町村別の地図データが付属しているほか、白地図画像から自分で地図データを作成したり、シェープファイルや各種数値地図、国土数値情報からデータを取得することもできます。</li>
+        <li>データの表示には、塗りつぶしや記号、グラフ、等値線など多様な表現方法が用意されており、誰でも簡単に統計地図を描くことができます。</li>
+    </ul>
+    <h2>自分で簡単に地図データを編集できます</h2>
+    <ul>
+    <li>MANDARAでは緯度経度情報を保持してるので、面積計測、バッファなどいくつかの空間的な分析が可能です。</li>
+    <li>点・線・面の形状のオブジェクトに対応。</li>
+       <li>シェープファイルやKMLのデータを地図データとして取得することができます。</li>
+       <li>地図データには緯度経度情報を入れることができるので、地図データ同士を簡単に重ね合わせることができます。</li>
+        </ul>
+    <h2>属性データの取り込みが簡単です</h2>
+    <ul>
+       <li>表計算ソフト上にあるデータを貼り付けることで属性データが取り込めます。</li>
+       <li>属性データ編集機能を使用すれば、表計算ソフトが使えない人でも使用できます。</li>
+       <li>シェープファイルからも直接読み込めます。</li>
+    </ul>
+    <h2>多様な地図表現に対応しています</h2>
+    <ul>
+       <li>塗りつぶし、円、等値線、グラフなど、様々な方法でデータを表現できます。</li>
+    <li>またオブジェクト間を線で結んで表示する機能があり、OD行列を地図化できます。</li>
+       <li>作図機能があり、円や線、画像などを主題図に挿入できます。</li>
+    </ul>
+    <h2>レイヤ概念があります</h2>
+    <ul>
+       <li>鉄道線と行政境など、異なる種類のデータを重ね合わせて表示できます。</li>
+    </ul>
+    <h2>時間概念があります</h2>
+    <ul>
+       <li>オブジェクトやラインには時間属性を設定することができます。</li>
+       <li>市町村合併や名称変更などでオブジェクトが変化しても、一つの地図ファイルを継続して使用することができます。</li>
+       <li>任意の時期の地図を表示することができます。</li>
+    </ul>
+    <h2>移動データを表示できます</h2>
+    <ul>
+        <li>時間・空間上を移動する主体をGPXデータなどを取り込んで表示することができます。</li>
+        <li>時間地理学的概念であるデイリーパスを簡単に表示できます。</li>
+    </ul>
+    <h2>Web用やGoogle Earth，シェープファイルに出力できます</h2>
+    <ul>
+        <li>地図上の一部をクリックするとデータが表示されるような、クリッカブルマップとして表示した主題図を出力できます。</li>
+        <li>複数の主題図をアニメーションのとして連続表示するhtmlファイルを作成できます。</li>
+        <li>Google Earth上に表示できるKMLという形式で保存できます。シェープファイルに出力すれば、いろいろなGISと連携できます。</li>
+    </ul>
+
+</div>
+<div id="footerArea">
+    <div class="button" style="position:absolute;top:4px;left:10px"><a href="#top"><b>▲ページトップへ</b></a></div>
+    <div class="button" style="position:absolute;top:4px;left:140px"><a href="index.html">ヘルプ目次</a></div>
+    <div class="button" style="position:absolute;top:4px;left:270px"><a href="settingwindow.html">起動・設定画面</a></div>
+    <div class="button" style="position:absolute;top:4px;left:400px"><a href="propertydata.html">属性データの作成</a></div>
+    <div class="button" style="position:absolute;top:4px;left:530px"><a href="outputwindow.html">出力画面</a></div>
+    <div class="button" style="position:absolute;top:30px;left:10px"><a href="mapeditor.html">マップエディタ</a></div>
+    <div class="button" style="position:absolute;top:30px;left:140px"><a href="subwindow.html">サブウインドウ</a></div>
+    <div class="button" style="position:absolute;top:30px;left:270px"><a href="glossary.html">用語解説</a></div>
+    <div class="button" style="position:absolute;top:30px;left:400px"><a href="about.html">MANDARAとは</a></div>
+</div>  
+</body>
+</html>

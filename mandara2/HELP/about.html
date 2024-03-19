@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="StyleSheet.css"/>
+    <title>MANDARAについて|MANDARA10ヘルプ</title>
+</head>
+<body>
+<div id="contentsArea">  
+    <a name="top"></a>
+    <h1>MANDARAについて</h1>
+        <h4>目次</h4>
+        <ul>
+            <li><a href="#history">開発史</a></li>
+            <li><a href="#os">対応OS/環境</a></li>
+            <li><a href="#compati">Ver9までとの互換性</a></li>
+            <li><a href="#install">インストール</a></li>
+            <li><a href="#update">更新</a></li>
+            <li><a href="#uninstall">アンインストール</a></li>
+            <li><a href="#support">サポート</a></li>
+            <li><a href="#copyright">著作権など</a></li>
+        </ul>
+    <a name="history"></a>
+    <h2>開発史</h2>
+    <h4>1993年</h4>
+    <div class="indent2">大学学部生の頃、Ｔ先生やＮ先生の要望で92年冬頃に作り始める。プログラムはN-88BASICとアセンブリ言語で書かれていた。PC-98専用のDOS版。<br />
+最初の頃は地図データの座標を方眼紙から読みとって入力していた。手で入力した日本地図は現在でも使われている。<br />
+その後画像処理の勉強をして、イメージスキャナから読みとってベクトル変換する方式に発展。<br />
+実はラスタデータを処理するMANDARA-MESHと、ボーリング柱状図を表示するためのMANDARA-BOREというのも存在した。</div>
+    <h4>1996年</h4>
+    <div class="indent2">ウィンドウズ95が幅を利かせるようになったため、Windows版をVisual Basic4.0を使って作成した。Windowsの勉強から始めたので、このバージョンアップには多大な労力を費やした。
+98年頃、Visual Basic5.0を使ったプログラムに書きかえる。意外と変更点が多く、苦労した。</div>
+    <h4>1999年 Ver.4</h4>
+    <div class="indent2">ウィンドウズ98対応版。Visual Basic6.0にプログラムを移行した。</div>
+    <h4>2001年 Ver.4.61</h4>
+    <div class="indent2">属性データ編集機能を追加した。</div>
+    <h4>2002年 Ver.5</h4>
+    <div class="indent2">地図データの構造を時間データを付与した時空間構造にした。</div>
+     <h4>2003年 Ver.5.19</h4>
+    <div class="indent2">シェープファイルを読み込んで地図データにできるようにした。</div>
+   <h4>2007年 Ver.8</h4>
+    <div class="indent2">緯度経度情報に対応。完全無償化</div>
+    <h4>2008年 Ver.9</h4>
+    <div class="indent2">集成オブジェクトに対応。地図ファイルに初期属性を追加できるようにした。</div>
+    <h4>2009年 Ver9.10</h4>
+    <div class="indent2">背景画像に「ウォッちず」「オルソ化空中写真」「今昔マップ2」の画像を設定できるようにした。 </div>
+    <h4>2010年 Ver9.20</h4>
+    <div class="indent2">等高線データの高速取得。</div>
+    <h4>2016年 MANDARA10試作版</h4>
+    <div class="indent2">3年以上の時間をかけ、Visual Basic 2013に書きかえたMANDARA10試作版を公開。</div>
+    <h4>2018年 MANDARA10正式版</h4>
+    <div class="indent2">試作版のテストを経てMANDARA10正式版を公開。</div>
+
+    <a name="os"></a>
+    <h2>対応OS/環境</h2>
+    <div class="indent2">MANDARA10は以下の環境で動作します。<br />
+        <ul>
+            <li>Microsoft Windows 7/8/8.1/10</li>
+            <li>.NET Framework4.5以上</li>
+        </ul>
+    </div>
+
+    <a name="compati"></a>
+    <h2>Ver9までとの互換性</h2>
+    <div class="indent2">MANDARA10で作成した地図ファイル(mpfz,mpfx)および属性データファイル(mdrz,mdrmz)は、MANDARA9以前で開くことはできません。<br />
+        <br />MANDARA9以前で作成したデータとの互換性は以下のようになっています。<br />
+    </div>
+    <h4>地図ファイル</h4><div class="indent2">地図ファイル（拡張子mpf）はおおむね2005年以降に作成されたものであれば読み込めます。読み込めない場合は、MANDARA9.45のマップエディタで読み込み、上書き保存して下さい。</div>
+    <h4>属性データファイル</h4><div class="indent2">属性データファイル（拡張子mdr,mdrm）は、おおむね2011年に作成されたものであれば読み込めます。読み込めない場合は、MANDARA9.45で読み込み、上書き保存して下さい。</div>
+    <h4>MANDARAタグ</h4><div class="indent2">MANDARAタグにもいくつか変更があるので、従来のままでは読み込めないケースもあります。また、新設のタグもあります。タグの変更点は<a href="propertydata.html#tagChange">Ver9以前からのタグ変更</a>をご覧下さい。</div>
+
+    <a name="install"></a>
+    <h2>インストール</h2>
+    <div class="indent2">インストールファイルは、MANDARAホームページに置いてあります。<br />
+        <ul class="bold">
+            <li>インストーラ版<div class="indent1NormalWeight">インストーラの指示に従ってインストール作業を行います。デスクトップにショートカットが作成され、拡張子MDRZ、MDRMZ、MPFZ、MPFXが関連づけられます。</div></li>
+            <li>インストール不要版<div class="indent1NormalWeight">ZIPファイルで圧縮されているので、展開して任意のフォルダに入れ、MANDARA10.exeを実行します。USBメモリからの起動も可能です。</div></li>
+        </ul>
+        <br />
+        どちらの場合も、起動後に[ドキュメント]フォルダ内にMANDARA10フォルダが作成されます。MANDARA10フォルダのMAPフォルダには、地図ファイルが入っています。SAMPLEフォルダには、サンプルの属性データが入っています。
+    </div>
+    <a name="update"></a>
+    <h2>更新</h2>
+    <div class="indent2">MANDARA10を最新のバージョンに更新したい場合、起動画面の<b>バージョン情報</b>からバージョン情報画面に入り、<b>最新バージョンチェック</b>を行います。<br />
+        <br />
+        最新バージョンでない場合、インターネットを通じて最新版に更新できます。その際、現在実行中のMANDARAは終了する必要があります。</div>
+
+    <a name="uninstall"></a>
+    <h2>アンインストール</h2>
+    <div class="indent2">インストーラ版を使ってインストールした場合は、アンインストールするにはWindowsのコントロールパネルの<b>プログラムと機能</b>から行います。<br />
+        <br />
+        [ドキュメント]フォルダには、MANDARA10フォルダが作成されていますが、このフォルダはアンインストールしても削除されないので、手動で削除して下さい。</div>
+
+    <a name="support"></a>
+    <h2>サポート</h2>
+    <div class="indent2">操作方法等のご質問、エラーの報告、感想等は、ホームページの掲示板で受け付けています。</div>
+    <div class="indent2"><a href="http://ktgis.net/cp-bin/pppbbs4/pppbbs.php">MANDARA掲示板</a></div>
+    <div class="indent2">最新の情報については、下記 URLに掲載されています。</div>
+    <div class="indent2"><a href="http://ktgis.net/mandara/">MANDARAホームページ</a></div>
+
+
+    <a name="copyright"></a>
+    <h2>著作権など</h2>
+    <div class="indent2">MANDARAの基本的な著作権は谷謙二に属します。<br />
+        このプログラムを運用して、なんらかの損害をユーザーが負っても、作者はそれに関する責任を一切負いません。<br />
+        雑誌やWebサイトへの転載、再配布、雑誌、ムック等への掲載を許可します。特段の連絡は不要です。<br />
+    </div>
+    <h4>MANDARAで描いた地図の利用について</h4>
+    <div class="indent2">MANDARAで描いた地図については、学術利用、商業利用などどのような目的に使用していただいても構いません。使用の際の連絡は不要です。また、文中等でMANDARAを使用した旨記述する必要はありません。</div>
+    <h4>プログラム作成上のお礼</h4>
+    <div class="indent2">
+        日本測地系と世界測地系との変換および、平面直角座標系から緯度経度座標系への変換機能では、国土地理院のTKY2JGDのソースコードの一部を使用しています。
+「このプログラムは、国土地理院長の承認を得て、同院の技術資料H･1-No.2「測地成果2000のための座標変換ソフトウェアTKY2JGD」を利用し作成したものである。（承認番号　国地企調第174号　平成18年８月22日）」
+
+</div>
+</div>
+<div id="footerArea">
+    <div class="button" style="position:absolute;top:4px;left:10px"><a href="#top"><b>▲ページトップへ</b></a></div>
+    <div class="button" style="position:absolute;top:4px;left:140px"><a href="index.html">ヘルプ目次</a></div>
+    <div class="button" style="position:absolute;top:4px;left:270px"><a href="settingwindow.html">起動・設定画面</a></div>
+    <div class="button" style="position:absolute;top:4px;left:400px"><a href="propertydata.html">属性データの作成</a></div>
+    <div class="button" style="position:absolute;top:4px;left:530px"><a href="outputwindow.html">出力画面</a></div>
+    <div class="button" style="position:absolute;top:30px;left:10px"><a href="mapeditor.html">マップエディタ</a></div>
+    <div class="button" style="position:absolute;top:30px;left:140px"><a href="subwindow.html">サブウインドウ</a></div>
+    <div class="button" style="position:absolute;top:30px;left:270px"><a href="glossary.html">用語解説</a></div>
+    <div class="button" style="position:absolute;top:30px;left:400px"><a href="about.html">MANDARAとは</a></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,1583 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E09079BE-21B2-476F-8786-34F2442DA7CE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>mandara10.My.MyApplication</StartupObject>
+    <RootNamespace>mandara10</RootNamespace>
+    <AssemblyName>MANDARA10</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>MANDARA10.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>MANDARA10.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>mandara.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DocumentationFile>MANDARA10.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DocumentationFile>MANDARA10.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="KTGISUserControl, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\KTGISUserControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.Compatibility" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="clsDraw.vb" />
+    <Compile Include="clsDrawMarkFan.vb" />
+    <Compile Include="clsDrawTile.vb" />
+    <Compile Include="clsExtendedControl.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="clsAttrData.vb" />
+    <Compile Include="frmGridRelated\frmGridAddDefData.designer.vb">
+      <DependentUpon>frmGridAddDefData.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmGridRelated\frmGridAddDefData.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_LorenzGini.Designer.vb">
+      <DependentUpon>frmMain_LorenzGini.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_LorenzGini.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_Autocorrelation.Designer.vb">
+      <DependentUpon>frmMain_Autocorrelation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_Autocorrelation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_PainrColor.designer.vb">
+      <DependentUpon>frmMain_PainrColor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_PainrColor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_AreaPeripheri.designer.vb">
+      <DependentUpon>frmMain_AreaPeripheri.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_AreaPeripheri.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_Scatterplot.Designer.vb">
+      <DependentUpon>frmMain_Scatterplot.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_Scatterplot.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_SetPositionFromData.designer.vb">
+      <DependentUpon>frmMain_SetPositionFromData.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_SetPositionFromData.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainRelated\frmShowDataItems.Designer.vb">
+      <DependentUpon>frmShowDataItems.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainRelated\frmShowDataItems.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainRelated\frmUseClassSettings.Designer.vb">
+      <DependentUpon>frmUseClassSettings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainRelated\frmUseClassSettings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\clsOSM.vb" />
+    <Compile Include="frmPrintRelated\frmPrint_LinkEdit.Designer.vb">
+      <DependentUpon>frmPrint_LinkEdit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrintRelated\frmPrint_LinkEdit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrintRelated\frmPrint_SearchObjects.designer.vb">
+      <DependentUpon>frmPrint_SearchObjects.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrintRelated\frmPrint_SearchObjects.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="General-Purpose-Form\frmColorTransparency.Designer.vb">
+      <DependentUpon>frmColorTransparency.vb</DependentUpon>
+    </Compile>
+    <Compile Include="General-Purpose-Form\frmColorTransparency.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="General-Purpose-Form\frmSyntheticObject.designer.vb">
+      <DependentUpon>frmSyntheticObject.vb</DependentUpon>
+    </Compile>
+    <Compile Include="General-Purpose-Form\frmSyntheticObject.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\clsKiban.vb" />
+    <Compile Include="frmMapEditorRelated\frmMED_Kiban.designer.vb">
+      <DependentUpon>frmMED_Kiban.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_Kiban.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_SRTM30Divide.designer.vb">
+      <DependentUpon>frmMED_SRTM30Divide.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_SRTM30Divide.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_TImeObjectSet.designer.vb">
+      <DependentUpon>frmMED_TImeObjectSet.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_TImeObjectSet.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_ObjectLimitaion.designer.vb">
+      <DependentUpon>frmMain_ObjectLimitaion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_ObjectLimitaion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_CensusGISData.designer.vb">
+      <DependentUpon>frmMED_CensusGISData.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_CensusGISData.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrintRelated\frmPrint_GoogleMapsFileOut.designer.vb">
+      <DependentUpon>frmPrint_GoogleMapsFileOut.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrintRelated\frmPrint_GoogleMapsFileOut.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrintRelated\frmPrint_FigureList.designer.vb">
+      <DependentUpon>frmPrint_FigureList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrintRelated\frmPrint_FigureList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="General-Purpose-Form\frmTitleSettingsAddingData.Designer.vb">
+      <DependentUpon>frmTitleSettingsAddingData.vb</DependentUpon>
+    </Compile>
+    <Compile Include="General-Purpose-Form\frmTitleSettingsAddingData.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="General-Purpose-Form\frmUserTileMap.designer.vb">
+      <DependentUpon>frmUserTileMap.vb</DependentUpon>
+    </Compile>
+    <Compile Include="General-Purpose-Form\frmUserTileMap.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="General-Purpose-Form\frmHelpBrowser.designer.vb">
+      <DependentUpon>frmHelpBrowser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="General-Purpose-Form\frmHelpBrowser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGridRelated\frmGridGPX.designer.vb">
+      <DependentUpon>frmGridGPX.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmGridRelated\frmGridGPX.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_ExchangeObjectName.designer.vb">
+      <DependentUpon>frmMain_ExchangeObjectName.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_ExchangeObjectName.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_SelMapObject.designer.vb">
+      <DependentUpon>frmMain_SelMapObject.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_SelMapObject.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_LayerObjectCombine.designer.vb">
+      <DependentUpon>frmMain_LayerObjectCombine.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_LayerObjectCombine.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_Buffer.designer.vb">
+      <DependentUpon>frmMain_Buffer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_Buffer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_GetDistance.designer.vb">
+      <DependentUpon>frmMain_GetDistance.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_GetDistance.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_Culc.designer.vb">
+      <DependentUpon>frmMain_Culc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_Culc.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\clsE00.vb" />
+    <Compile Include="frmMapEditorRelated\clsOldMapFile.vb" />
+    <Compile Include="frmMapEditorRelated\frmMED_ObjectTimeNameList.designer.vb">
+      <DependentUpon>frmMED_ObjectTimeNameList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_ObjectTimeNameList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_ObjectTimeNameEdit.designer.vb">
+      <DependentUpon>frmMED_ObjectTimeNameEdit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_ObjectTimeNameEdit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_ObjectNameEdit.designer.vb">
+      <DependentUpon>frmMED_ObjectNameEdit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_ObjectNameEdit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_ObjectNameAddFromAttrData.designer.vb">
+      <DependentUpon>frmMED_ObjectNameAddFromAttrData.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_ObjectNameAddFromAttrData.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_E00File.designer.vb">
+      <DependentUpon>frmMED_E00File.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_E00File.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="General-Purpose-Form\clsGPX.vb" />
+    <Compile Include="frmMainRelated\frmStartUp.designer.vb">
+      <DependentUpon>frmStartUp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainRelated\frmStartUp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_ShapefileOut.designer.vb">
+      <DependentUpon>frmMain_ShapefileOut.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_ShapefileOut.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_TimeSeriesSummingUp.designer.vb">
+      <DependentUpon>frmMain_TimeSeriesSummingUp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_TimeSeriesSummingUp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_Cross.designer.vb">
+      <DependentUpon>frmMain_Cross.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_Cross.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_ConditionSettings.Designer.vb">
+      <DependentUpon>frmMain_ConditionSettings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_ConditionSettings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_ConditionSettingSub.Designer.vb">
+      <DependentUpon>frmMain_ConditionSettingSub.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_ConditionSettingSub.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_CopyDataItemSettings.Designer.vb">
+      <DependentUpon>frmMain_CopyDataItemSettings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_CopyDataItemSettings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_SetSeriesMode.Designer.vb">
+      <DependentUpon>frmMain_SetSeriesMode.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_SetSeriesMode.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainRelated\frmVersionInfo.designer.vb">
+      <DependentUpon>frmVersionInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainRelated\frmVersionInfo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_DefTimeAttData.Designer.vb">
+      <DependentUpon>frmMED_DefTimeAttData.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_DefTimeAttData.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_DefTimeAttDataItem.Designer.vb">
+      <DependentUpon>frmMED_DefTimeAttDataItem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_DefTimeAttDataItem.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_DefTimeAttDataObjectEdit.Designer.vb">
+      <DependentUpon>frmMED_DefTimeAttDataObjectEdit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_DefTimeAttDataObjectEdit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_DefTimeAttData_ValueSet.Designer.vb">
+      <DependentUpon>frmMED_DefTimeAttData_ValueSet.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_DefTimeAttData_ValueSet.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrintRelated\frmPrint_KMLFileOut.designer.vb">
+      <DependentUpon>frmPrint_KMLFileOut.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrintRelated\frmPrint_KMLFileOut.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrintRelated\frmPrint_SeriesFileOut.designer.vb">
+      <DependentUpon>frmPrint_SeriesFileOut.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrintRelated\frmPrint_SeriesFileOut.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrintRelated\frmPrint_TileMapOut.designer.vb">
+      <DependentUpon>frmPrint_TileMapOut.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrintRelated\frmPrint_TileMapOut.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrintRelated\frmPrint_Instance.designer.vb">
+      <DependentUpon>frmPrint_Instance.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrintRelated\frmPrint_Instance.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrintRelated\frmPrint_ScreenSetting.designer.vb">
+      <DependentUpon>frmPrint_ScreenSetting.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrintRelated\frmPrint_ScreenSetting.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrintRelated\frmPrint_SizeChange.designer.vb">
+      <DependentUpon>frmPrint_SizeChange.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrintRelated\frmPrint_SizeChange.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrintRelated\frmPrint_Figure.Designer.vb">
+      <DependentUpon>frmPrint_Figure.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrintRelated\frmPrint_Figure.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrintRelated\frmPrint_ObjectValue.Designer.vb">
+      <DependentUpon>frmPrint_ObjectValue.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrintRelated\frmPrint_ObjectValue.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrintRelated\frmPrint_PointLineAdd.Designer.vb">
+      <DependentUpon>frmPrint_PointLineAdd.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrintRelated\frmPrint_PointLineAdd.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="General-Purpose-Form\frmMessageBox.Designer.vb">
+      <DependentUpon>frmMessageBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="General-Purpose-Form\frmMessageBox.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="General-Purpose-Form\frmAlphaValueSet.Designer.vb">
+      <DependentUpon>frmAlphaValueSet.vb</DependentUpon>
+    </Compile>
+    <Compile Include="General-Purpose-Form\frmAlphaValueSet.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="General-Purpose-Form\frmSelectTwoCombobox.Designer.vb">
+      <DependentUpon>frmSelectTwoCombobox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="General-Purpose-Form\frmSelectTwoCombobox.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGridRelated\frmGrid.Designer.vb">
+      <DependentUpon>frmGrid.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmGridRelated\frmGrid.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGridRelated\frmGridDataRefference.Designer.vb">
+      <DependentUpon>frmGridDataRefference.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmGridRelated\frmGridDataRefference.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainRelated\clsOldMDRFile.vb" />
+    <Compile Include="frmMainRelated\frmInnerData.Designer.vb">
+      <DependentUpon>frmInnerData.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainRelated\frmInnerData.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMainProperty.Designer.vb">
+      <DependentUpon>frmMainProperty.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMainProperty.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_ClassViewSettings.Designer.vb">
+      <DependentUpon>frmMain_ClassViewSettings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_ClassViewSettings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_ContourViewSettings.Designer.vb">
+      <DependentUpon>frmMain_ContourViewSettings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_ContourViewSettings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_GraphModeSettings.Designer.vb">
+      <DependentUpon>frmMain_GraphModeSettings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_GraphModeSettings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_LabelModeSettings.Designer.vb">
+      <DependentUpon>frmMain_LabelModeSettings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_LabelModeSettings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_LayeObjectSelect.Designer.vb">
+      <DependentUpon>frmMain_LayeObjectSelect.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_LayeObjectSelect.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_MarkViewSettings.Designer.vb">
+      <DependentUpon>frmMain_MarkViewSettings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_MarkViewSettings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_OverLayModeSettings.Designer.vb">
+      <DependentUpon>frmMain_OverLayModeSettings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_OverLayModeSettings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_SeriesModeSettings.Designer.vb">
+      <DependentUpon>frmMain_SeriesModeSettings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_SeriesModeSettings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_ShowViewer.Designer.vb">
+      <DependentUpon>frmMain_ShowViewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_ShowViewer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_TripModeSettings.Designer.vb">
+      <DependentUpon>frmMain_TripModeSettings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain_TripModeSettings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\clsMapEditorOperation.vb" />
+    <Compile Include="clsGeneric.vb" />
+    <Compile Include="clsMapData.vb" />
+    <Compile Include="clsSortingSearch.vb" />
+    <Compile Include="clsSpatialIndexSearch.vb" />
+    <Compile Include="clsMeshContour.vb" />
+    <Compile Include="frmMainRelated\frmMain.Designer.vb">
+      <DependentUpon>frmMain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainRelated\frmMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_DefAttShow.Designer.vb">
+      <DependentUpon>frmMED_DefAttShow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_DefAttShow.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_MeshContour.Designer.vb">
+      <DependentUpon>frmMED_MeshContour.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_MeshContour.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_ShapefileOut.Designer.vb">
+      <DependentUpon>frmMED_ShapefileOut.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_ShapefileOut.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrintRelated\clsAccessory.vb" />
+    <Compile Include="frmPrintRelated\clsPrintMap.vb" />
+    <Compile Include="frmPrintRelated\frmPrint_DummyObjectGroup.Designer.vb">
+      <DependentUpon>frmPrint_DummyObjectGroup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrintRelated\frmPrint_DummyObjectGroup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrintRelated\frmPrint.Designer.vb">
+      <DependentUpon>frmPrint.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrintRelated\frmPrint.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrintRelated\frmPrint_3DSettings.Designer.vb">
+      <DependentUpon>frmPrint_3DSettings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrintRelated\frmPrint_3DSettings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrintRelated\frmPrint_LinePattern.Designer.vb">
+      <DependentUpon>frmPrint_LinePattern.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrintRelated\frmPrint_LinePattern.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrintRelated\frmPrint_Option.Designer.vb">
+      <DependentUpon>frmPrint_Option.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrintRelated\frmPrint_Option.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrintRelated\frmPrint_PrintOut.Designer.vb">
+      <DependentUpon>frmPrint_PrintOut.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrintRelated\frmPrint_PrintOut.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrintRelated\frmPrint_Property.Designer.vb">
+      <DependentUpon>frmPrint_Property.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrintRelated\frmPrint_Property.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="General-Purpose-Form\clsKML.vb" />
+    <Compile Include="General-Purpose-Form\clsShapefile.vb" />
+    <Compile Include="General-Purpose-Form\clsTileMapService.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\clsMED_Undo.vb" />
+    <Compile Include="frmMapEditorRelated\frmMED_AggrObjClipSet.Designer.vb">
+      <DependentUpon>frmMED_AggrObjClipSet.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_AggrObjClipSet.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_CenterPointSet.Designer.vb">
+      <DependentUpon>frmMED_CenterPointSet.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_CenterPointSet.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_ChangeAllObjectName.designer.vb">
+      <DependentUpon>frmMED_ChangeAllObjectName.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_ChangeAllObjectName.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_ClickSetObjName.Designer.vb">
+      <DependentUpon>frmMED_ClickSetObjName.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_ClickSetObjName.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_GetLine.Designer.vb">
+      <DependentUpon>frmMED_GetLine.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_GetLine.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_GetPointObject.Designer.vb">
+      <DependentUpon>frmMED_GetPointObject.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_GetPointObject.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_LatLonInput.Designer.vb">
+      <DependentUpon>frmMED_LatLonInput.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_LatLonInput.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_Preview.Designer.vb">
+      <DependentUpon>frmMED_Preview.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_Preview.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_Property_of_MapFile.Designer.vb">
+      <DependentUpon>frmMED_Property_of_MapFile.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_Property_of_MapFile.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_ReplaceObjectName.Designer.vb">
+      <DependentUpon>frmMED_ReplaceObjectName.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_ReplaceObjectName.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmProjectionConvert.Designer.vb">
+      <DependentUpon>frmProjectionConvert.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmProjectionConvert.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="General-Purpose-Form\clsTime.vb" />
+    <Compile Include="General-Purpose-Form\clsVB6File.vb" />
+    <Compile Include="General-Purpose-Form\frmArrow.Designer.vb">
+      <DependentUpon>frmArrow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="General-Purpose-Form\frmArrow.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="General-Purpose-Form\frmBackgroundSetting.Designer.vb">
+      <DependentUpon>frmBackgroundSetting.vb</DependentUpon>
+    </Compile>
+    <Compile Include="General-Purpose-Form\frmBackgroundSetting.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="General-Purpose-Form\frmColor.Designer.vb">
+      <DependentUpon>frmColor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="General-Purpose-Form\frmColor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="General-Purpose-Form\frmCompassSetting.Designer.vb">
+      <DependentUpon>frmCompassSetting.vb</DependentUpon>
+    </Compile>
+    <Compile Include="General-Purpose-Form\frmCompassSetting.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_DefAttData.Designer.vb">
+      <DependentUpon>frmMED_DefAttData.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_DefAttData.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_LineKindCombine.Designer.vb">
+      <DependentUpon>frmMED_LineKindCombine.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_LineKindCombine.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_MultiObjDefAttr.Designer.vb">
+      <DependentUpon>frmMED_MultiObjDefAttr.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_MultiObjDefAttr.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_ObjectKindCombine.Designer.vb">
+      <DependentUpon>frmMED_ObjectKindCombine.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_ObjectKindCombine.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="General-Purpose-Form\frmCopyObjectName.Designer.vb">
+      <DependentUpon>frmCopyObjectName.vb</DependentUpon>
+    </Compile>
+    <Compile Include="General-Purpose-Form\frmCopyObjectName.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="General-Purpose-Form\frmFontSelect.Designer.vb">
+      <DependentUpon>frmFontSelect.vb</DependentUpon>
+    </Compile>
+    <Compile Include="General-Purpose-Form\frmFontSelect.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="General-Purpose-Form\frmHatchSelecter.Designer.vb">
+      <DependentUpon>frmHatchSelecter.vb</DependentUpon>
+    </Compile>
+    <Compile Include="General-Purpose-Form\frmHatchSelecter.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="General-Purpose-Form\frmHatch_Mark.Designer.vb">
+      <DependentUpon>frmHatch_Mark.vb</DependentUpon>
+    </Compile>
+    <Compile Include="General-Purpose-Form\frmHatch_Mark.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="General-Purpose-Form\frmLatLonInputDMS.Designer.vb">
+      <DependentUpon>frmLatLonInputDMS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="General-Purpose-Form\frmLatLonInputDMS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="General-Purpose-Form\frmLatLonInput10.Designer.vb">
+      <DependentUpon>frmLatLonInput10.vb</DependentUpon>
+    </Compile>
+    <Compile Include="General-Purpose-Form\frmLatLonInput10.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="General-Purpose-Form\frmMark_Select.Designer.vb">
+      <DependentUpon>frmMark_Select.vb</DependentUpon>
+    </Compile>
+    <Compile Include="General-Purpose-Form\frmMark_Select.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="General-Purpose-Form\frmMark_Set.Designer.vb">
+      <DependentUpon>frmMark_Set.vb</DependentUpon>
+    </Compile>
+    <Compile Include="General-Purpose-Form\frmMark_Set.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="General-Purpose-Form\frmOption.Designer.vb">
+      <DependentUpon>frmOption.vb</DependentUpon>
+    </Compile>
+    <Compile Include="General-Purpose-Form\frmOption.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="General-Purpose-Form\frmPictureSelector.Designer.vb">
+      <DependentUpon>frmPictureSelector.vb</DependentUpon>
+    </Compile>
+    <Compile Include="General-Purpose-Form\frmPictureSelector.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="General-Purpose-Form\frmSelectListBox.Designer.vb">
+      <DependentUpon>frmSelectListBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="General-Purpose-Form\frmSelectListBox.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="General-Purpose-Form\frmShapeFile.Designer.vb">
+      <DependentUpon>frmShapeFile.vb</DependentUpon>
+    </Compile>
+    <Compile Include="General-Purpose-Form\frmShapeFile.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="General-Purpose-Form\frmSmootingLineIn.Designer.vb">
+      <DependentUpon>frmSmootingLineIn.vb</DependentUpon>
+    </Compile>
+    <Compile Include="General-Purpose-Form\frmSmootingLineIn.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="General-Purpose-Form\frmTileMapServiceSelect.Designer.vb">
+      <DependentUpon>frmTileMapServiceSelect.vb</DependentUpon>
+    </Compile>
+    <Compile Include="General-Purpose-Form\frmTileMapServiceSelect.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LinePatternRelated\frmLpatBasicSelect.Designer.vb">
+      <DependentUpon>frmLpatBasicSelect.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LinePatternRelated\frmLpatBasicSelect.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_AggrObjUseTime.Designer.vb">
+      <DependentUpon>frmMED_AggrObjUseTime.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_AggrObjUseTime.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_ChangeLineKind_in_MultiLineNoTime.Designer.vb">
+      <DependentUpon>frmMED_ChangeLineKind_in_MultiLineNoTime.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_ChangeLineKind_in_MultiLineNoTime.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_ChengeLineKind_in_Multiobject.Designer.vb">
+      <DependentUpon>frmMED_ChengeLineKind_in_Multiobject.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_ChengeLineKind_in_Multiobject.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_LineKind.Designer.vb">
+      <DependentUpon>frmMED_LineKind.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_LineKind.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_LineKindTimeSet.Designer.vb">
+      <DependentUpon>frmMED_LineKindTimeSet.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_LineKindTimeSet.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_makeMesh.Designer.vb">
+      <DependentUpon>frmMED_makeMesh.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_makeMesh.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_ObjectKind.Designer.vb">
+      <DependentUpon>frmMED_ObjectKind.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_ObjectKind.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_TimeObjectCombine.Designer.vb">
+      <DependentUpon>frmMED_TimeObjectCombine.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_TimeObjectCombine.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="General-Purpose-Form\frmSelectComboBox.Designer.vb">
+      <DependentUpon>frmSelectComboBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="General-Purpose-Form\frmSelectComboBox.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_LineCodeTime.Designer.vb">
+      <DependentUpon>frmMED_LineCodeTime.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_LineCodeTime.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_ObjectCPTimeSet.Designer.vb">
+      <DependentUpon>frmMED_ObjectCPTimeSet.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_ObjectCPTimeSet.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_ObjectSuccession.Designer.vb">
+      <DependentUpon>frmMED_ObjectSuccession.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_ObjectSuccession.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_ObjectNameTimeSet.Designer.vb">
+      <DependentUpon>frmMED_ObjectNameTimeSet.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_ObjectNameTimeSet.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMapEditor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMapEditor.Designer.vb">
+      <DependentUpon>frmMapEditor.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_Show_Object_Time_Series.Designer.vb">
+      <DependentUpon>frmMED_Show_Object_Time_Series.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_Show_Object_Time_Series.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="General-Purpose-Form\frmSearch_Object.Designer.vb">
+      <DependentUpon>frmSearch_Object.vb</DependentUpon>
+    </Compile>
+    <Compile Include="General-Purpose-Form\frmSearch_Object.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="General-Purpose-Form\frmMessage.Designer.vb">
+      <DependentUpon>frmMessage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="General-Purpose-Form\frmMessage.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_AggrObjSet.Designer.vb">
+      <DependentUpon>frmMED_AggrObjSet.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMapEditorRelated\frmMED_AggrObjSet.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LinePatternRelated\frmMakeLineBrokenPattern.Designer.vb">
+      <DependentUpon>frmMakeLineBrokenPattern.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LinePatternRelated\frmMakeLineBrokenPattern.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LinePatternRelated\frmMakeLineCrossPattern.Designer.vb">
+      <DependentUpon>frmMakeLineCrossPattern.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LinePatternRelated\frmMakeLineCrossPattern.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LinePatternRelated\frmMakeLineEdgePattern.Designer.vb">
+      <DependentUpon>frmMakeLineEdgePattern.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LinePatternRelated\frmMakeLineEdgePattern.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LinePatternRelated\frmMakeLineParallelPattern.Designer.vb">
+      <DependentUpon>frmMakeLineParallelPattern.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LinePatternRelated\frmMakeLineParallelPattern.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LinePatternRelated\frmMakeLinePattern.Designer.vb">
+      <DependentUpon>frmMakeLinePattern.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LinePatternRelated\frmMakeLinePattern.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LinePatternRelated\frmMakeLineSolidPattern.Designer.vb">
+      <DependentUpon>frmMakeLineSolidPattern.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LinePatternRelated\frmMakeLineSolidPattern.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings.vb" />
+    <Compile Include="TKY2JGD.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="spatial.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="clsExtendedControl.resx">
+      <DependentUpon>clsExtendedControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGridRelated\frmGridAddDefData.resx">
+      <DependentUpon>frmGridAddDefData.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainRelated\frmMain_LorenzGini.resx">
+      <DependentUpon>frmMain_LorenzGini.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainRelated\frmMain_Autocorrelation.resx">
+      <DependentUpon>frmMain_Autocorrelation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainRelated\frmMain_PainrColor.resx">
+      <DependentUpon>frmMain_PainrColor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainRelated\frmMain_AreaPeripheri.resx">
+      <DependentUpon>frmMain_AreaPeripheri.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainRelated\frmMain_Scatterplot.resx">
+      <DependentUpon>frmMain_Scatterplot.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainRelated\frmMain_SetPositionFromData.resx">
+      <DependentUpon>frmMain_SetPositionFromData.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainRelated\frmShowDataItems.resx">
+      <DependentUpon>frmShowDataItems.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainRelated\frmUseClassSettings.resx">
+      <DependentUpon>frmUseClassSettings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrintRelated\frmPrint_LinkEdit.resx">
+      <DependentUpon>frmPrint_LinkEdit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrintRelated\frmPrint_SearchObjects.resx">
+      <DependentUpon>frmPrint_SearchObjects.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="General-Purpose-Form\frmColorTransparency.resx">
+      <DependentUpon>frmColorTransparency.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="General-Purpose-Form\frmSyntheticObject.resx">
+      <DependentUpon>frmSyntheticObject.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMapEditorRelated\frmMED_Kiban.resx">
+      <DependentUpon>frmMED_Kiban.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMapEditorRelated\frmMED_SRTM30Divide.resx">
+      <DependentUpon>frmMED_SRTM30Divide.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMapEditorRelated\frmMED_TImeObjectSet.resx">
+      <DependentUpon>frmMED_TImeObjectSet.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainRelated\frmMain_ObjectLimitaion.resx">
+      <DependentUpon>frmMain_ObjectLimitaion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMapEditorRelated\frmMED_CensusGISData.resx">
+      <DependentUpon>frmMED_CensusGISData.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrintRelated\frmPrint_GoogleMapsFileOut.resx">
+      <DependentUpon>frmPrint_GoogleMapsFileOut.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrintRelated\frmPrint_FigureList.resx">
+      <DependentUpon>frmPrint_FigureList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="General-Purpose-Form\frmTitleSettingsAddingData.resx">
+      <DependentUpon>frmTitleSettingsAddingData.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="General-Purpose-Form\frmUserTileMap.resx">
+      <DependentUpon>frmUserTileMap.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="General-Purpose-Form\frmHelpBrowser.resx">
+      <DependentUpon>frmHelpBrowser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGridRelated\frmGridGPX.resx">
+      <DependentUpon>frmGridGPX.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainRelated\frmMain_ExchangeObjectName.resx">
+      <DependentUpon>frmMain_ExchangeObjectName.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainRelated\frmMain_SelMapObject.resx">
+      <DependentUpon>frmMain_SelMapObject.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainRelated\frmMain_LayerObjectCombine.resx">
+      <DependentUpon>frmMain_LayerObjectCombine.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainRelated\frmMain_Buffer.resx">
+      <DependentUpon>frmMain_Buffer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainRelated\frmMain_GetDistance.resx">
+      <DependentUpon>frmMain_GetDistance.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainRelated\frmMain_Culc.resx">
+      <DependentUpon>frmMain_Culc.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainRelated\frmStartUp.resx">
+      <DependentUpon>frmStartUp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainRelated\frmMain_ShapefileOut.resx">
+      <DependentUpon>frmMain_ShapefileOut.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainRelated\frmMain_TimeSeriesSummingUp.resx">
+      <DependentUpon>frmMain_TimeSeriesSummingUp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainRelated\frmMain_Cross.resx">
+      <DependentUpon>frmMain_Cross.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainRelated\frmMain_ConditionSettings.resx">
+      <DependentUpon>frmMain_ConditionSettings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainRelated\frmMain_ConditionSettingSub.resx">
+      <DependentUpon>frmMain_ConditionSettingSub.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainRelated\frmMain_CopyDataItemSettings.resx">
+      <DependentUpon>frmMain_CopyDataItemSettings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainRelated\frmMain_SetSeriesMode.resx">
+      <DependentUpon>frmMain_SetSeriesMode.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainRelated\frmVersionInfo.resx">
+      <DependentUpon>frmVersionInfo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMapEditorRelated\frmMED_ObjectTimeNameList.resx">
+      <DependentUpon>frmMED_ObjectTimeNameList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMapEditorRelated\frmMED_ObjectTimeNameEdit.resx">
+      <DependentUpon>frmMED_ObjectTimeNameEdit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMapEditorRelated\frmMED_ObjectNameEdit.resx">
+      <DependentUpon>frmMED_ObjectNameEdit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMapEditorRelated\frmMED_ObjectNameAddFromAttrData.resx">
+      <DependentUpon>frmMED_ObjectNameAddFromAttrData.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMapEditorRelated\frmMED_E00File.resx">
+      <DependentUpon>frmMED_E00File.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMapEditorRelated\frmMED_DefTimeAttData.resx">
+      <DependentUpon>frmMED_DefTimeAttData.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMapEditorRelated\frmMED_DefTimeAttDataItem.resx">
+      <DependentUpon>frmMED_DefTimeAttDataItem.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMapEditorRelated\frmMED_DefTimeAttDataObjectEdit.resx">
+      <DependentUpon>frmMED_DefTimeAttDataObjectEdit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMapEditorRelated\frmMED_DefTimeAttData_ValueSet.resx">
+      <DependentUpon>frmMED_DefTimeAttData_ValueSet.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrintRelated\frmPrint_KMLFileOut.resx">
+      <DependentUpon>frmPrint_KMLFileOut.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrintRelated\frmPrint_SeriesFileOut.resx">
+      <DependentUpon>frmPrint_SeriesFileOut.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrintRelated\frmPrint_TileMapOut.resx">
+      <DependentUpon>frmPrint_TileMapOut.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrintRelated\frmPrint_Instance.resx">
+      <DependentUpon>frmPrint_Instance.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrintRelated\frmPrint_ScreenSetting.resx">
+      <DependentUpon>frmPrint_ScreenSetting.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrintRelated\frmPrint_SizeChange.resx">
+      <DependentUpon>frmPrint_SizeChange.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrintRelated\frmPrint_Figure.resx">
+      <DependentUpon>frmPrint_Figure.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrintRelated\frmPrint_ObjectValue.resx">
+      <DependentUpon>frmPrint_ObjectValue.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrintRelated\frmPrint_PointLineAdd.resx">
+      <DependentUpon>frmPrint_PointLineAdd.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="General-Purpose-Form\frmMessageBox.resx">
+      <DependentUpon>frmMessageBox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="General-Purpose-Form\frmAlphaValueSet.resx">
+      <DependentUpon>frmAlphaValueSet.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="General-Purpose-Form\frmSelectTwoCombobox.resx">
+      <DependentUpon>frmSelectTwoCombobox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGridRelated\frmGrid.resx">
+      <DependentUpon>frmGrid.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGridRelated\frmGridDataRefference.resx">
+      <DependentUpon>frmGridDataRefference.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainRelated\frmMain.resx">
+      <DependentUpon>frmMain.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainRelated\frmInnerData.resx">
+      <DependentUpon>frmInnerData.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainRelated\frmMainProperty.resx">
+      <DependentUpon>frmMainProperty.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainRelated\frmMain_ClassViewSettings.resx">
+      <DependentUpon>frmMain_ClassViewSettings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainRelated\frmMain_ContourViewSettings.resx">
+      <DependentUpon>frmMain_ContourViewSettings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainRelated\frmMain_GraphModeSettings.resx">
+      <DependentUpon>frmMain_GraphModeSettings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainRelated\frmMain_LabelModeSettings.resx">
+      <DependentUpon>frmMain_LabelModeSettings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainRelated\frmMain_LayeObjectSelect.resx">
+      <DependentUpon>frmMain_LayeObjectSelect.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainRelated\frmMain_MarkViewSettings.resx">
+      <DependentUpon>frmMain_MarkViewSettings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainRelated\frmMain_OverLayModeSettings.resx">
+      <DependentUpon>frmMain_OverLayModeSettings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainRelated\frmMain_SeriesModeSettings.resx">
+      <DependentUpon>frmMain_SeriesModeSettings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainRelated\frmMain_ShowViewer.resx">
+      <DependentUpon>frmMain_ShowViewer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainRelated\frmMain_TripModeSettings.resx">
+      <DependentUpon>frmMain_TripModeSettings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMapEditorRelated\frmMED_AggrObjClipSet.resx">
+      <DependentUpon>frmMED_AggrObjClipSet.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMapEditorRelated\frmMED_CenterPointSet.resx">
+      <DependentUpon>frmMED_CenterPointSet.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMapEditorRelated\frmMED_ChangeAllObjectName.resx">
+      <DependentUpon>frmMED_ChangeAllObjectName.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMapEditorRelated\frmMED_ClickSetObjName.resx">
+      <DependentUpon>frmMED_ClickSetObjName.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMapEditorRelated\frmMED_DefAttShow.resx">
+      <DependentUpon>frmMED_DefAttShow.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMapEditorRelated\frmMED_GetLine.resx">
+      <DependentUpon>frmMED_GetLine.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMapEditorRelated\frmMED_GetPointObject.resx">
+      <DependentUpon>frmMED_GetPointObject.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMapEditorRelated\frmMED_LatLonInput.resx">
+      <DependentUpon>frmMED_LatLonInput.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMapEditorRelated\frmMED_MeshContour.resx">
+      <DependentUpon>frmMED_MeshContour.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMapEditorRelated\frmMED_Preview.resx">
+      <DependentUpon>frmMED_Preview.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMapEditorRelated\frmMED_Property_of_MapFile.resx">
+      <DependentUpon>frmMED_Property_of_MapFile.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMapEditorRelated\frmMED_ReplaceObjectName.resx">
+      <DependentUpon>frmMED_ReplaceObjectName.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMapEditorRelated\frmMED_ShapefileOut.resx">
+      <DependentUpon>frmMED_ShapefileOut.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMapEditorRelated\frmProjectionConvert.resx">
+      <DependentUpon>frmProjectionConvert.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrintRelated\frmPrint_DummyObjectGroup.resx">
+      <DependentUpon>frmPrint_DummyObjectGroup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrintRelated\frmPrint.resx">
+      <DependentUpon>frmPrint.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrintRelated\frmPrint_3DSettings.resx">
+      <DependentUpon>frmPrint_3DSettings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrintRelated\frmPrint_LinePattern.resx">
+      <DependentUpon>frmPrint_LinePattern.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrintRelated\frmPrint_Option.resx">
+      <DependentUpon>frmPrint_Option.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrintRelated\frmPrint_PrintOut.resx">
+      <DependentUpon>frmPrint_PrintOut.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrintRelated\frmPrint_Property.resx">
+      <DependentUpon>frmPrint_Property.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="General-Purpose-Form\frmArrow.resx">
+      <DependentUpon>frmArrow.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="General-Purpose-Form\frmBackgroundSetting.resx">
+      <DependentUpon>frmBackgroundSetting.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="General-Purpose-Form\frmColor.resx">
+      <DependentUpon>frmColor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="General-Purpose-Form\frmCompassSetting.resx">
+      <DependentUpon>frmCompassSetting.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMapEditorRelated\frmMED_DefAttData.resx">
+      <DependentUpon>frmMED_DefAttData.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMapEditorRelated\frmMED_LineKindCombine.resx">
+      <DependentUpon>frmMED_LineKindCombine.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMapEditorRelated\frmMED_MultiObjDefAttr.resx">
+      <DependentUpon>frmMED_MultiObjDefAttr.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMapEditorRelated\frmMED_ObjectKindCombine.resx">
+      <DependentUpon>frmMED_ObjectKindCombine.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="General-Purpose-Form\frmCopyObjectName.resx">
+      <DependentUpon>frmCopyObjectName.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="General-Purpose-Form\frmFontSelect.resx">
+      <DependentUpon>frmFontSelect.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="General-Purpose-Form\frmHatchSelecter.resx">
+      <DependentUpon>frmHatchSelecter.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="General-Purpose-Form\frmHatch_Mark.resx">
+      <DependentUpon>frmHatch_Mark.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="General-Purpose-Form\frmLatLonInputDMS.resx">
+      <DependentUpon>frmLatLonInputDMS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="General-Purpose-Form\frmLatLonInput10.resx">
+      <DependentUpon>frmLatLonInput10.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="General-Purpose-Form\frmMark_Select.resx">
+      <DependentUpon>frmMark_Select.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="General-Purpose-Form\frmMark_Set.resx">
+      <DependentUpon>frmMark_Set.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="General-Purpose-Form\frmOption.resx">
+      <DependentUpon>frmOption.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="General-Purpose-Form\frmPictureSelector.resx">
+      <DependentUpon>frmPictureSelector.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="General-Purpose-Form\frmSelectListBox.resx">
+      <DependentUpon>frmSelectListBox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="General-Purpose-Form\frmShapeFile.resx">
+      <DependentUpon>frmShapeFile.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="General-Purpose-Form\frmSmootingLineIn.resx">
+      <DependentUpon>frmSmootingLineIn.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="General-Purpose-Form\frmTileMapServiceSelect.resx">
+      <DependentUpon>frmTileMapServiceSelect.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LinePatternRelated\frmLpatBasicSelect.resx">
+      <DependentUpon>frmLpatBasicSelect.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMapEditorRelated\frmMED_AggrObjSet.resx">
+      <DependentUpon>frmMED_AggrObjSet.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMapEditorRelated\frmMED_AggrObjUseTime.resx">
+      <DependentUpon>frmMED_AggrObjUseTime.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMapEditorRelated\frmMED_ChangeLineKind_in_MultiLineNoTime.resx">
+      <DependentUpon>frmMED_ChangeLineKind_in_MultiLineNoTime.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMapEditorRelated\frmMED_ChengeLineKind_in_Multiobject.resx">
+      <DependentUpon>frmMED_ChengeLineKind_in_Multiobject.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMapEditorRelated\frmMED_LineKind.resx">
+      <DependentUpon>frmMED_LineKind.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMapEditorRelated\frmMED_LineKindTimeSet.resx">
+      <DependentUpon>frmMED_LineKindTimeSet.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMapEditorRelated\frmMED_makeMesh.resx">
+      <DependentUpon>frmMED_makeMesh.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMapEditorRelated\frmMED_ObjectKind.resx">
+      <DependentUpon>frmMED_ObjectKind.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMapEditorRelated\frmMED_TimeObjectCombine.resx">
+      <DependentUpon>frmMED_TimeObjectCombine.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="General-Purpose-Form\frmMessage.resx">
+      <DependentUpon>frmMessage.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="General-Purpose-Form\frmSelectComboBox.resx">
+      <DependentUpon>frmSelectComboBox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMapEditorRelated\frmMED_LineCodeTime.resx">
+      <DependentUpon>frmMED_LineCodeTime.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMapEditorRelated\frmMED_ObjectCPTimeSet.resx">
+      <DependentUpon>frmMED_ObjectCPTimeSet.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMapEditorRelated\frmMED_ObjectSuccession.resx">
+      <DependentUpon>frmMED_ObjectSuccession.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMapEditorRelated\frmMED_ObjectNameTimeSet.resx">
+      <DependentUpon>frmMED_ObjectNameTimeSet.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMapEditorRelated\frmMapEditor.resx">
+      <DependentUpon>frmMapEditor.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMapEditorRelated\frmMED_Show_Object_Time_Series.resx">
+      <DependentUpon>frmMED_Show_Object_Time_Series.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="General-Purpose-Form\frmSearch_Object.resx">
+      <DependentUpon>frmSearch_Object.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LinePatternRelated\frmMakeLineBrokenPattern.resx">
+      <DependentUpon>frmMakeLineBrokenPattern.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LinePatternRelated\frmMakeLineCrossPattern.resx">
+      <DependentUpon>frmMakeLineCrossPattern.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LinePatternRelated\frmMakeLineEdgePattern.resx">
+      <DependentUpon>frmMakeLineEdgePattern.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LinePatternRelated\frmMakeLineParallelPattern.resx">
+      <DependentUpon>frmMakeLineParallelPattern.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LinePatternRelated\frmMakeLinePattern.resx">
+      <DependentUpon>frmMakeLinePattern.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LinePatternRelated\frmMakeLineSolidPattern.resx">
+      <DependentUpon>frmMakeLineSolidPattern.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="app.manifest" />
+    <None Include="ClassDiagram2.cd" />
+    <None Include="ClassDiagram3.cd" />
+    <None Include="My Project\app.manifest">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 および x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows インストーラー 4.5
+</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Shell32">
+      <Guid>{50A7E9B0-70EF-11D1-B75A-00A0C90564FE}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ARW03UP.ICO" />
+    <Content Include="HELP\glossary.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="HELP\about.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="HELP\mapeditor.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="HELP\subwindow.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="HELP\outputwindow.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="HELP\propertydata.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="HELP\settingwindow.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="HELP\index.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="HELP\StyleSheet.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="mandara.ico" />
+    <Content Include="mandara2googlemaps10\GoogleMapsCustomMapType.js" />
+    <Content Include="mandara2googlemaps10\mandara2googlemap10.js" />
+    <Content Include="mandara2googlemaps10\mandara2googlemap10_v22.js" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

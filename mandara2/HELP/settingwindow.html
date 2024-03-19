@@ -1,0 +1,894 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="StyleSheet.css"/>
+    <title>起動画面|設定画面|MANDARA10ヘルプ</title>
+</head>
+<body>
+    <div id="contentsArea">  
+    <a name="Top"></a>
+    <h1>起動画面と設定画面</h1>
+    <h4>目次</h4>
+        <ul>
+            <li><a href="#frmStartUp">起動画面</a></li>
+            <li><a href="#settingWindow">設定画面</a>
+                <ul>
+                    <li><a href="#selectMode">表示方法の選択</a>
+                        <ul >
+                            <li>データ表示モード
+                              <ul>
+                                  <li>単独表示モード
+                                      <ul>
+                                          <li><a href="#classMode">階級区分モード</a>
+                                              <ul>
+                                                  <li><a href="#paintMode"> ペイントモード</a></li>
+                                                  <li><a href="#hatchMode">ハッチモード</a></li>
+                                                  <li><a href="#classsMarkMode">階級記号モード</a></li>
+                                                  <li><a href="#odMode">線モード</a></li>
+                                              </ul>
+                                          </li>
+                                        <li><a href="#markMode">記号モード</a>
+                                            <ul>
+                                                <li><a href="#markSizeMode">記号の大きさモード</a></li>
+                                                <li><a href="#markBlockMode">記号の数モード</a></li>
+                                                <li><a href="#markTurnMode">記号の回転モード</a></li>
+                                                <li><a href="#barMode">棒の高さモード</a></li>
+                                            </ul>
+                                        </li>
+                                         <li><a href="#contourMode">等値線モード</a></li>
+                                         <li><a href="#stringMode">文字モード</a></li>
+                                      </ul>
+                                  </li>
+                                  <li>複数表示モード
+                                      <ul>
+                                          <li><a href="#graphMode">グラフ表示モード</a></li>
+                                          <li><a href="#labelMode">ラベル表示モード</a></li>
+                                          <li><a href="#tripMode">移動表示モード</a></li>
+                                      </ul>
+                                  </li>
+                              </ul>
+                            </li>
+                            <li>複合表示モード
+                                <ul>
+                                    <li><a href="#overlayMode">重ね合わせ表示モード</a></li>
+                                    <li><a href="#seriesMode">連続表示モード</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#menu">メニュー</a>
+                        <ul>
+                        <li><a href="#filemenu">ファイル</a></li>
+                        <li><a href="#editmenu">編集</a></li>
+                        <li><a href="#analysismenu">分析</a></li>
+                        <li><a href="#toolmenu">ツール</a></li>
+                         <li><a href="#helpmenu">ヘルプ</a></li>
+                       </ul>
+                     </li>
+               </ul>
+            </li>
+          </ul>
+    <hr />
+    <a name="frmStartUp"></a>
+    <h1>起動画面</h1>
+        MANDARAを実行すると最初に行う操作を選択する画面になります。<br />
+        <br />
+        <h4>クリップボードのデータを読み込む</h4>
+        <div class="indent2">MANDARAタグを使用して作成した表計算ソフト上の属性データをコピーしたものを読み込みます。</div>
+       <h4>データファイルを読み込む</h4>
+        白地図<div class="indent2">CSV形式のテキストファイルやMDRZ形式、MDR形式のMANDARAデータファイルを読み込みます。</div>
+        <h4>最近使ったファイルを読み込む</h4>
+        <div class="indent2">最近使用したデータファイルを読み込みます</div>
+        <h4>新しくデータを作成</h4>
+        <div class="indent2">属性データ編集機能を使用して新しく属性データを作成します。</div>
+        <h4><a href="#frmMain_ShowViewer">白地図・初期属性データ表示</a></h4>
+        <div class="indent2">データはないけど、取りあえず地図ファイルの中身を表示させたいような場合、または地図ファイルに入っている初期属性データを表示する場合に使用します。</div>
+        <h4>シェープファイル読み込み</h4>
+        <div class="indent2">GISでよく使われるデータ形式であるシェープファイルを読み込みます。</div>
+        <h4>マップエディタ</h4>
+        <div class="indent2">マップエディタを使用して作成済みの地図データを修正したり、外部地図データからの取り込んでMANDARA用の地図ファイルを作成します。</div>
+        <h4>バージョン情報</h4>
+        <div class="indent2">現在ご利用のMANDARAのバージョンを表示します。さらに、最新のものかどうかを、インターネットに接続してチェックできます。</div>
+
+    <hr />
+    <a name="settingWindow"></a>
+    <h1>設定画面</h1>
+        <div class="indent2">設定画面では、次のような操作を行うことができます。</div>
+        <ul>
+            <li>属性データを読み込む</li>
+            <li>属性データを作成する、修正する</li>
+            <li>属性データを保存する</li>
+            <li>データの表示方法を設定する</li>
+        </ul>
+    <hr />
+    <a name="selectMode"></a>
+    <h1>表示方法の選択</h1>
+        <div class="indent2">設定画面では、表示方法を選択して設定を行い、<b>描画開始</b>ボタンで描画します。</div>
+        <h4>表示方法</h4>
+            <ul class="bold">
+                <li>データ表示モード<div class="indent1NormalWeight">1つのレイヤ内の属性データを表示します。</div>
+                  <ul>
+                      <li>単独表示モード<div class="indent1NormalWeight">レイヤ内の1つのデータ項目を表示します。</div>
+                          <ul>
+                              <li><a href="#classMode">階級区分モード</a><div class="indent1NormalWeight">データ値を階級区分して表現します。</div>
+                                  <ul>
+                                      <li><a href="#paintMode">ペイントモード</a><div class="indent1NormalWeight">色で塗り分けます。</div></li>
+                                      <li><a href="#hatchMode">ハッチモード</a><div class="indent1NormalWeight">ハッチパターンで区分します。</div></li>
+                                      <li><a href="#classsMarkMode">階級記号モード</a><div class="indent1NormalWeight">記号で区分します。</div></li>
+                                      <li><a href="#odMode">線モード</a><div class="indent1NormalWeight">線でオブジェクト間を結びます。</div></li>
+                                  </ul>
+                              </li>
+                            <li>記号モード<div class="indent1NormalWeight">データ値を記号で表現します。</div>
+                                <ul>
+                                    <li><a href="#markSizeMode">記号の大きさモード</a><div class="indent1NormalWeight">記号の大きさで示します。</div></li>
+                                    <li><a href="#markBlockMode">記号の数モード</a><div class="indent1NormalWeight">記号の数で示します。</div></li>
+                                    <li><a href="#markTurnMode">記号の回転モード</a><div class="indent1NormalWeight">値によって記号を回転して表示します。</div></li>
+                                    <li><a href="#barMode">棒の高さモード</a><div class="indent1NormalWeight">棒の高さで示します。</div></li>
+                                </ul>
+                            </li>
+                             <li><a href="#contourMode">等値線モード</a><div class="indent1NormalWeight">データ値を等値線で表現します。</div></li>
+                             <li><a href="#stringMode">文字モード</a><div class="indent1NormalWeight">データ値を文字で表示します。</div></li>
+                          </ul>
+                      </li>
+                      <li>複数表示モード<div class="indent1NormalWeight">レイヤ内の複数のデータ項目を表示します。</div>
+                          <ul>
+                              <li><a href="#graphMode">グラフ表示モード</a><div class="indent1NormalWeight">棒グラフ、折れ線グラフ、円グラフ、帯グラフで表示します。</div></li>
+                              <li><a href="#labelMode">ラベル表示モード</a><div class="indent1NormalWeight">複数のデータ項目を文字で表示します。</div></li>
+                              <li><a href="#tripMode">移動表示モード</a><div class="indent1NormalWeight">移動データレイヤが存在する場合、移動データを表示します。</div></li>
+                          </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li>複合表示モード<div class="indent1NormalWeight">同一または異なるレイヤの複数のデータ項目を表示します。</div>
+                    <ul>
+                        <li><a href="#overlayMode">重ね合わせ表示モード</a><div class="indent1NormalWeight">複数のデータ項目を重ねて表示します。</div></li>
+                        <li><a href="#seriesMode">連続表示モード</a><div class="indent1NormalWeight">複数のデータ項目を連続して表示します。</div></li>
+                    </ul>
+                </li>
+            </ul>
+    <hr />
+    <a name="classMode"></a>
+    <h1>階級区分モード</h1>
+        <div class="indent2">データ値を階級区分して表現します。</div>
+        <h4>階級区分方法</h4><div class="indent2">階級区分の方法を指定します。</div>
+        <ul class="bold">
+            <li>自由設定<div class="indent1NormalWeight">分割数を指定して任意の値で区切ります。</div></li>
+            <li>分位数<div class="indent1NormalWeight">指定した分割数を元に、オブジェクト数が階級間に等しく分布するように、区分値を決定します。</div></li>
+            <li>面積分位数<div class="indent1NormalWeight">指定した分割数を元に、含まれるオブジェクトの面積が階級間に等しく分布するように、区分値を決定します（面形状の場合のみ使用できます）。</div></li>
+            <li>標準偏差<div class="indent1NormalWeight">平均値+標準偏差、平均値+標準偏差/2、平均値、平均値-標準偏差/2、平均値-標準偏差、と区分値を決定します。分割数は6で固定です。</div></li>
+            <li>等間隔<div class="indent1NormalWeight">指定した分割数で等間隔で区分します。</div></li>
+        </ul>
+        <h4>分割数</h4><div class="indent2">右側で分けられている区分数を設定します。読み込み直後は最大値・最小値をもとに自動で決められています。単位に「CAT」を設定した、名義尺度データの場合、または区分方法が標準偏差の場合は変更できません。</div>
+        <h4>区分値入力ボックス</h4><div class="indent2">区分方法が自由設定の場合に、階級区分の値を入力できます。区分値は上側ほど大きな値に設定する必要があります。カーソルの↓↑を使うと、上下に設定箇所が移動します。カテゴリーデータの場合は、↓↑のボタンで緑?のカテゴリーの位置を変更できます。入力ボックス右側の（）の値は、階級区分に含まれるオブジェクト数です。</div>
+        <h4><a href="#frmUserClassSettings">ユーザ設定</a></h4><div class="indent2">現在の階級区分の色、ハッチパターン、記号、線種を保存したり、保存済みの設定に変えたりします。</div>
+        <h4>カテゴリーデータ化</h4><div class="indent2">データがカテゴリーデータでない場合、現在の階級区分設定をそのままカテゴリーデータにして、新しいデータ項目に追加します。</div>
+        <h4>並べ替え</h4><div class="indent2">データがカテゴリーデータの場合、カテゴリーの並び順を指定の方法で変更します。</div>
+        <a name="frmUserClassSettings"></a>
+        <h2>階級区分のユーザ設定</h2>
+        <div class="indent2">階級区分のユーザ設定画面では、現在の階級区分の色、ハッチパターン、記号、線種を保存したり、保存済みの設定に変えたりします。</div>
+        <h4>分割数xの登録パターン</h4><div class="indent2">現在の表示モード・分割数で登録されているパターン名が表示されているので、変更したいものを選択します。</div>
+            <h4>現在の設定</h4><div class="indent2">現在の表示モード・分割数でパターンを登録します。</div>
+    <a name="paintMode"></a>
+    <h2>ペイントモード</h2>
+        <div class="indent2"><a href="#classMode">階級区分モード</a>のペイントモードでは、データ値を階級区分して色で塗り分けます。点形状レイヤ、線形状レイヤの場合に適し、面形状レイヤの場合は、データ値が面積の影響を受けない、比率や密度のデータの場合に使用します。</div>
+        <h4>色設定方法</h4><div class="indent2">右側のカラーボックスの色の設定方法を選択します。</div>
+        <ul class="bold">
+           <li>２色グラデーション<div class="indent1NormalWeight">白→黒、赤→青など、右側の色設定ボックスの上下端の色を設定します。すると中間部は自動的にグラデーションになるように色が選ばれます。</div></li> 
+           <li>３色グラデーション<div class="indent1NormalWeight">赤→白→青など、右側の色設定ボックスの上下端および中間の一つの色を設定します。すると、三段階にグラデーションがかけられます。</div></li> 
+           <li>複数グラデーション<div class="indent1NormalWeight">赤→黄→緑→青など、4色以上の色でグラデーションをかけます。最初に上下2色を決め、次に上から順に色を指定していください。</div></li> 
+           <li>単独設定<div class="indent1NormalWeight">右側のボックスの1つの階級区分ごとに色を設定します。</div></li> 
+           <li>カラーチャート<div class="indent1NormalWeight">カラーチャートから区分色を選択します。</div></li> 
+            <li>上下色反転<div class="indent1NormalWeight">区分色を上下反転します。</div></li>
+            <li>透過度設定<div class="indent1NormalWeight">区分色の透過度をまとめて設定します。</div></li>
+        </ul>
+        <h4>表示記号設定</h4><div class="indent2">点形状レイヤの場合のみ表示されます。記号表示位置に表示される記号の種類や大きさを設定します。</div>
+        <h4>線オブジェクトサイズ</h4><div class="indent2">線形状レイヤの場合のみ表示されます。線の幅およびや線端・中間点の形状を設定します。</div>
+        <h4>カラーボックス</h4><div class="indent2">階級区分の際の色を設定します。2色グラデーションでは上下の2箇所のみが変更できます。</div>
+        <br />
+        上記以外の項目は<a href="#classMode">階級区分モード共通</a>の設定です。
+
+    <a name="hatchMode"></a>
+        <h2>ハッチモード</h2>
+        <div class="indent2"><a href="#classMode">階級区分モード</a>のハッチモードでは、データ値を階級区分してハッチパターンで表示します。点形状レイヤ、線形状レイヤの場合に適し、面形状レイヤの場合は、データ値が面積の影響を受けない、比率や密度のデータの場合に使用します。</div>
+        <h4>ハッチ設定</h4>
+        <ul class="bold">
+            <li>既定パターン<div class="indent1NormalWeight">階級分割数に応じて設定された既定パターンに設定します。</div></li>
+            <li>全色変更<div class="indent1NormalWeight">ハッチボックス内の模様の色を全て変更します。</div></li>
+            <li>ペイントモードの色をコピー<div class="indent1NormalWeight">模様は変えずに、模様の色をペイントモードで設定してある色に変えます。</div></li>
+            <li>すべてベタ塗りにする<div class="indent1NormalWeight">色を保持した状態で模様をベタ塗りにします。</div></li>
+        </ul>
+        <h4>表示記号設定</h4><div class="indent2">点形状レイヤの場合のみ表示されます。記号表示位置に表示される記号の種類や大きさを設定します。</div>
+        <h4>ハッチボックス</h4><div class="indent2">クリックするとハッチを変更できます。</div>
+        <br />
+        上記以外の項目は<a href="#classMode">階級区分モード共通</a>の設定です。
+    <a name="classsMarkMode"></a>
+        <h2>階級記号モード</h2>
+        <div class="indent2"><a href="#classMode">階級区分モード</a>の階級記号モードでは、データ値を階級区分して記号で表示します。</div>
+        <h4>記号設定</h4>
+        <ul class="bold">
+            <li>既定パターン<div class="indent1NormalWeight">階級分割数に応じて設定された既定パターンに設定します。</div></li>
+            <li>全色変更<div class="indent1NormalWeight">ハッチボックス内の模様の色を全て変更します。</div></li>
+            <li>ペイントモードの色を内部色に設定<div class="indent1NormalWeight">記号の内部色をペイントモードで設定してある色で表示します。</div></li>
+            <li>内部データの設定<div class="indent1NormalWeight">記号内部を別のデータ項目のペイントまたはハッチで塗りつぶします。ハッチが選択できるのは既定記号のみが設定されている場合に限られます。</div></li>
+        </ul>
+        <h4>記号ボックス</h4><div class="indent2">記号ボックスをクリックすると記号選択画面が出るので選択します。</div>
+        <br />
+        上記以外の項目は<a href="#classMode">階級区分モード共通</a>の設定です。
+    <a name="odMode"></a>
+    <h2>線モード</h2>
+        <div class="indent2"><a href="#classMode">階級区分モード</a>の線モードでは、特定のオブジェクトに対して、階級区分に応じた線種を使用して線で結び、流線図を表示します。ただし、線形状レイヤの場合は、流線図ではなく、線オブジェクトのラインパターンが指定のもので表示されます。</div>
+        <h4>線設定</h4>
+        <ul class="bold">
+            <li>全線種変更<div class="indent1NormalWeight">線種を全て指定のパターンに変更します。</div></li>
+            <li>全色変更<div class="indent1NormalWeight">線種の色を全て変更します。</div></li>
+            <li>ペイントモードの色をコピー<div class="indent1NormalWeight">線種の色をペイントモードで設定してある色に変えます。</div></li>
+            <li>線幅自動設定<div class="indent1NormalWeight">最上位階級と最下位階級の線幅をもとに、中間部の階級の線幅を設定します。</div></li>
+            <li>矢印設定<div class="indent1NormalWeight">矢印を付けるかどうか、また矢印の形状を設定します。線形状レイヤの場合は表示されません。</div></li>
+        </ul>
+        <h4>起点オブジェクト設定</h4><div class="indent2">線で結ぶオブジェクトを選びます。自レイヤだけでなく、他レイヤのオブジェクトやダミーオブジェクトに設定することもできます。線形状レイヤの場合は表示されません</div>
+        <h4>流線図について</h4><div class="indent2"><b>[描画開始]</b>して描かれた図では、オブジェクト間は直線で結ばれていますが、線の上をマウスが通過すると十字型のマウスカーソルに変化するので、そこで左ボタンを押しながらドラッグすると曲線で結ぶことができます。また、右クリックすると、曲線だったものを直線に戻すことができます。</div>
+        <br />
+        上記以外の項目は<a href="#classMode">階級区分モード共通</a>の設定です。
+
+    <a name="markMode"></a>
+    <h1>記号モード</h1>
+    <div class="indent2">データ値を記号の大きさや数で表現します。</div>
+    <a name="markSizeMode"></a>
+    <h2>記号の大きさモード</h2>
+    <div class="indent2">記号の大きさモードでは、データ値を記号の大きさで示します。</div>
+    <h4>表示記号設定</h4><div class="indent2">記号表示位置に表示される記号の種類およびデータ値が最大の場合の大きさを設定します。</div>
+    <h4>内部データ</h4><div class="indent2">記号内部を別のデータ項目のペイントまたはハッチで塗りつぶします。ハッチが選択できるのは既定記号が選択されている場合に限られます。画像の場合は、内部色で指定された箇所の色が変更されます。</div>
+    <h4>凡例</h4><div class="indent2">地図を表示した際に、凡例として表示される値を設定します。0に設定した箇所は表示されません。</div>
+    <h4>最大サイズの値</h4><div class="indent2">最も記号の大きくなるデータの値を設定します。<b>データ項目の最大値</b>では、選択してあるデータ項目の最大値が、そのまま最も大きい記号になります。<b>ユーザ設定</b>では、ユーザー側で設定します。例えば、最大値の異なる複数のデータ項目を記号で表示して比較するときに、「データ項目の最大値」で設定すると、それぞれの記号の大きさを比較することができません。そのような場合には、ここでユーザ設定で最大値を固定しておけば、記号の大きさでデータ値の大小を比較することができます。</div>
+    <h4>負の値の場合</h4><div class="indent2">データ項目に負の値が存在する場合、記号の大きさは絶対値が使われます。また、以下のような設定ができます。</div>
+    <ul class="bold">
+        <li>負の値の内部模様・色<div class="indent1NormalWeight">負の値の記号の内部色を設定します。</div></li>
+        <li>凡例文字<div class="indent1NormalWeight">正と負がわかるよう、凡例に表示する文字を設定します。たとえば人口増減の場合、「増加」「減少」と入力します。空白の場合、出力画面のオプションで指定した既定値が使われます。</div></li>
+    </ul>
+
+    <a name="markBlockMode"></a>
+    <h2>記号の数モード</h2>
+    <div class="indent2">記号の数モードでは、データ値を記号の数で示します。</div>
+    <h4>表示記号設定</h4><div class="indent2">記号表示位置に表示される記号の種類およびデータ値が最大の場合の大きさを設定します。</div>
+    <h4>内部データ</h4><div class="indent2">記号内部を別のデータ項目のペイントまたはハッチで塗りつぶします。ハッチが選択できるのは既定記号が選択されている場合に限られます。画像の場合は、内部色で指定された箇所の色が変更されます。</div>
+    <h4>記号配置</h4><div class="indent2">選択した記号をどのように配列して表示するかを設定します。</div>
+    <ul class="bold">
+        <li>ブロック<div class="indent1NormalWeight">塊状になるように配置します。</div></li>
+        <li>ランダム<div class="indent1NormalWeight">面形状オブジェクトの場合に利用でき、オブジェクト内にランダムに記号を配置し、ドットマップを作成します。この場合「端数表示」と「記号の重なり」の設定は無視されます。</div></li>
+        <li>縦<div class="indent1NormalWeight">縦一列で配置します。</div></li>
+        <li>横<div class="indent1NormalWeight">横一列で配置します。</div></li>
+    </ul>
+    <h4>１記号当たりの値</h4><div class="indent2">一つの当たりの記号が、どれだけの値を指すかを設定します。</div>
+    <h4>凡例文字</h4><div class="indent2">出力した凡例で、「1個あたり」などの凡例を表示しますが、その際の文字を設定します。空白の場合、出力画面のオプションで指定した既定値が使われます。</div>
+    <h4>端数表示</h4><div class="indent2">データの値を「１記号当たりの値」で割った際のあまりの処理を設定します。ここにチェックすると、端数に比例したサイズの記号を表示します。チェックしていない場合は、端数は無視されます。</div>
+    <h4>記号の重なり</h4><div class="indent2">記号を並べた際に、記号同士の重なりの程度を設定します。</div>
+    <h4>負の値の場合</h4><div class="indent2">データ項目に負の値が存在する場合、記号の大きさは絶対値が使われます。また、以下のような設定ができます。</div>
+    <ul class="bold">
+        <li>負の値の内部模様・色<div class="indent1NormalWeight">負の値の記号の内部色を設定します。</div></li>
+        <li>凡例文字<div class="indent1NormalWeight">正と負がわかるよう、凡例に表示する文字を設定します。たとえば人口増減の場合、「増加」「減少」と入力します。空白の場合、出力画面のオプションで指定した既定値が使われます。</div></li>
+    </ul>
+
+    <a name="markTurnMode"></a>
+    <h2>記号の回転モード</h2>
+    <div class="indent2">記号の回転モードでは、データ値によって記号を回転して表示します。風向きの角度のような方向を示すデータで使用します。</div>
+    <h4>表示記号設定</h4><div class="indent2">記号表示位置に表示される記号の種類およびデータ値が最大の場合の大きさを設定します。</div>
+    <h4>内部データ</h4><div class="indent2">記号内部を別のデータ項目のペイントまたはハッチで塗りつぶします。ハッチが選択できるのは既定記号が選択されている場合に限られます。画像の場合は、内部色で指定された箇所の色が変更されます。</div>
+    <h4>回転方向</h4><div class="indent2">データ値が正の値の場合に反時計回りに回転させるか、時計回りに回転させるかを設定します。</div>
+    <h4>1周の値</h4><div class="indent2">1周分の値を設定します。</div>
+
+    <a name="barMode"></a>
+    <h2>棒の高さモード</h2>
+    <div class="indent2">棒の高さモードでは、データ値を棒の高さで示します。データ値が負の値の場合は地図上に表示されません。</div>
+    <h4>最大の高さ</h4><div class="indent2">最大の棒の高さを設定します。</div>
+    <h4>最大高さの値</h4><div class="indent2">最も高くなるデータの値を設定します。<b>データ項目の最大値</b>では、選択してあるデータ項目の最大値が、そのまま最も高い棒になります。<b>ユーザ設定</b>では、ユーザー側で設定します。例えば、最大値の異なる複数のデータ項目を記号で表示して比較するときに、「データ項目の最大値」で設定すると、それぞれの棒の高さを比較することができません。そのような場合には、ここでユーザ設定で最大値を固定しておけば、棒の高さでデータ値の大小を比較することができます。</div>
+    <h4>幅</h4><div class="indent2">棒の幅を設定します</div>
+    <h4>内部</h4><div class="indent2">棒の内部色を設定します。</div>
+    <h4>輪郭線</h4><div class="indent2">棒の輪郭線のラインパターンを設定します。</div>
+    <h4>目盛線</h4><div class="indent2">棒の中に目盛線を入れる場合にチェックし、目盛り間隔とラインパターンを設定します。</div>
+    <h4>内部データ</h4><div class="indent2">棒の内部を別のデータ項目のペイントまたはハッチで塗りつぶします。ハッチは選択できません。</div>
+
+    <a name="contourMode"></a>
+    <h2>等値線モード</h2>
+    <div class="indent2">等値線モードではデータ値を等値線で表現します。カテゴリーデータや線オブジェクトの場合は利用できません。</div>
+    <h4>等値線の設定方法</h4>
+    <ul class="bold">
+        <li>ペイントモードで塗分け／ハッチモードで塗分け<div class="indent1NormalWeight">階級区分モードの区分値を使用して等値線を描き、内部をペイントモードまたハッチモードで塗りつぶします。</div></li>
+        <li>等間隔<div class="indent1NormalWeight">下限値・上限値・間隔値を入力して等値線を描きます。</div></li>
+        <li>個別設定<div class="indent1NormalWeight">描く等値線の値を1つずつ入力します。</div></li>
+    </ul>
+    <h4>等値線の描き方</h4>
+    <ul class="bold">
+        <li>ポリゴン内部のみ描画<div class="indent1NormalWeight">ここをチェックすると、ポリゴンに含まれない部分では等値線を描きません。なお、ここではダミーオブジェクト・ダミーオブジェクトグループのポリゴンも含まれます。</div></li>
+        <li>等値線を曲線で近似<div class="indent1NormalWeight">等値線を曲線で近似するとなめらかな線になりますが、描画速度は低下します。</div></li>
+        <li>密度<div class="indent1NormalWeight">密度を細かくすると、詳細な等値線になりますが、描画速度は低下します。</div></li>
+    </ul>
+    <h3>等間隔設定の場合</h3>
+    <h4>通常の等値線</h4><div class="indent2">基本となる等値線の下限・上限・間隔・線種を設定します。</div>
+    <h4>上のうち強調する等値線</h4><div class="indent2">通常の等値線で設定したもののうち、異なる線種で表示したいもののを設定します。</div>
+    <h4>上のうち一本だけさらに強調する</h4><div class="indent2">通常の等値線で設定したもののうち、1本だけ強調したい場合に値を設定します。必要ない場合はチェックをはずしておきます。</div>
+    <h3>個別設定の場合</h3>
+    <h4>追加</h4><div class="indent2">追加をクリックして、それぞれの等値線の値と線種を設定していきます。</div>
+    <h4>階級区分の値を追加</h4><div class="indent2">階級区分モードの区分値を等値線の値として設定します。</div>
+    <h4>並べ替え</h4><div class="indent2">設定した値を数値順に並べ替えます。</div>
+    <br />
+    <h4>出力画面で</h4><div class="indent2">表示された等値線の図には数値は示されていません。数値を示す場合は、等値線にマウスカーソルをあわせて右クリックします。するとメニューの中に「等値線の数値表示」があるので選択します。</div>
+
+    <a name="stringMode"></a>
+    <h2>文字モード</h2>
+    <div class="indent2">文字モードでは、データ値を文字で表示します。</div>
+    <h4>フォント</h4><div class="indent2">表示するフォントを設定します。</div>
+    <h4>最大幅</h4><div class="indent2">横方向に表示する最大幅を設定します。<b>最大値幅をこえたら折り返す</b>にチェックした場合は、折り返して表示されますが、チェックされていない場合は、最大幅を超えた分は表示されません。</div>
+
+    <a name="graphMode"></a>
+    <h2>グラフ表示モード</h2>
+    <div class="indent2">グラフ表示モードは、レイヤ内のデータ項目で棒グラフ、折れ線グラフ、円グラフ、帯グラフで表示します。</div>
+    <h4>グラフデータセット</h4><div class="indent2">グラフ表示モードは、レイヤごとに複数のデータセットを持つことができ、それぞれ異なる表示方法やデータ項目を持つことができます。</div>
+    <ul class="bold">
+        <li>データセット追加/削除<div class="indent1NormalWeight">データセットを追加または削除します。</div></li>
+        <li>タイトル<div class="indent1NormalWeight">データセットのタイトルを設定します。設定したタイトルは出力画面に表示されます。</div></li>
+    </ul>
+    <h4>表示データ項目</h4><div class="indent2">データ項目には、カテゴリーデータ、文字データを含めることができません。折れ線グラフの場合を除き、データ項目右側に内部色を設定するボックスが表示され、クリックして変更できます。</div>
+    <ul class="bold">
+        <li>追加/削除<div class="indent1NormalWeight">データセットにデータ項目を追加します。または、選択したデータ項目を削除します。</div></li>
+        <li>まとめて追加<div class="indent1NormalWeight">データセットのデータ項目を複数まとめて設定します。</div></li>
+        <li>すべて削除<div class="indent1NormalWeight">データセットのデータ項目をすべて削除します。</div></li>
+        <li>↑↓<div class="indent1NormalWeight">データ項目を順序を入れ替えます。</div></li>
+    </ul>
+    <h3>グラフの形式</h3>
+    <ul class="bold">
+        <li>
+            円グラフ<div class="indent1NormalWeight">円グラフでは、負の値の含むデータ項目を含めることができません。</div>
+            <ul class="bold">
+                <li>最大サイズ<div class="indent1NormalWeight"><b>固定</b>の場合は、円の大きさは一定です。<b>可変</b>の場合は、選択したデータ項目の合計に応じてオブジェクトごとに大きさがかわります。</div></li>
+                <li>最大サイズの値<div class="indent1NormalWeight">最も円の大きくなるデータの値を設定します。<b>選択データの最大値</b>では、選択してあるデータ項目の合計の最大値が、そのまま最も大きい円になります。<b>ユーザ設定</b>では、ユーザー側で設定します。例えば、複数のデータセット間で表示して比較するときに、「データ項目の最大値」で同じ値を設定すると、それぞれの記号の大きさを比較することができません。そのような場合にユーザ設定で最大値を固定しておけば、大小を比較することができます。</div></li>
+                <li>凡例値<div class="indent1NormalWeight">凡例につける値を設定します。0に設定した箇所は表示されません。</div></li>
+            </ul>
+        </li>
+        <li>
+            帯グラフ<div class="indent1NormalWeight">帯グラフでは、負の値の含むデータ項目を含めることができません。設定項目は円グラフのものに次の項目が加わります。</div>
+            <h4>帯グラフ表示</h4><div class="indent2NormalWeight">グラフの向きで、縦方向か横方向を選択できます。また、長辺と短辺の比を設定できます。</div>
+        </li>
+        <li>
+            折れ線グラフ<div class="indent1NormalWeight"></div>
+            <h4>サイズ</h4><div class="indent2NormalWeight">折れ線グラフの大きさを設定します。</div>
+            <h4>縦:横</h4><div class="indent2NormalWeight">グラフの縦横比を設定します。</div>
+            <h4>線種</h4><div class="indent2NormalWeight">グラフの折れ線のラインパターンを設定します。</div>
+            <h4>枠</h4><div class="indent2NormalWeight">グラフの枠と内部色を設定します。</div>
+            <h4>最大・最初値</h4><div class="indent2NormalWeight">グラフの縦軸の最大値・最小値を設定します。<b>自動</b>と<b>ユーザ設定</b>から選択します。</div>
+        </li>
+        <li>
+            棒グラフ<div class="indent1NormalWeight">折れ線グラフのものに次の項目が加わります。</div>
+            <h4>同一ハッチに設定</h4><div class="indent2NormalWeight">各データ項目の棒グラフのグラフ内を同一ハッチに設定します。</div>
+        </li>
+    </ul>
+    <h4></h4><div class="indent2"></div>
+
+    <a name="labelMode"></a>
+    <h2>ラベル表示モード</h2>
+    <div class="indent2">レイヤ内の複数のデータ項目を文字で表示します。表示される場所はラベル表示位置です。</div>
+    <h4>ラベルデータセット</h4><div class="indent2">ラベル表示モードは、レイヤごとに複数のデータセットを持つことができ、それぞれ異なる表示方法やデータ項目を持つことができます。単独表示モードの文字モードでもデータ値を表示できますが、複数のデータ項目を並べる場合はラベル表示モードを使います。</div>
+    <ul class="bold">
+        <li>データセット追加/削除<div class="indent1NormalWeight">データセットを追加または削除します。</div></li>
+        <li>タイトル<div class="indent1NormalWeight">データセットのタイトルを設定します。設定したタイトルは出力画面に表示されます。</div></li>
+    </ul>
+    <h4>データ項目</h4><br />
+    <ul class="bold">
+        <li>追加/削除<div class="indent1NormalWeight">表示するデータ項目を追加します。または、選択したデータ項目を削除します。</div></li>
+        <li>まとめて追加<div class="indent1NormalWeight">表示するデータ項目を複数まとめて設定します。</div></li>
+        <li>すべて削除<div class="indent1NormalWeight">データセットのデータ項目をすべて削除します。</div></li>
+        <li>データ項目名の表示<div class="indent1NormalWeight">データ項目名を表示します。</div></li>
+        <li>単位の表示<div class="indent1NormalWeight">データ項目の単位を表示します。</div></li>
+    </ul>
+    <h4>ダミーオブジェクト・グループのオブジェクト名</h4><div class="indent2">設定してあるダミーオブジェクト・グループのオブジェクト名を表示します。ダミーオブジェクトグループの場合で、オブジェクト名リストが複数ある場合、/で区切られて表示されます。ただし、<b>オブジェクト名1を優先</b>にすると、最初のオブジェクト名が表示されます。</div>
+    <h4>最大幅</h4><div class="indent2">オブジェクト名やデータ項目を表示する際の、枠の大きさを指定します。</div>
+    <h4>表示位置の記号</h4><div class="indent2">ラベル表示位置に記号を表示するかどうか、記号の種類を設定します。</div>
+    <h4>枠</h4><div class="indent2">ラベルの枠や枠内の背景色を指定します。</div>
+
+    <a name="tripMode"></a>
+    <h2>移動表示モード</h2>
+    <div class="indent2">移動主体定義レイヤおよび移動データレイヤが存在する場合に、移動データレイヤを選択し、移動データを表示します。</div>
+    <div class="indent2">通常の2Dモードで表示した場合は、全ての移動ラインは同一平面上に描かれるので、時間ごとの変化は分かりません。出力画面の3Dモードで移動データを表示すると、Z軸に時間等が設定され、時空間上での移動を可視化することができます。3Dモードと2Dモードを切り替えるには、描画後の出力画面で<b>[表示]＞[3D表示]</b>にチェックします。</div>
+
+    <h4>移動表示データセット</h4><div class="indent2">移動表示モードは、レイヤごとに複数のデータセットを持つことができ、それぞれ異なる表示方法やデータ項目を持つことができます。</div>
+    <ul class="bold">
+        <li>データセット追加/削除<div class="indent1NormalWeight">データセットを追加または削除します。</div></li>
+        <li>タイトル<div class="indent1NormalWeight">データセットのタイトルを設定します。設定したタイトルは出力画面に表示されます。</div></li>
+    </ul>
+    <h3>移動データの表示方法</h3>
+    <ul class="bold">
+        <li>白地図<div class="indent1NormalWeight">移動経路が線で表示されます。表示される移動経路の線種・色は、描画後に出力画面の<b>[オプション]＞[オプション]＞[移動データ]</b>から変更できます。</div></li>
+        <li>移動主体定義レイヤのデータ項目を利用<div class="indent1NormalWeight">移動主体定義レイヤのデータ項目を使い、移動経路を色分けするなどして表示します。<b>表示する移動主体定義レイヤのデータ項目</b>欄でデータ項目を選択し、ペイントモードで表示するか、線モードで表示するかを決めます。ペイントモード・線モードの階級区分や線種は、<b>対象レイヤ</b>を移動主体定義レイヤにして設定します。</div></li>
+        <li>現在のレイヤのデータを使用<div class="indent1NormalWeight">移動データレイヤのデータ項目を使って、移動経路を色分けするなどして表示します。「表示するデータ項目」欄のうち、<b>滞在データ</b>は、移動していない滞在場所の線を表示するのに使用するデータ項目を指定し、「ペイント」または「線モード」のどちらで表示するかを選択します。「既定のライン 」を指定した場合は白地図モードと同様の線種で滞在線が表示されます。ただし、3Dモードでない場合は、滞在線を表示することはできないので、代わりに記号の内部の色で表示されます。<b>移動データ</b>は、同様に移動経路をデータ項目から色分け等で表示します。</div></li>
+    </ul>
+
+    <h4>表示期間</h4><div class="indent2">表示期間を限定して示すことができます。</div>
+    <h4>3D表示の際の高さ設定</h4><div class="indent2">出力画面で3Dモードで表示した際、高さを表すデータ項目を設定します。デフォルトは「時間」で、高さが時間の経過を表します。</div>
+    <h4>移動表示オプション</h4><div class="indent2">移動表示全体の設定を行います。出力画面の<b>[オプション]＞[オプション]</b>で行う設定と同じです。</div>
+    <h4>関連項目</h4>
+    <ul>
+        <li><a href="propertydata.html#tagList">属性データのタグの設定</a>　TYPE, TRIP, TRIP_DEFINITION, PLACE, ARRIVAL, DEPARTURE, LAT/LONタグなどが関連します。</li>
+        <li><a href="propertydata.html#propertyEditorWindows">属性データ編集機能での設定</a></li>
+    </ul>
+
+    <a name="overlayMode"></a>
+    <h2>重ね合わせ表示モード</h2>
+    <div class="indent2">重ね合わせ表示モードでは、単独表示モードやグラフ表示モードなどのデータ表示モードで作成した主題図を重ね合わせて表示します。異なるレイヤでも可能です。データセットに項目を追加するには、重ね合わせたい主題図を単独表示モードやグラフ表示モードで設定し、左側画面の<b>[重ね合わせセット]</b>をクリックします。その際、重ね合わせ表示モードに複数のデータセットがある場合は、選択メニューが表示されます。</div>
+    <h4>重ね合わせデータセット</h4><div class="indent2">重ね合わせ表示モードは、複数のデータセットを持つことができ、それぞれ異なる表示方法やデータ項目を持つことができます。</div>
+    <ul class="bold">
+        <li>データセット追加/削除<div class="indent1NormalWeight">データセットを追加または削除します。</div></li>
+        <li>タイトル<div class="indent1NormalWeight">データセットのタイトルを設定します。設定したタイトルは出力画面に表示されます。</div></li>
+        <li>このデータセットを常に重ねる<div class="indent1NormalWeight">ここをチェックしたデータセットは、単独表示モードなど、重ね合わせ表示モードでない場合も常に表示されます。指定できるのは1つのデータセットだけです。</div></li>
+    </ul>
+    <h4>オブジェクト名</h4><div class="indent2">オブジェクト名を表示するかどうか、またフォントなどを設定します</div>
+    <h4>重ね合わせデータ</h4><br />
+    <ul class="bold">
+        <li>↑ ↓<div class="indent1NormalWeight">重ねる順序を入れ替えます。上に位置する項目から順に描画されるため、地図の下の方になります。なお<b>[重ね合わせセット]</b>ボタンでデータを追加した場合は、再度設定する必要があります。</div></li>
+        <li>凡例を表示する<div class="indent1NormalWeight">重ね合わせた際に凡例を表示するかどうかを項目ごとに設定できます。</div></li>
+        <li>消去<div class="indent1NormalWeight">選択中のデータの項目を消去します。</div></li>
+        <li>注<div class="indent1NormalWeight">出力画面に表示する注を設定します。データ項目のNOTEタグに相当します。</div></li>
+        <li>画像タイル追加<div class="indent1NormalWeight">緯度経度情報を持つ地図ファイルを使用している場合に、画像タイルを表示できます。出力画面で設定する背景画像と同じですが、背景画像が主題図の最背面か最前面にしか表示できないのに対し、ここでは重ね合わせの任意の位置で表示できます。</div></li>
+        <li>すべて削除<div class="indent1NormalWeight">重ね合わせデータの項目を全て消去します。</div></li>
+        <li>記号モードの位置はずらさない<div class="indent1NormalWeight">記号の大きさモード、記号の回転モード、記号の数モード、階級記号モードそれぞれの複数の項目を1つのデータセットに設定した場合、表示位置をずらさずに、重ねたい場合にチェックします。この設定は、全重ね合わせデータセットに共通です。</div></li>
+    </ul>
+    <h4>注意事項</h4>
+    <ul>
+        <li>表示方法によっては、重ねられない組み合わせがあります。</li>
+        <li>グラフ表示モードの折れ線と棒グラフを重ねると、同一グラフ中に重ねて表示されます。</li>
+    </ul>
+
+    <a name="seriesMode"></a>
+    <h2>連続表示モード</h2>
+    <div class="indent2">連続表示モードでは、単独表示モード・グラフモード・重ね合わせモードのデータを、連続して表示します。複数の項目を比較したい場合に便利です。出力画面では、画像をまとめて保存したり、画像アニメーションの作成をすることができます。データセットに項目を設定するには、連続して表示したい項目を選択しておき、左側画面の<b>[連続表示セット]</b>＞をクリックします。その際、連続表示モードに複数のデータセットがある場合は、選択メニューが表示されます。また、設定画面の<b>[ツール]＞[連続表示モードにまとめてデータ追加]</b>からも可能です。</div>
+    <h4>連続表示データセット</h4><div class="indent2">連続表示モードは、複数のデータセットを持つことができ、それぞれ異なる項目を持つことができます。</div>
+    <ul class="bold">
+        <li>データセット追加/削除<div class="indent1NormalWeight">データセットを追加または削除します。</div></li>
+        <li>タイトル<div class="indent1NormalWeight">データセットのタイトルを設定します。なお､設定したタイトルは出力画面には表示されません。</div></li>
+    </ul>
+    <h4>連続表示データ</h4>
+    <ul class="bold">
+        <li>↑ ↓<div class="indent1NormalWeight">選択中のデータの表示順序を入れ替えます。</div></li>
+        <li>消去<div class="indent1NormalWeight">選択中のデータの項目を消去します。</div></li>
+        <li>すべて削除<div class="indent1NormalWeight">連続表示データの項目を全て消去します。</div></li>
+    </ul>
+    <h4>出力画面での操作</h4><div class="indent2">出力画面に表示されると、1番のデータが表示されます。画面の下に現れるボタンの←→をクリックすると前後のデータに移動して表示されます。</div>
+
+    <hr />
+    <a name="menu"></a>
+    <h1>設定画面のメニュー</h1>
+    <a name="filemenu"></a>
+    <h3>ファイル</h3>
+    <h4>クリップボードからデータの読み込み</h4>
+    <div class="indent2">MANDARAタグを使用して作成した表計算ソフト上の属性データをコピーした情報を読み込みます。</div>
+    <h4>ファイルを開く</h4>
+    <div class="indent2">MANDARA用の属性データファイルを読み込みます。<b>CSV形式</b>のテキストファイルでは、MANDARAタグを設定したファイルです。<b>MDRZ形式</b>は、設定画面から保存した属性データファイルで、データ項目ごとの描画設定などが記録されています。<b>MDRMZ形式</b>は、MDRZ形式に地図ファイルも含めたものです。<b>MDR/MDRZ形式</b>はバージョン9以前の属性データファイルです。MANDARAデータファイルを読み込みます。</div>
+    <h4><a href="#frmMain_ShowViewer">白地図・初期属性データ表示</a></h4>
+    <div class="indent2">データはないけど、取りあえず地図ファイルの中身を表示させたいような場合、または地図ファイルに入っている初期属性データを表示する場合に使用します。</div>
+    <h4><a href="subwindow.html#frmShapeFile">シェープファイル読み込み</a></h4>
+    <div class="indent2">GISでよく使われるデータ形式であるシェープファイルを読み込みます。</div>
+    <h4>最近使ったファイル</h4>
+    <div class="indent2">最近使用したデータファイルを読み込みます</div>
+    <h4>上書き保存/名前を付けて保存</h4>
+    <div class="indent2">現在の描画設定をMANDARA属性データファイルとして保存します。<b>MDRZ形式</b>には、データ項目ごとの設定などが記録されます。<b>MDRMZ形式</b>は、MDRZファイルの情報に加え、地図ファイル自体も含めたものです。</div>
+    <h4>データ挿入</h4>
+    <div class="indent2">現在読み込んでいるデータに、別のMANDARA属性データを別レイヤとして挿入します。挿入するデータは、異なる地図ファイルを使用していても構いませんが、座標系が適合しなければなりません。挿入する形式としては、<b>クリップボード</b>、<b>MANDARAデータファイル</b>、<b>白地図・初期属性データ</b>、<b>シェープファイル</b>があります。</div>
+    <h4><a href="#frmMain_ShapefileOut">シェープファイル出力</a></h4>
+    <div class="indent2">レイヤを指定してシェープファイルに出力します。</div>
+    <h4>プロパティ</h4>
+    <div class="indent2">読み込んでいるデータのプロパティを表示します。</div>
+    <a name="editmenu"></a>
+    <h3>編集</h3>
+    <h4><a href="propertydata.html#propertyEditor">属性データ編集</a> </h4>
+    <div class="indent2">属性データの値を編集します。</div>
+        <h4>データ項目一覧</h4>
+        <div class="indent2">各データ項目の統計情報を一覧で表示します。</div>
+    <h4><a href="mapeditor.html">マップエディタ</a></h4>
+    <div class="indent2">属性データを破棄して、地図編集のためのマップエディタに移ります。その際、属性データで使われていた地図ファイル（複数使用している場合は最初に指定した地図ファイル）がマップエディタに表示されます。</div>
+    <h4>クリップボードにデータのコピー</h4>
+    <div class="indent2">読み込んでいるデータを、MANDARAタグつきのテキストデータとしてクリップボードにコピーします。</div>
+    <h4>非表示オブジェクト削除</h4>
+    <div class="indent2">
+        <b>[分析]</b>メニューの<a href="#frmMain_ConditionSettings">属性検索設定</a>や<a href="#frmMain_ObjectLimitaion">表示オブジェクト限定</a>で非表示になっているオブジェクトを削除します。属性データ上は削除されますが、地図ファイルからは削除されません。<br />
+        移動主体定義レイヤ、移動データレイヤおよび合成オブジェクトを含むレイヤは削除の対象外です。
+    </div>
+    <a name="analysismenu"></a>
+    <h3>分析</h3>
+    <h4><a href="#frmMain_Buffer">空間検索</a></h4>
+    <div class="indent2">あるオブジェクトからの距離を指定し（あるいは面オブジェクト）、その内部に含まれるオブジェクトのデータを集計してして、属性データ項目に追加します。</div>
+    <h4><a href="#frmMain_GetDistance">距離測定</a></h4>
+    <div class="indent2">オブジェクト間の距離や、特定地点からの距離を計測して属性データ項目に追加します。</div>
+    <h4><a href="#frmMain_AreaPeripheri">面積・周長取得</a></h4>
+    <div class="indent2">オブジェクトの面積や周長を計算して属性データ項目に追加します。</div>
+    <h4><a href="#frmMain_Culc">データ計算</a></h4>
+    <div class="indent2">属性データ項目間で簡単な加減乗除の計算を行い、属性データ項目に追加します。</div>
+    <h4>時系列集計</h4>
+    <div class="indent2"><h4><a href="#frmMain_TimeSeriesSummingUp">時系列集計</a></h4>異なる時間のレイヤ間で、オブジェクトが変化している場合、地図データに継承が設定されていれば、継承データを利用して2時点で共通するオブジェクト（合成オブジェクト）を生成し、それに合わせて属性値を集計します。</div>
+    <div class="indent2"><h4><a href="subwindow.html#frmSyntheticObject">合成オブジェクト一覧</a></h4>時系列集計機能で作成された合成オブジェクトの一覧を表示するとともに、合成オブジェクトの名称を変更します。</div>
+    <h4><a href="#frmMain_LayerObjectCombine">レイヤ間オブジェクト集計</a></h4>
+    <div class="indent2">複数のレイヤ内のオブジェクトを統合して、一つのレイヤにまとめます。</div>
+    <h4><a href="#frmMain_Cross">クロス集計</a></h4>
+    <div class="indent2">複数のデータ項目のクロス集計を行い、結果をクリップボードに出力します。</div>
+     <h4><a href="#frmMain_Lorenz">ローレンツ曲線・ジニ係数</a></h4>
+    <div class="indent2">複数のデータ項目のローレンツ曲線を描き、ジニ係数を計算します。</div>
+    <h4><a href="#frmMain_Autocorrelation">空間的自己相関分析</a></h4>
+    <div class="indent2">モランのI統計量を算出します。</div>
+    <h4><a href="#frmMain_Scatterplot">散布図</a></h4>
+    <div class="indent2">2つのデータ項目で散布図を作成します。</div>
+    <h4><a href="#frmMain_ConditionSettings">属性検索設定</a></h4>
+    <div class="indent2">特定の値を属性値に持つオブジェクトを表示する設定を行います。</div>
+    <h4><a href="#frmMain_ObjectLimitaion">表示オブジェクト限定</a></h4>
+    <div class="indent2">レイヤのオブジェクトごとに表示/非表示を設定します。</div>
+    <a name="toolmenu"></a>
+    <h3>ツール</h3>
+    <h4><a href="#frmMain_CopyDataItemSettings">データ項目設定コピー</a></h4>
+    <div class="indent2">データ項目間で、表示設定をコピーします。</div>
+    <h4><a href="#frmMain_SetSeriesMode">連続表示モードにまとめて設定</a></h4>
+    <div class="indent2">データ項目と表示モードを指定して連続表示モードに設定します。</div>
+    <h4><a href="#mnuSymbolPosition">記号表示位置等操作</a></h4>
+    <div class="indent2">データ読み込み直後は、記号表示位置、ラベル表示位置はオブジェクトの代表点に設定されていますが、その位置を変更したり、元の代表点に戻したりします。</div>
+    <h4><a href="#frmMain_ExchangeObjectName">オブジェクト名入れ替え</a></h4>
+    <div class="indent2">地図ファイル中のオブジェクトは、データによっては複数のオブジェクト名が設定されています。その場合、別のオブジェクト名に表記を変更することができます。</div>
+    <h4><a href="mapeditor.html#frmMED_CensusGISData">統計GIS国勢調査小地域データ</a></h4>
+    <div class="indent2">国勢調査の小地域データについて、統計データと境界データを統合して読み込みます。</div>
+    <h4><a href="#frmOption">オプション</a></h4>
+    <div class="indent2">MANDARA全般にかかるオプションを設定します。</div>
+    <a name="helpmenu"></a>
+    <h3>ツール</h3>
+    <h4>ヘルプ/設定画面のヘルプ</h4>
+    <div class="indent2">ヘルプ画面を表示します。</div>
+    <h4>MANDARAホームページ</h4>
+    <div class="indent2">MANDARAのホームページを表示します。</div>
+    <h4>タイルマップ更新チェック</h4>
+    <div class="indent2">出力画面やマップエディタの<a href="subwindow.html#frmTileMapServiceSelect">背景画像</a>として表示されるタイルマップのうち、既定のタイルマップは時々追加されたり修正されたりします。更新されたかどうかネットからチェックし、更新された場合はダウンロードします。</div>
+    <h4>バージョン情報</h4>
+    <div class="indent2">MANDARAの現在のバージョンを表示し、更新を確認して必要であれば更新します。</div>
+    <hr />
+    <a name="frmMain_ShowViewer"></a>
+    <h1>白地図・初期属性データ表示</h1>
+    <div class="indent2">
+        地図ファイルの中身をオブジェクトグループ単位で表示します。<br />
+        <br />属性データは無いけど、とりあえず白地図を表示したい場合や、初期属性データの設定してある地図ファイルを表示する場合、地図ファイルの中身を確認したい場合などに使います。入り方は以下の方法があります。
+    </div>
+    <ul>
+        <li>起動画面の<b>白地図表示・初期属性データ表示</b></li>
+        <li>設定画面の<b>[ファイル]＞[白地図表示・初期属性データ表示]</b></li>
+        <li>マップエディタの<b>[ファイル]＞[地図ファイルを保存して白地図・初期属性データ表示]</b></li>
+    </ul>
+    <h4>地図ファイル</h4><div class="indent2">座標系の設定がしてある地図ファイルでは、複数の地図ファイルを表示することができます。<b>地図ファイル追加</b>で使用する地図ファイルを追加します。<b>削除</b>で選択した地図ファイルをリストから削除します。</div>
+    <h3>レイヤ</h3>
+    <h4>レイヤ追加/削除</h4><div class="indent2">レイヤを追加または削除します。</div>
+    <h4>レイヤごとの設定</h4>
+    <ul class="bold">
+        <li>レイヤ名<div class="indent1NormalWeight">レイヤの名称を設定します。</div></li>
+        <li>使用する地図ファイル<div class="indent1NormalWeight">上の地図ファイル欄で設定した地図ファイルから、当該レイヤで使用する地図ファイルを選択します。</div></li>
+        <li>表示するオブジェクトグループ<div class="indent1NormalWeight"></div></li>
+        <li>レイヤ名<div class="indent1NormalWeight">選択した地図ファイルの中のオブジェクトグループから、レイヤで表示したいものにチェックします。同じ形状のオブジェクトグループである必要があります。</div></li>
+        <li>時間設定<div class="indent1NormalWeight">時空間モードの地図ファイルの場合は、表示する時間を設定します。</div></li>
+    </ul>
+    <h4>注意事項</h4>
+    <ul>
+        <li><b>OK</b>をクリックすると設定画面に移ります。</li>
+        <li>各レイヤで設定されているデータ項目は、地図ファイル中の初期属性データです。</li>
+        <li>初期属性データのない地図ファイルの場合は、空白のデータ項目が1つ作成されています。</li>
+    </ul>
+    <hr />
+    <a name="frmMain_ShapefileOut"></a>
+    <h1>シェープファイル出力（設定画面）</h1>
+    <div class="indent2">
+        レイヤごとにシェープファイルに出力します。出力するレイヤの種類は通常のレイヤで、合成オブジェクトが含まれないレイヤです。レイヤ中のオブジェクトは、点・線・面のいずれかの形状に統一されている必要があります。設定画面の<b>[ファイル]＞[シェープファイル出力]</b>から入ります。<br />
+        <br />
+        出力されるファイルは、拡張子shp,shx,dbfの3つのファイルです。ただし、座標系・測地系が設定してある地図ファイルを使用している場合には，prjファイルも出力されます。その際、「日本測地系」の場合は「Tokyo」、世界測地系の場合は「JGD_2000」として出力されます。<br />
+        <br />
+        dbfファイルには属性データが入りますが、属性データとしてはレイヤ中のデータ項目が入ります。属性データの中の文字コードも指定できます。<br />
+        <br />
+        dbfファイルのフィールド名としては、レイヤ中のデータ項目のタイトルが入りますが、dbfファイルの仕様で最大半角英数11文字となっています。それ以上の文字数の場合は切り取られます。また、漢字など2バイト全角文字が使用されている場合は、「DATA」+番号というフィールド名に変更されます。<br />
+    </div>
+    <hr />
+    <a name="frmMain_Buffer"></a>
+    <h1>空間検索</h1>
+    <div class="indent2">空間検索では、現在設定中のレイヤのオブジェクトの代表点からの距離や、オブシェクト間の包含関係といった空間的要素をもとにオブジェクトを検索し、データの集計などを行います。検索結果は、現在選択中のレイヤのデータ項目に追加されます。設定画面の<b>[分析]＞[空間検索]</b>から入ります。</div>
+    <h3>対象レイヤと方法</h3>
+    <h4>検索対象レイヤ</h4><div class="indent2">検索対象となるオブジェクトを含むレイヤを設定します。</div>
+    <h4>方法</h4>
+    <ul class="bold">
+        <li>①面領域内部のオブジェクトを検索する<div class="indent1NormalWeight">設定中のレイヤの面オブジェクト内部に含まれる検索対象レイヤのオブジェクトを検索します。たとえば、市区町村ごとに含まれる小学校数をカウントしたい場合などに使います。</div></li>
+        <li>②バッファ距離を設定して内部のオブジェクトを検索する<div class="indent1NormalWeight">設定中のレイヤのオブジェクトから、<b>バッファ距離</b>欄で指定した距離内に含まれる検索対象レイヤのオブジェクトを検索します。たとえば、駅からから1km以内の店舗の数を数えたいような場合に使用します。</div></li>
+        <li>③元レイヤのオブジェクトを含むオブジェクトを検索する<div class="indent1NormalWeight">設定中のレイヤが、検索対象レイヤの内のどの面オブジェクトに含まれるかを検索します。たとえば小学校がどの市区町村別に含まれるかを調べたい場合などに使用します。</div></li>
+    </ul>
+    <h4>表示オブジェクト限定・属性検索の条件設定を使用する</h4><div class="indent2">検索対象のレイヤに表示オブジェクト限定または属性検索の設定項目がある場合、それによる条件をつけて検索するかどうか設定します。</div>
+    <h3>出力項目</h3> <div class="indent2">設定中のレイヤに検索結果を追加するデータ項目を設定します。</div>
+    <h4>含まれるオブジェクト数カウント</h4><div class="indent2">方法で①②を選んだ場合に可能で、設定したバッファ領域内（またはオブジェクト内部）に含まれたオブジェクト数をカウントし、設定中のレイヤのデータ項目に追加します。</div>
+    <h4>含まれるオブジェクト名リスト</h4><div class="indent2">方法で①②を選んだ場合に可能で、設定したバッファ領域内（またはオブジェクト内部）に含まれたオブジェクト名を/で区切り、設定中のレイヤのデータ項目に文字データとして追加します。</div>
+    <h4>含まれるオブジェクトのオブジェクト属性データ集計</h4><div class="indent2">方法で①②を選んだ場合に可能で、設定したバッファ領域内（またはオブジェクト内部）に含まれたオブジェクトのデータ項目をチェックし、その<b>平均値、合計値、標準偏差</b>のいずれかを集計し、設定中のレイヤのデータ項目に追加します。カテゴリーデータの場合はカテゴリーごとに数がカウントされます。</div>
+    <h4>検索対象レイヤのオブジェクトの属性データ取得</h4><div class="indent2">方法で③を選んだ場合に可能で、検索されたオブジェクトのデータ項目の値を取得します。</div>
+    <h4>注意事項</h4>
+    <ul>
+        <li>方法①②で、設定中のレイヤと検索対象のレイヤが同じ場合、バッファ元のオブジェクト自身もカウントそれます。</li>
+        <li>方法②で距離を指定した場合、バッファ元のオブジェクトが、面または点オブジェクトの場合、代表点からの距離がバッファ領域になります。線オブジェクトの場合は、ラインからの最短距離がバッファ領域になります。</li>
+        <li>方法③の場合、出力項目を選択しなくても、オブジェクト名が追加されます。</li>
+    </ul>
+    <hr />
+    <a name="frmMain_GetDistance"></a>
+    <h1>距離測定</h1>
+    <div class="indent2"><b>現在設定中のレイヤ</b>のオブジェクトと、別のオブジェクトや地点との間の距離を計算します。設定画面の<b>[分析]＞[距離測定]</b>から入ります。</div>
+    <h3>距離の取得元</h3>
+    <div class="indent2">距離の取得元の設定は3種類あり、複数設定することができます。</div>
+    <ul class="bold">
+        <li>緯度経度で指定<div class="indent1NormalWeight">取得元を緯度経度で指定します</div></li>
+        <li>レイヤ内オブジェクトから選択<div class="indent1NormalWeight">取得元を読み込んでいるレイヤから指定します。複数選択することもできます。</div></li>
+        <li>地図ファイルオブジェクトから選択<div class="indent1NormalWeight">取得元を地図ファイル中のオブジェクトから検索して指定します。複数選択することもできます。</div></li>
+    </ul>
+    <h4>消去</h4><div class="indent2">選択した距離取得元を消去します。</div>
+    <h3>距離取得方法</h3>
+    <ul class="bold">
+        <li>距離取得元からの距離のうち、最も近い距離を取得<div class="indent1NormalWeight">最も近い取得元の名称と、距離をデータ項目に追加します。</div></li>
+        <li>取得元それぞれの距離を取得<div class="indent1NormalWeight">設定した取得元それぞれについて、距離をデータ項目に追加します。</div></li>
+        <li>取得単位<div class="indent1NormalWeight">距離の取得単位を指定します。</div></li>
+    </ul>
+    <h4>注意事項</h4>
+    <ul>
+        <li>面または点オブジェクト同士の距離は、代表点同士の距離が取得されます。</li>
+        <li>設定中のレイヤが線オブジェクトの場合は、ラインと左のパネルで指定したオブジェクトの代表点との最短距離が取得されます。</li>
+        <li>座標系が設定してある地図ファイルを使用している場合、距離は緯度経度の値をもとに計算されます。そうでない場合はスケール値を使用して計算されます。</li>
+    </ul>
+    <hr />
+    <a name="frmMain_AreaPeripheri"></a>
+    <h1>面積・周長取得</h1>
+    <div class="indent2"><b>現在設定中のレイヤ</b>のオブジェクトの面積または周長を求めデータ項目に追加します。設定画面の<b>[分析]＞[面積・周長取得・データ計算]</b>から入ります。</div>
+    <h4>オブジェクト面積取得</h4>
+    <div class="indent2">オブジェクトの面積を取得してデータ項目に追加します。レイヤが面形状の場合に使用できます。</div>
+    <h4>オブジェクト周長取得</h4>
+    <div class="indent2">オブジェクトの周長を取得してデータ項目に追加します。レイヤが面または線形状の場合に使用できます。</div>
+    <h4>取得単位</h4>
+    <div class="indent2">面積・周長を取得する際の単位を指定します。</div>
+    <hr />
+    <a name="frmMain_Culc"></a>
+    <h1>データ計算</h1>
+    <div class="indent2"><b>現在設定中のレイヤ</b>のデータ項目同士で簡単な計算を行います。</div>
+    <h4>計算</h4>
+    <div class="indent2">データ項目同士で簡単な計算を行い、計算結果を新しいデータ項目に追加します。計算方法には、<b>和、差、かけ算、割り算、増減率、密度</b>があります。それぞれ計算したいデータ項目を選択して下さい。密度は面形状のオブジェクトの面積を使用して計算します。</div>
+    <div class="indent2">データ項目で「数値入力」を選択した場合は、右側の入力欄に設定した数値が加減乗除に使われます。</div>
+    <hr />
+    <a name="frmMain_TimeSeriesSummingUp"></a>
+    <h1>時系列集計</h1>
+    <div class="indent2">時系列集計とは、同じ地域で複数のレイヤに異なる時間設定がしてある場合に、地図ファイル中の継承関係データを使って、2時点で共通するオブジェクト（合成オブジェクト）を生成し、当該空間単位に合わせてデータ項目値を集計し、新しいレイヤとして作成します。</div>
+    <h3>使用場面</h3>
+    <div class="indent2">
+        たとえば、ある県の市町村別の人口データを1960年から2000年まで5年ごとに入力したとします。ところが、この間に市町村の合併、あるいは分離などが起こり、時期によってオブジェクトが異なったどうでしょうか。<br />
+        <br />
+        時空間データを持つMANDARAでは、こうした問題を簡単に解決することができます。まず、時期ごとにレイヤを作成し、時期設定を行い、それぞれの時期のオブジェクトを設定します。これでそれぞれの時期の人口数などを地図化することができます。<br />
+        <br />
+        さらにMANDARAでは、ことなる時期ごとのレイヤのデータを集計し、1つのレイヤに納めることができます。これによって、人口増加率の推移などを表示させることができます。<br />
+        <br />
+        たとえば、1960年から1970年にかけて、次のようなオブジェクトの変化があったとします。<br />
+        A→A<br />
+        B→Aに統合<br />
+        C→C<br />
+        D→D･Eに分離<br />
+        <br />
+        この場合、時系列集計を行うと、<br />
+        C<br />
+        A/B（合成オブジェクト）<br />
+        D/E（合成オブジェクト）<br />
+        <br />
+        という３つのオブジェクトが含まれるレイヤが作成されます。<br />
+        <br />
+        さらに属性データが次のような場合、<br />
+        <table>
+            <tr><td colspan="2">1960年</td><td colspan="2">1970年</td></tr>
+            <tr><td>A</td><td>100</td><td>A</td><td>180</td></tr>
+            <tr><td>B</td><td>50</td><td>C</td><td>30</td></tr>
+            <tr><td>C</td><td>25</td><td>D</td><td>60</td></tr>
+            <tr><td>D</td><td>70</td><td>E</td><td>30</td></tr>
+        </table>
+        時系列集計したレイヤには、<br />
+        <table>
+            <tr><td></td><td>1960年</td><td>1970年</td></tr>
+            <tr><td>C</td><td>25</td><td>30</td></tr>
+            <tr><td>A/B</td><td>150</td><td>180</td></tr>
+            <tr><td>D/E</td><td>70</td><td>90</td></tr>
+        </table>
+        と、合成オブジェクトのデータ値は、含まれるオブジェクトの属性データが加算されたものになります。また、最初のデータ項目には、当該オブジェクトが合成オブジェクトかどうかを示すカテゴリーデータが入ります。<br />
+        <br />
+        このような作業を行うには、時空間モードで正確に作成された地図ファイルを使用する必要があります。<br />
+    </div>
+    <h3>時系列集計画面</h3>
+    <div class="indent2">時系列集計を行います。設定画面の<b>[分析]＞[時系列集計]</b>から入ります。</div>
+    <h4>集計するレイヤ</h4><div class="indent2">時系列集計するレイヤにチェックします。</div>
+    <h4>取得するデータ項目</h4><div class="indent2">レイヤごとに、集計するデータ項目をチェックします。ここにチェックを入れたデータ項目は、新しいレイヤに追加されます。合成オブジェクトが作成された場合は、含まれるオブジェクトごとの数値が加算されます。</div>
+    <h4>新しいレイヤの名称</h4><div class="indent2">時系列集計で作成される新しいレイヤの名称を設定します。</div>
+    <hr />
+    <a name="frmMain_LayerObjectCombine"></a>
+    <h1>レイヤ間オブジェクト集計</h1>
+    <div class="indent2">複数のレイヤ内のオブジェクトを統合して、1つのレイヤにまとめます。時系列集計で作成されたレイヤ、移動主体定義レイヤ、移動データレイヤは指定できません。</div>
+    <h4>オブジェクトを集計するレイヤ</h4><div class="indent2">集計するレイヤを複数選びます。</div>
+    <h4>新しいレイヤの名称</h4><div class="indent2">作成されるレイヤの名称を設定します。</div>
+    <h4>レイヤ間で共通しないオブジェクトの処理</h4><div class="indent2">選択したレイヤで、全てのレイヤに共通していないオブジェクトの処理を選択します。</div>
+    <h4>注意事項</h4>
+    <ul>
+        <li>時期の違うレイヤ、形状の違うレイヤ、種類の違うレイヤ、異なる地図ファイルを使用するレイヤ、異なる測地系を使用する地点定義レイヤまたはメッシュレイヤは選択できません。</li>
+    </ul>
+    <hr />
+    <a name="frmMain_Cross"></a>
+    <h1>クロス集計</h1>
+    <div class="indent2">複数のデータ項目のクロス集計を行い、結果を表示します。設定画面の<b>[分析]＞[クロス集計]</b>から入ります。</div>
+    <h4>レイヤ</h4><div class="indent2">クロス集計を行うレイヤを指定します。</div>
+    <h4>データ項目の設定</h4><div class="indent2">
+        左側に表示されているデータ項目を選択し、右側の<b>縦方向</b>リストと<b>横方向</b>リストに設定してください。横方向に何も指定せずに集計することもできます。<br />
+        <br />
+        ここで設定したデータ項目のカテゴリー分類は、もともとカテゴリーデータの場合はその名称が使用され、数値データの場合は、階級区分モードの際の階級区分値が使用されます。<br />
+    </div>
+    <h4>3つめの次元のデータ項目</h4><div class="indent2">縦方向、横方向のデータ項目をさらに別のデータ項目の数値で細分化して集計します。</div>
+    <h4>表示オブジェクト限定・属性検索の条件設定を使用する</h4><div class="indent2">検索対象のレイヤに表示オブジェクト限定または属性検索条件が設定してある場合に、その条件に当てはまるオブジェクトだけをクロス集計するかどうかを設定します。</div>
+    <h4>集計項目</h4><ul class="bold">
+        <li>含まれるオブジェクト数<div class="indent1NormalWeight">縦横方向のカテゴリー内に含まれるオブジェクト数を取得します。</div></li>
+        <li>含まれるオブジェクト一覧<div class="indent1NormalWeight">縦横方向のカテゴリー内に含まれるオブジェクト名の一覧を取得します。</div></li>
+        <li>横方向データ項目集計<div class="indent1NormalWeight">横方向に設定したデータ項目について、縦方向のカテゴリーごとに<b>合計値、平均値、標準偏差、オブジェクト数</b>を計算します。</div></li>
+        <li>データ項目集計<div class="indent1NormalWeight">縦横方向のカテゴリー内に含まれるオブジェクトについて、<b>集計するデータ項目</b>で設定したデータ項目の<b>合計値、平均値、標準偏差、オブジェクト数、データの数値</b>などの数値を計算します。</div></li>
+    </ul>
+    <h4>集計</h4><div class="indent2">結果が表で表示されます。</div>
+    <hr />
+    <a name="frmMain_Lorenz"></a>
+    <h1>ローレンツ曲線・ジニ係数</h1>
+    <div class="indent2">
+        ローレンツ曲線、ジニ係数は不均等度を測る指標です。まずローレンツ曲線は、縦軸データを横軸データで割った値を、小⇒大に並べ、小さい順に累積グラフを描いたものです。すべて同じ値なら、ローレンツ曲線は対角線と同じになります。<b>ジニ係数</b>は、対角線とローレンツ曲線の間の面積を、対角線の下の三角形の面積で割った値で、0で完全に均等、1で1箇所に集中している状態を示します。<br />
+        縦軸データまたは横軸データが欠損値の場合は除外されます。<br />
+    </div>
+    <h4>縦軸データ</h4><div class="indent2">対象とするデータ項目を指定します。通常のデータで最小値が0以上のデータから選択し、複数選択も可能です。</div>
+    <h4>横軸データ</h4>
+        <ul class="bold">
+            <li>なし<div class="indent1NormalWeight">横軸のデータは設定しません。縦軸データの小さい順に曲線を描きます。</div></li>
+            <li>面積（計測）<div class="indent1NormalWeight">面形状レイヤの場合で、オブジェクトの面積を計測して横軸データします。この場合、縦軸データを面積で割った値を小⇒大に並べてローレンツ曲線を描きます。地理的な分布の不均等度を示すことができます。なお、面積は地図データのオブジェクトの精度に依存します。</div></li>
+            <li>データ項目<div class="indent1NormalWeight">指定したデータ項目を横軸データとします。この場合、縦軸データを横軸データで割った値を小⇒大に並べてローレンツ曲線を描きます。</div></li>
+        </ul>
+    <h4>表示オブジェクト限定・属性検索の条件設定を使用する</h4><div class="indent2">検索対象のレイヤに表示オブジェクト限定または属性検索条件が設定してある場合に、その条件に当てはまるオブジェクトだけをクロス集計するかどうかを設定します。</div>
+    <hr />
+    <a name="frmMain_Autocorrelation"></a>
+    <h1>空間的自己相関分析</h1>
+    <div class="indent2">
+        近い場所ほど似通った値を示すことを空間的自己相関と言います。空間的自己相関分析機能では、現在のレイヤのデータ項目について、<b>モランのI統計量</b>を算出します。<br />
+        データが欠損値の場合は除外されます。また、属性検索設定は考慮されません。<br />
+        この機能は、面形状レイヤで、位相構造を持つ地図データの場合に利用できます。メッシュレイヤでも使用できません。<br />
+        「数値エラー」と表示される場合は、データ値がすべて同じ場合、位相構造化されていない地図データの場合、が考えられます。<br />
+        モランのI統計量は、-1以上1以下の値をとり、プラスの場合で値が大きくなるほど周囲のオブジェクトと値が類似しており、マイナスの場合で小さくなるほど、周囲のオブジェクトと値が異なる傾向になる。0の場合はランダムとなる。<br />
+        ここでの計算では、重み係数を、隣接している場合は1、隣接していない場合は0としています。頂点で接している場合は隣接していないと判定されます。<br />
+    </div>
+    <h4>対象データ</h4><div class="indent2">モランのI統計量を求めるデータを選択します。複数選択できます。</div>
+    <h4>隣接オブジェクトをデータ項目に取得</h4><div class="indent2">隣接するオブジェクト名をデータ項目に文字列データとして取得します。</div>
+    <hr />
+    <a name="frmMain_Scatterplot"></a>
+    <h1>散布図</h1>
+    <div class="indent2">
+        散布図は、現在のレイヤのデータについて、X軸、Y軸にデータ項目を設定し、2つのデータの関連を見るときに使います。<br />
+        Y軸データまたはX軸データが欠損値の場合は除外されます。<br />
+    </div>
+    <h4>Y軸データ</h4><div class="indent2">散布図のY軸に設定するデータを選択します。</div>
+    <h4>X軸データ</h4><div class="indent2">散布図のX軸に設定するデータを選択します。</div>
+    <h4>記号</h4><div class="indent2">散布図のにプロットする記号を選択します。</div>
+    <h4>表示オブジェクト限定・属性検索の条件設定を使用する</h4><div class="indent2">検索対象のレイヤに表示オブジェクト限定または属性検索条件が設定してある場合に、その条件に当てはまるオブジェクトだけをクロス集計するかどうかを設定します。</div>
+    <h4>単回帰分析</h4><div class="indent2">選択された2つのデータ項目について、単回帰分析を行います。グラフ上に回帰線が描かれ、下に相関係数、回帰式、決定係数が表示されます。</div>
+    <hr />
+    <a name="frmMain_ConditionSettings"></a>
+    <h1>属性検索設定</h1>
+    <div class="indent2">
+        属性検索とは、データ項目に条件を設定して、条件に合うオブジェクトだけを表示する機能です。条件は複数設定することができ、それぞれを組み合わせて使用することができます。設定画面の<b>[分析]＞[属性検索設定]</b>から入ります。<br />
+        選択されているレイヤに属性検索設定が設定され、チェックされている場合は、設定画面の<b>描画開始</b>ボタンの右側に双眼鏡ボタンが表示されます。
+    </div>
+    <h3>属性検索設定画面</h3>
+    <div class="indent2">属性検索設定を追加・削除し、実際に使用する設定項目を選択します。設定画面の<b>[分析]＞[属性検索設定]</b>から入ります。</div>
+    <h4>条件設定</h4><div class="indent2">設定された属性検索設定の条件設定の一覧が表示されています。【】内はレイヤ、その後ろは条件設定の名称です。</div>
+    <h4>設定変更</h4><div class="indent2">選択した項目の条件を<b><a href="#frmMain_ConditionSettingSub">属性検索条件設定画面</a></b>で変更します。</div>
+    <h4>追加</h4><div class="indent2">新しい設定項目を<b>属性検索条件設定画面</b>で追加します。</div>
+    <h4>削除</h4><div class="indent2">選択した項目を削除します。</div>
+    <h4>すべてチェック／すべて非チェック</h4><div class="indent2">使用する項目のチェックを切り替えます。</div>
+    <h4>非表示面オブジェクトの境界線を描画</h4><div class="indent2">属性検索設定および表示オブジェクト限定により、非表示になったオブジェクトで、面形状オブジェクトの場合に境界線を表示する場合にチェックします。</div>
+    <h4>該当条件チェック</h4><div class="indent2">現在選択されている設定項目および表示オブジェクト限定により、表示されるオブジェクトの数をチェックします。</div>
+    <hr />
+    <a name="frmMain_ConditionSettingSub"></a>
+    <h1>属性検索条件設定画面</h1>
+    <div class="indent2">個別の属性検索設定項目の条件を設定します。条件は複数の段階を設定することができます。条件検索では、まず第１段階の条件に適合するオブジェクトを検索します。その中から第２段階の条件で検索し、と繰り返します。第２段階以降は設定しなくても構いません。</div>
+    <h4>レイヤ</h4><div class="indent2">設定項目1つにつき、1つのレイヤを設定します。移動データレイヤは設定できません。</div>
+    <h4>タイトル</h4><div class="indent2">設定項目のタイトルを指定します。</div>
+    <h4>AND/OR</h4><div class="indent2">当該段階で設定されている項目が、ANDなのか、ORなのかを設定します。ANDの場合は、すべての項目の条件に該当するオブジェクトが検索されます。ORの場合は、いずれかの条件に該当するオブジェクトが検索されます。</div>
+    <h4>項目削除</h4><div class="indent2">選択した項目を削除します。</div>
+    <h4>データ項目</h4><div class="indent2">追加する条件を設定するデータ項目を指定します。</div>
+    <h4>データ値参照</h4><div class="indent2">選択したデータ項目の中のデータ値を選択肢、条件値に設定します。</div>
+    <h4>条件値</h4><div class="indent2">条件となるデータ項目の値を設定します。</div>
+    <h4>条件</h4><div class="indent2">検索する条件を設定します。</div>
+    <h4>項目追加</h4><div class="indent2">設定した項目をリストに追加します。</div>
+    <h4>段階追加</h4><div class="indent2">新しく段階を追加します。</div>
+    <h4>段階削除</h4><div class="indent2">選択中の段階を削除します。</div>
+    <hr />
+
+    <a name="frmMain_ObjectLimitaion"></a>
+    <h1>表示オブジェクト限定</h1>
+    <div class="indent2">
+        レイヤのオブジェクトごとに表示・非表示を指定します。設定画面の<b>[分析]＞[表示オブジェクト限定]</b>から入ります。<br />
+        移動データレイヤには設定できず、移動主体レイヤの移動主体に設定することで表示/非表示を切り替えます。表示オブジェクト限定が設定が設定され、有効になっている場合は、設定画面の<b>描画開始</b>ボタンの右側に双眼鏡ボタンが表示されます。
+    </div>
+    <h4>表示オブジェクト限定を有効にする</h4><div class="indent2">表示オブジェクト限定を有効にする場合チェックします。</div>
+    <h4>レイヤ</h4><div class="indent2">設定するレイヤを選択します。下に全オブジェクトが表示されるので、表示する場合にチェックします。移動データレイヤには設定できません。</div>
+    <h4>非表示面オブジェクトの境界線を描画</h4><div class="indent2">属性検索設定および表示オブジェクト限定により、非表示になったオブジェクトで、面形状オブジェクトの場合に境界線を表示する場合にチェックします。</div>
+    <a name="frmMain_CopyDataItemSettings"></a>
+    <h1>データ項目設定コピー</h1>
+    <div class="indent2">データ項目間で、表示設定をコピーします。設定画面の<b>[ツール]＞[データ項目設定コピー]</b>から入ります。</div>
+    <h3>コピー元</h3>
+    <h4>レイヤ/データ項目</h4><div class="indent2">コピー元となるデータ項目とそのレイヤを設定します。</div>
+    <h4>コピーする表示モード</h4><div class="indent2">選択したデータ項目から、コピーする表示モードを選択します。</div>
+    <h3>コピー先</h3>
+    <h4>レイヤ/データ項目</h4><div class="indent2">コピー元の表示モードの、コピー先となるレイヤ・データ項目を設定します。複数のデータ項目を設定できます。コピー元のデータ項目の種類と同じ種類のデータ項目を設定します。</div>
+    <hr />
+    <a name="frmMain_SetSeriesMode"></a>
+    <h1>連続表示モードにまとめて設定</h1>
+    <div class="indent2">データ項目と表示モードを指定して連続表示モードに設定します。設定画面の<b>[ツール]＞[連続表示モードにまとめて設定]</b>から入ります。</div>
+    <div class="indent2">画面左側には、表示モードやデータ項目を選択するパネルかあるので、連続表示モードのに入れたい項目を選択し、<b>→</b>をクリックして右側のデータセットに入れます。</div>
+    <div class="indent2">画面右側では、設定する連続表示モードのデータセットを指定します。設定した項目を選択し<b>削除</b>すると取り消されます。</div>
+    <hr />
+    <a name="mnuSymbolPosition"></a>
+    <h1>記号表示位置等操作</h1>
+    <div class="indent2">データ読み込み直後は、記号表示位置、ラベル表示位置はオブジェクトの代表点に設定されていますが、その位置を変更したり、元の代表点に戻したりします。設定画面の<b>[ツール]＞[記号表示位置等操作]</b>から入ります。</div>
+    <ul class="bold">
+        <li>代表点を属性データとして取得<div class="indent1NormalWeight">オブジェクトの代表点の座標を取得してデータ項目に追加します。</div></li>
+        <li>
+            記号表示位置操作
+            <ul>
+                <li>記号表示位置を属性データとして取得<div class="indent1NormalWeight">オブジェクトの記号表示位置の座標を取得してデータ項目に追加します。</div></li>
+                <li>属性データを記号表示位置に設定<div class="indent1NormalWeight">オブジェクトの記号表示位置をデータ項目の値を使って設定します。緯度経度座標系の地図データの場合に利用できます。</div></li>
+                <li>重心を記号表示位置に設定<div class="indent1NormalWeight">オブジェクトの重心をオブジェクトの記号表示位置に設定します。面形状オブジェクトの場合に使用できます。</div></li>
+                <li>記号表示位置を代表点に戻す<div class="indent1NormalWeight">オブジェクトの記号表示位置を代表点に戻します。</div></li>
+            </ul>
+        </li>
+        <li>
+            ラベル表示位置操作
+            <ul>
+                <li>ラベル位置を属性データとして取得<div class="indent1NormalWeight">オブジェクトのラベル表示位置の座標を取得してデータ項目に追加します。</div></li>
+                <li>記号表示位置をラベル表示位置に設定<div class="indent1NormalWeight">オブジェクトの記号表示位置をオブジェクトのラベル表示位置に設定します。</div></li>
+                <li>属性データをラベル表示位置に設定<div class="indent1NormalWeight">オブジェクトのラベル表示位置をデータ項目の値を使って設定します。緯度経度座標系の地図データの場合に利用できます。</div></li>
+                <li>重心をラベル表示位置に設定<div class="indent1NormalWeight">オブジェクトの重心をラベル表示位置に設定します。面形状オブジェクトの場合に使用できます。</div></li>
+                <li>ラベル表示位置を代表点に戻す<div class="indent1NormalWeight">オブジェクトのラベル表示位置を代表点に戻します</div></li>
+            </ul>
+        </li>
+    </ul>
+    <hr />
+    <a name="frmMain_ExchangeObjectName"></a>
+    <h1>オブジェクト名入れ替え</h1>
+    <div class="indent2">地図ファイル中のオブジェクトは、データによっては複数のオブジェクト名が設定されています。その場合、別のオブジェクト名に表記を変更することができます。設定画面の<b>[ツール]＞[オブジェクト名入れ替え]</b>から入ります。</div>
+    <div class="indent2">たとえば、地図ファイル「日本市町村緯度経度.mpfz」を利用した場合、5桁の行政コードで市区町村オブジェクトを指定できますが、同地図ファイルにはオブジェクト名として行政コードに加え、市区町村名も含まれています。そのため、行政コードで読み込んだ後で、この機能を使って市区町村名に差し替えることができます。</div>
+    <h4>オブジェクトグループ</h4><div class="indent2">差し替えは選択中のレイヤのオブジェクトに対して行われます。この欄には、レイヤで使用されているオブジェクトのオブジェクトグループが表示されています。複数ある場合は選択して下さい。</div>
+    <h4>オブジェクト名リスト</h4><div class="indent2">選択したオブジェクトグループに含まれるオブジェクト名リストが表示されているので、差し替えたい項目を選択します。</div>
+    <hr />
+    <a name="frmOption"></a>
+    <h1>オプション</h1>
+    <div class="indent2">MANDARA全般にかかるオプションを設定します。設定画面またはマップエディタの<b>[ツール]＞[オプション]</b>から入ります。</div>
+    <h3>全般</h3>
+    <h4>オブジェクト名読み込み時に同一と見なす文字</h4><div class="indent2">MANDARAでは地図データと属性データを結合する際に、オブジェクト名を使用しています。しかし「ガ」と「ヶ」など、オブジェクト名で似通った文字があると、設定が難しくなります。また、「曽」と「曾」のような略字と正字などもあります。そうした場合この欄で同一と見なす文字を設定しておけば、混乱はなくなります。リストごとに並んでいる文字が、同一と見なされます。</div>
+    <h4>カタカナチェック</h4><div class="indent2">オブジェクト名がカタカナの場合で、ヴァ（バ）,ヴェ（ベ）,ティ（チ）を同一と見なす場合にチェックします。</div>
+    <h4>新字体/旧字体チェック</h4><div class="indent2">旧字体と新字体で互換性を持たせ、どちらで指定しても同じように認識して読み込めるように設定します。</div>
+    <h4>ベースフォント</h4><div class="indent2">デフォルトのフォントを設定します。</div>
+    <h4>緯度経度の表示</h4><div class="indent2">緯度経度の座標系を持つ地図データを使用している場合に、出力画面およびマップエディタでの表示方法をs<b>度分秒</b>または<b>10進数</b>から選択します。</div>
+    <h4>背景画像の表示速度</h4><div class="indent2">背景画像にタイルマップサービスを設定している場合に、描画速度を設定します。速い場合は少ない画像しか読み込まないため、粗い画像になります。</div>
+    <h4>地図ファイルデフォルトフォルダ</h4><div class="indent2">地図ファイルの読み込みフォルダを選択します。</div>
+    <h4>デフォルト地図投影法</h4><div class="indent2">シェープファイルなど外部地図データを読み込む際に、デフォルトで設定される地図投影法を指定します。</div>
+    <h4>デフォルト凡例色</h4><div class="indent2">MANDARA属性データファイル以外のデータを読み込んだ場合に、最初にデータ項目に設定される色の系統をグレー、赤、青から選択します。変更は次に読み込むデータから反映されます。</div>
+    <h4>出力画面のアンチエイリアス処理</h4><div class="indent2">出力画面でアンチエイリアス（線や文字を滑らかにする）を行う場合にチェックします。</div>
+    <h3>マップエディタ</h3>
+    <h4>デフォルト方位記号</h4><div class="indent2">マップエディタでシェープファイルなど外部地図データを読み込む際に、デフォルトで設定される方位記号を指定します。</div>
+    <h4>色設定</h4><div class="indent2">マップエディタでの各種色設定を行います。</div>
+    <h4>オブジェクト名表示</h4><div class="indent2">マップエディタでオブジェクト名を表示した場合の設定を行います。</div>
+    <hr />
+</div>
+    <div id="footerArea">
+    <div class="button" style="position:absolute;top:4px;left:10px"><a href="#top"><b>▲ページトップへ</b></a></div>
+    <div class="button" style="position:absolute;top:4px;left:140px"><a href="index.html">ヘルプ目次</a></div>
+    <div class="button" style="position:absolute;top:4px;left:270px"><a href="settingwindow.html">起動・設定画面</a></div>
+    <div class="button" style="position:absolute;top:4px;left:400px"><a href="propertydata.html">属性データの作成</a></div>  
+    <div class="button" style="position:absolute;top:4px;left:530px"><a href="outputwindow.html">出力画面</a></div>
+    <div class="button" style="position:absolute;top:30px;left:10px"><a href="mapeditor.html">マップエディタ</a></div>
+    <div class="button" style="position:absolute;top:30px;left:140px"><a href="subwindow.html">サブウインドウ</a></div>
+    <div class="button" style="position:absolute;top:30px;left:270px"><a href="glossary.html">用語解説</a></div>
+    <div class="button" style="position:absolute;top:30px;left:400px"><a href="about.html">MANDARAとは</a></div>
+
+    </div>
+</body>
+</html>

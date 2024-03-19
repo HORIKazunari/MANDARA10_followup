@@ -1,0 +1,212 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="StyleSheet.css"/>
+    <title>各種サブウインドウ|MANDARA10ヘルプ</title>
+</head>
+<body>
+<div id="contentsArea">  
+    <a name="top"></a>
+    <h1>各種サブウインドウ</h1>
+    <hr />
+    <a name="frmTileMapServiceSelect"></a>
+    <h1>背景画像設定</h1>
+        <div class="indent2">緯度経度の地図ファイルを使用している場合に、背景画像を設定します。出力画面の<b>[表示]＞[背景画像設定]</b>または、出力画面右下の<b>背景画像</b>ボタンから入ります。マップエディタの場合は、左上の<b>背景画像</b>ボタンをクリックします。</div>
+        <h2>表示画像</h2>
+        <div class="indent2">背景に設定できる画像は以下の3種類です。</div>
+        <h3>タイルマップサービス</h3>
+        <div class="indent2">インターネットで公開されている、Web地図サービス向けの地図タイル画像を取得し、表示します。これらのサービスは変更されることがあります。<br />
+            <br />
+            タイルマップサービスを表示する際、地図の<a href="#frmProjectionConvert">投影法</a>をメルカトル図法に設定しておくと、ぴったり重なります。
+            <ul class="bold">
+                <li>国土地理院地図<div class="indent1NormalWeight">国土地理院の地理院地図にアクセスして、一般図を表示します。</div></li>
+                <li>国土地理院空中写真<div class="indent1NormalWeight">国土地理院の地理院地図にアクセスして、空中写真画像を表示します。複数の年次がありますが、地域によってデータがない場合があります。</div></li>
+                <li>国土地理院主題図<div class="indent1NormalWeight">国土地理院の地理院地図にアクセスして、地形分類図や活断層図など主題図を表示します。地域によってデータがない場合があります。</div></li>
+                <li>国土地理院土地利用図<div class="indent1NormalWeight">国土地理院の地理院地図にアクセスして、土地利用図を表示します。地域によってデータがない場合があります。</div></li>
+                <li>国土地理院東日本大震災<div class="indent1NormalWeight">国土地理院の地理院地図にアクセスして、東日本大震災関連の空中写真を表示します。</div></li>
+                <li>オープンストリートマップ<div class="indent1NormalWeight">オープンストリートマップにアクセスして、地図画像を表示します。オープンストリートマップは、誰でも自由に利用することができます。</div></li>
+                <li>沖縄1948年米軍作成<div class="indent1NormalWeight">GIS沖縄研究室の作成した、沖縄本島南部の米軍作成の1/4800地形図を表示します。</div></li>
+                <li>20万分の1シームレス地質図<div class="indent1NormalWeight">	産業技術総合研究所地質調査総合センターによって公開された「20万分の1日本シームレス地質図」の地質図画像を表示します。</div></li>
+                <li>歴史的農業環境WMS配信サービス(関東平野)<div class="indent1NormalWeight">独立行政法人農業環境技術研究所によって公開された「歴史的農業環境閲覧システム」の明治期の迅速測図画像です。独立行政法人農業・食品産業技術総合研究機構 近畿中国四国農業研究センター 営農・環境研究領域の「地図画像タイルキャッシュサービス」にアクセスして表示しています。</div></li>
+                <li>基盤地図情報25000WMS配信サービス<div class="indent1NormalWeight">独立行政法人農業・食品産業技術総合研究機構が公開しているタイルマップサービスにアクセスして地図画像を表示します。</div></li>
+                <li>埼玉県用途地域<div class="indent1NormalWeight">埼玉県のオープンデータを利用して作成した2014年の都市計画用途地域を表示します。</div></li>
+                <li>人口マップ<div class="indent1NormalWeight">2010年国勢調査から、2010年人口密度、1985～2015年人口増加率を表示します。</div></li>
+                <li>今昔マップ<div class="indent1NormalWeight">今昔マップタイル配信サービスにアクセスして、過去の地形図を表示します。</div></li>
+                <li>ユーザー設定タイルマップ<div class="indent1NormalWeight"><b>ユーザー設定タイルマップ</b>で作成したタイルマップを表示します。</div></li>
+            </ul>
+            <h4><a href="#frmUserTileMap">ユーザー設定タイルマップ</a></h4>
+            <div class="indent2">MANDARAで設定されている上記タイルマップサービスの他にも、多くのタイルマップサービスがあります。そうしたサービスを設定することができます。</div>
+        </div>
+        <h3>ユーザ画像ファイル</h3>
+        <div class="indent2">ユーザーの用意した画像ファイルを背景に設定します。使用可能な画像ファイルはpng，jpeg，bmpの3種類です。画像ファイルはまとめて１つのフォルダに入れます。<br />
+            <br />
+            画像の位置を指定するには次のようにします。<br />
+            各画像ファイルの緯度経度情報を記述した、次のようなCSVファイル「position.csv」を作成して指定したフォルダに入れておきます。<br />
+            <br />
+                    <div class="indent2">
+                        <table>
+                            <tr><td style="width:100px">画像ファイル名</td><td style="width:100px">西端経度</td><td style="width:100px">東端経度</td><td style="width:100px">北端緯度</td><td style="width:100px">南端緯度</td></tr>
+                            <tr><td>007_003.jpg</td><td>139.425</td><td>139.45</td><td>35.95</td><td>35.93333</td></tr>
+                            <tr><td>007_004.jpg</td><td>139.425</td><td>139.45</td><td>335.93333333</td><td>35.91667</td></tr>
+                            <tr><td>007_005.jpg</td><td>139.425</td><td>139.45</td><td>35.91666667</td><td>35.9</td></tr>
+                        </table>
+                    </div>
+            CSVファイル1行目は読み込み時には無視されます。2行目以降は，「画像ファイル名-画像の西端経度-東端経度-北端緯度-南端緯度」の順で設定します。画像ファイル名は任意です。<br />
+        </div>
+        <h3>ワールドファイル付き画像</h3>
+        <div class="indent2">ワールドファイルとは、画像ファイルと同じファイル名で拡張子に'w'を追加したもの、または'pgw'、'jgw'、'bpw'の拡張子で作成したテキストファイルで、以下の6行で構成されます。<br />
+            <br />
+            <ol>
+                <li>画像ピクセルが左から右に進む際の1ピクセル当りの座標増減値</li>
+                <li>回転行列パラメータ</li>
+                <li>回転行列パラメータ</li>
+                <li>画像ピクセルが上から下に進む際の1ピクセル当りの座標増減値</li>
+                <li>画像左上のX座標(経度)</li>
+                <li>画像左上のY座標(緯度)</li>
+            </ol>
+            MANDARAでは、2行目と3行目は無視されます。緯度経度なので、4行目の値は負の値となります。<br />
+        </div>
+        <h4>描画タイミング</h4><div class="indent2">背景画像を、データを描画する前に表示するか、データ描画後に表示するか設定します。マップエディタの場合表示されません。</div>
+        <h4>透過度</h4><div class="indent2">背景画像の透過度を設定します。</div>
+        <h4>白地透過</h4><div class="indent2">背景画像に設定した画像で、白地部分を透過します。<b>描画タイミング</b>を<b>データ描画後</b>に設定した場合に、白地を透過するときれいに重ねられます。</div>
+    <hr />
+
+    <a name="frmUserTileMap"></a>
+    <h1>ユーザー設定タイルマップ</h1>
+        <div class="indent2">ユーザー自身でタイルマップサービスのパラメータを設定し、背景画像で表示できるようにします。<a href="#frmTileMapServiceSelect">背景画像設定</a>画面から入ります。</div>
+        <h4>ユーザー設定タイルマップリスト</h4><div class="indent2">複数のタイルマップを設定することができます。<b>追加</b>で新しいタイルマップサービスを追加します。</div>
+        <h4>名称</h4><div class="indent2">タイルマップサービスの名称を設定します。これは<b>背景画像設定</b>画面の選択リストに表示される名称になります。</div>
+        <h4>URL</h4><div class="indent2">タイルマップサービスのURLをディレクトリまで指定します。たとえば、http://ktgis.net/kjmapw/kjtilemap/tokyo50/2man/のように設定します。</div>
+        <h4>起点</h4><div class="indent2">タイルマップサービスの地図タイルの座標の起点の位置を北西または南西から選択します。たとえば地理院地図は北西になります。詳細は各サービスに問い合わせて下さい。</div>
+        <h4>XYZの並び</h4><div class="indent2">URLで指定したディレクトリの後ろに、XYZの指定がありますが、その並び方を指定します。指定方法は各サービスに問い合わせて下さい。</div>
+        <h4>ズームレベル</h4><div class="indent2">タイルマップサービスで提供される、ズームレベルの最小値と最大値を設定します。範囲は各サービスに問い合わせて下さい。</div>
+        <h4>拡張子</h4><div class="indent2">地図タイルのファイルの拡張子を選択して下さい。種類は各サービスに問い合わせて下さい。</div>
+        <h4>凡例URL</h4><div class="indent2">地図の凡例がある場合、そのURLを指定します（ただし、現状では機能していません）。</div>
+        <h4>著作権表示</h4><div class="indent2">地図領域の左下に表示される著作権表示を設定します。</div>
+        <h4>削除</h4><div class="indent2">選択したタイルマップを削除します。</div>
+    <hr />
+
+    <a name="frmProjectionConvert"></a>
+    <h1>投影法変換</h1>
+        <div class="indent2">緯度経度座標の地図ファイルを使用している場合、その投影法を設定します。MANDARAで使用している投影法は今のところ円筒図法・擬円筒図法のみです。<br />
+        マップエディタからは<b>[設定]＞[投影法変換]</b>、出力画面からは<b>[オプション]＞[投影法変換]</b>から入ります。
+        <br />
+        設定できる投影法は以下の通りです。<br />
+            <ul class="bold">
+                <li>メルカトル図法<div class="indent1NormalWeight">タイルマップ形式の投影法なので、<a href="#frmTileMapServiceSelect">背景画像</a>を設定した際にうまく重なる。世界地図では極に近づくと大きくなる。</div></li>
+                <li>ミラー図法<div class="indent1NormalWeight">メルカトル図法の歪みを小さくした図法</div></li>
+                <li>正距円筒図法<div class="indent1NormalWeight">緯度と経度の間隔が等しい</div></li>
+                <li>ランベルト正積円筒図法<div class="indent1NormalWeight">面積が正しいが、歪みがはげしい</div></li>
+                <li>エッケルト第４図法<div class="indent1NormalWeight">面積が正しく、世界地図ではペイントモードでの統計地図に適している。</div></li>
+                <li>モルワイデ図法<div class="indent1NormalWeight">面積が正しく、世界地図ではペイントモードでの統計地図に適している。</div></li>
+                <li>サンソン図法<div class="indent1NormalWeight">面積が正しいが、中央経線から外れると歪みが大きい。</div></li>
+            </ul>
+        </div>
+        <h4>中央経線の設定</h4><div class="indent2">それぞれの投影法の中央経線を設定します。メルカトル図法、ミラー図法、正距円筒図法、ランベルト正積円筒図法では、見た目は変わりません。</div>
+   <hr />
+
+    <a name="frmPictureSelector"></a>
+    <h1>画像設定</h1>
+        <div class="indent2">画像は図形モードや記号などで使用します。ここではそれらで使用する画像を取り込むなど管理します。<br />
+            出力画面の<b>[オプション]＞[画像設定]</b>、記号設定から入ります。</div>
+        <h4>画像追加</h4><div class="indent2"><b>ファイルから</b>ではファイルから画像ファイルを取得します。png、jpeg、gif、bmp、tifの各形式を取得できます。<b>クリップボードから</b>はコピーされた画像を取得します。</div>
+        <h4>透過色の指定</h4><div class="indent2">選択されている画像の透過色を指定します。右側のボックスをクリックし、画面中央の画像で透過したい色をクリックして指定します。<b>透過範囲</b>で透過色に幅を持たせることができます。</div>
+         <h4>内部色の指定</h4><div class="indent2">選択されている画像の内部色を指定します。右側のボックスをクリックし、画面中央の画像で内部色にしたい色をクリックして指定します。記号モードや階級記号モードの内部色を指定した内部色と差し替えて描画できます。</div>
+        <h4>削除</h4><div class="indent2">選択されている画像を削除します。ただし、図形モードや各種記号の設定箇所で使用されている場合は、削除できません。</div>
+    <hr />
+
+    <a name="frmSmootingLineIn"></a>
+    <h1>ポイント・ループ間引き設定</h1>
+        <div class="indent2">出力画面またはマップエディタから、ラインの座標を間引いたり、小さなループを消去します。</div>
+    <h4>出力画面の場合</h4><div class="indent2"><b>[オプション]＞[オプション]</b>の<b>全般タブ</b>から入ります。<br />
+        出力画面の場合、ラインの元の座標は保持されるので、ポイント間引きやループ間引きの間隔は変更できます。
+    </div>
+    <h4>マップエディタの場合</h4><div class="indent2">ライン編集の状態で、<b>[ライン編集]＞[ポイント・ループ間引き]</b>から入ります。<br />
+        マップエディタの場合、ラインの元の座標自体が減ったり、削除されたりします。
+    </div>
+    <h3>ポイント取得間隔</h3><div class="indent2">ポイント間の間隔を設定します。変更後も位相構造は保持されますが、位相構造を持たない面データを使用している場合、隣接ライン同士でズレが生じます。初期値は現状でのポイント間距離の中央値です。</div>
+    <h3>ループ取得最小サイズ</h3><div class="indent2">指定した値よりも小さな面積のループ（1本のラインからなるもの）がラインごと削除（出力画面の場合は非表示）になります。複数のラインからなるループには影響しません。</div>
+    <hr />
+
+    <a name="frmCopyObjectName"></a>
+    <h1>オブジェクト名コピー</h1>
+        <div class="indent2">選択したオブジェクト名をクリップボードにコピーします。マップエディタなど各所で使用します。</div>
+        <h4>検索するオブジェクト名</h4><div class="indent2">検索するオブジェクト名またはその一部を入力して<b>検索</b>します。結果は検索結果欄に入ります。</div>
+        <h4>オブジェクトの形状</h4><div class="indent2">オブジェクトの形状から検索対象を限定します。</div>
+        <h4>検索結果</h4><div class="indent2">検索結果が入ります。コピーしたいオブジェクトを一つまたは複数選択します。</div>
+        <h4>オブジェクトグループ</h4><div class="indent2">オブジェクトグループから検索対象を限定します。</div>
+        <h4>時期限定</h4><div class="indent2">時期によって検索対象を限定します。</div>
+        <h4>オブジェクト名コピー</h4><div class="indent2"><b>検索結果</b>欄で選択されているオブジェクト名をコピーします。コピーの内容は<b>オブジェクト名リスト</b>から選択します。</div>
+        <h4>終了</h4><div class="indent2">オブジェクト名コピーを閉じます。</div>
+    <hr />
+
+    <a name="frmCompassSetting"></a>
+    <h1>方位設定</h1>
+        <div class="indent2">出力画面に表示される方位を設定します。地図ファイルのデフォルト設定はマップエディタの<b>[設定]＞[方位設定]</b>から、出力画面に表示後は<b>[オプション]＞[オプション]</b>から設定します。</div>
+        <h4>方位記号を表示する</h4><div class="indent2">方位記号を表示する場合にチェックします。</div>
+        <h4>方位記号の形状</h4><div class="indent2">方位記号の種類を選択します。角度を変える場合もここで設定します。</div>
+        <h4>方位文字</h4><div class="indent2">東西南北に文字を表示したい場合は、それぞれ設定します。たとえば北ならNのように設定します。</div>
+
+    <a name="frmShapeFile"></a>
+    <h1>シェープファイル読み込み</h1>
+        <div class="indent2">GISの一般的なデータ形式であるシェープファイルを読み込みます。設定画面の<b>[ファイル]＞[シェープファイル読み込み]</b>、またはマップエディタの<b>[地図データ取得]＞[シェープファイル]</b>から入ります。</div>
+        <h4>読み込むシェープファイル</h4><div class="indent2">下の<b>追加</b>で追加したシェープファイルの一覧が表示されています。選択したシェープファイルの情報が右側<b>シェープファイル情報</b>に表示されます。</div>
+        <h4>追加</h4><div class="indent2">読み込むシェープファイルを追加します。ファイル選択画面では複数のシェープファイルを選択することができます。</div>
+        <h4>取り消し</h4><div class="indent2">選択したシェープファイルをリストから取り消します。</div>
+        <h4>全て取り消し</h4><div class="indent2">シェープファイルのリストをクリアします。</div>
+        <h4>投影法</h4><div class="indent2">緯度経度座標系のシェープファイルで、新規の読み込みの場合の投影法を設定します。緯度経度座標系以外の場合は無視されます。</div>
+        <h4>面形状ファイルを位相構造化する</h4><div class="indent2">チェックした場合、面形状のシェープファイルで位相構造化して隣接しているオブジェクト同士が境界線を共有するようにします。これはマップエディタの「ライン編集」＞「ラインの共有部分を別ラインに」と同じ機能です。なお、処理に時間がかかるので、大きなシェープファイルの場合は注意してください。</div>
+        <h4>ひとつのレイヤ（オブジェクトグループ）にまとめる</h4><div class="indent2">複数のシェープファイルを読み込む際、ひとつのレイヤ（マップエディタの場合はひとつのオブジェクトグループ）にまとめて読み込む場合にチェックします。その際、シェープファイルの形状とデータ項目数が同じでないといけません。</div>
+        <h4>シェープファイル情報</h4><div class="indent2"><b>読み込むシェープファイル</b>で選択しているシェープファイルの情報が表示されています。<br />
+            <h4>関連ファイル</h4><div class="indent2">シェープファイルの関連ファイルの有無が表示されています。<br />
+                shxファイルが無い場合は読み込めません。<br />
+                prjファイルがありの場合は、下の<b>座標系</b>、<b>測地系</b>の設定は不要です。<br />
+                dbfファイルは属性データの情報が入ったファイルです。データ項目数も表示されます。<br />
+                形状はシェープファイルの形状を示します。<br />
+                </div>
+            <h4>文字コード</h4><div class="indent2">
+                dbfファイルの属性データで使われている文字コードを指定します。<br />
+            </div>
+            <h4>全ファイル共通</h4><div class="indent2">
+                文字コード・座標系・測地系の設定を左で設定したすべてのシェープファイルに適用します。ただし座標系と測地系については、prjファイルで定義されている場合は変更されません。<br />
+            </div>
+            <h4>座標系</h4><div class="indent2">prjファイルが無い場合、データの座標系を指定します。平面直角座標系の場合は系番号も指定します。<br />
+                その他の場合は、シェープファイルの座標値がそのまま使用されます。
+                        </div>
+            <h4>測地系</h4><div class="indent2">シェープファイルの測地系を指定します。</div>
+                           </div>
+        <h4>次の座標系の組み合わせは読み込めません</h4><div class="indent2">
+            <ul>
+                <li>座標系の設定していないデータと、設定してあるデータの場合</li>
+                <li>平面直角座標系のデータ上に緯度経度座標系のデータを追加する場合</li>
+                <li>平面直角座標系同士でも系番号が異なる場合</li>
+            </ul>
+                          </div>
+    <hr />        
+
+    <a name="frmSyntheticObject"></a>
+    <h1>合成オブジェクト一覧</h1>
+        <div class="indent2"><a href="settingwindow.html#frmMain_TimeSeriesSummingUp">時系列集計機能</a>で作成された合成オブジェクトの一覧を表示するとともに、合成オブジェクトの名称を変更します。設定画面の<b>[分析]＞[時系列集計]＞[合成オブジェクト一覧]</b>、または出力画面で合成オブジェクトを右クリックし、<b>[構成を見る]</b>から入ります。
+            <h4>時系列集計レイヤ</h4><div class="indent2">時系列集計機能で作成されたレイヤが表示されているので、選択します。</div>
+            <h4>レイヤ内の合成オブジェクト</h4><div class="indent2">選択されたレイヤ内の合成オブジェクト一覧が表示されているので、選択します。</div>
+            <h4>合成オブジェクトの名称</h4><div class="indent2">選択された合成オブジェクトの名称が表示されており、変更が可能です。</div>
+            <h4>含まれるオブジェクト</h4><div class="indent2">選択された合成オブジェクトを構成しているオブジェクトの一覧が表示されています。変更はできません。</div>
+        </div>
+    <hr />
+</div>
+<div id="footerArea">
+    <div class="button" style="position:absolute;top:4px;left:10px"><a href="#top"><b>▲ページトップへ</b></a></div>
+    <div class="button" style="position:absolute;top:4px;left:140px"><a href="index.html">ヘルプ目次</a></div>
+    <div class="button" style="position:absolute;top:4px;left:270px"><a href="settingwindow.html">起動・設定画面</a></div>
+    <div class="button" style="position:absolute;top:4px;left:400px"><a href="propertydata.html">属性データの作成</a></div>
+    <div class="button" style="position:absolute;top:4px;left:530px"><a href="outputwindow.html">出力画面</a></div>
+    <div class="button" style="position:absolute;top:30px;left:10px"><a href="mapeditor.html">マップエディタ</a></div>
+    <div class="button" style="position:absolute;top:30px;left:140px"><a href="subwindow.html">サブウインドウ</a></div>
+    <div class="button" style="position:absolute;top:30px;left:270px"><a href="glossary.html">用語解説</a></div>
+    <div class="button" style="position:absolute;top:30px;left:400px"><a href="about.html">MANDARAとは</a></div>
+
+</div>
+</body>
+</html>
