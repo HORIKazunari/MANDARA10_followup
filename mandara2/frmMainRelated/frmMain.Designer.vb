@@ -103,7 +103,6 @@ Partial Class frmMain
         Me.Label17 = New System.Windows.Forms.Label()
         Me.lblLayer = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.ProgressLabel = New KTGISUserControl.KTGISProgressLabel()
         Me.mnuFile = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuDataFromClipboard = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuOpenDataFile = New System.Windows.Forms.ToolStripMenuItem()
@@ -144,6 +143,7 @@ Partial Class frmMain
         Me.mnuCross = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuLorenzGini = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuAutocorrelation = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuScatterplot = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem5 = New System.Windows.Forms.ToolStripSeparator()
         Me.mnuConditionSettings = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuObjectLimitaion = New System.Windows.Forms.ToolStripMenuItem()
@@ -174,7 +174,6 @@ Partial Class frmMain
         Me.mnuTileMapRevise = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuVersion = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.mnuScatterplot = New System.Windows.Forms.ToolStripMenuItem()
         Me.pnlSettings.SuspendLayout()
         CType(Me.picTotalModeOverPanel, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlComplex.SuspendLayout()
@@ -231,7 +230,6 @@ Partial Class frmMain
         Me.pnlSettings.Controls.Add(Me.Label21)
         Me.pnlSettings.Controls.Add(Me.pnlData)
         Me.pnlSettings.Controls.Add(Me.Label3)
-        Me.pnlSettings.Controls.Add(Me.ProgressLabel)
         Me.pnlSettings.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlSettings.Location = New System.Drawing.Point(0, 24)
         Me.pnlSettings.Name = "pnlSettings"
@@ -1149,16 +1147,6 @@ Partial Class frmMain
         Me.Label3.Text = "■データ表示モード"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'ProgressLabel
-        '
-        Me.ProgressLabel.LabelColor = System.Drawing.SystemColors.Control
-        Me.ProgressLabel.Location = New System.Drawing.Point(0, 0)
-        Me.ProgressLabel.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
-        Me.ProgressLabel.Name = "ProgressLabel"
-        Me.ProgressLabel.Size = New System.Drawing.Size(170, 30)
-        Me.ProgressLabel.TabIndex = 50
-        Me.ProgressLabel.Visible = False
-        '
         'mnuFile
         '
         Me.mnuFile.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuDataFromClipboard, Me.mnuOpenDataFile, Me.mnuViewer, Me.mnuShapefile, Me.mnuRecentUsedFile, Me.ToolStripMenuItem4, Me.mnuSave, Me.mnuSaveAs, Me.ToolStripMenuItem2, Me.mnuImportData, Me.mnuShapeFileOut, Me.mnuFileProperty, Me.ToolStripMenuItem3, Me.mnuEnd})
@@ -1170,43 +1158,43 @@ Partial Class frmMain
         '
         Me.mnuDataFromClipboard.Name = "mnuDataFromClipboard"
         Me.mnuDataFromClipboard.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
-        Me.mnuDataFromClipboard.Size = New System.Drawing.Size(290, 22)
+        Me.mnuDataFromClipboard.Size = New System.Drawing.Size(289, 22)
         Me.mnuDataFromClipboard.Text = "クリップボードからデータの読み込み(&P)"
         '
         'mnuOpenDataFile
         '
         Me.mnuOpenDataFile.Name = "mnuOpenDataFile"
-        Me.mnuOpenDataFile.Size = New System.Drawing.Size(290, 22)
+        Me.mnuOpenDataFile.Size = New System.Drawing.Size(289, 22)
         Me.mnuOpenDataFile.Text = "ファイルを開く(&O)"
         '
         'mnuViewer
         '
         Me.mnuViewer.Name = "mnuViewer"
-        Me.mnuViewer.Size = New System.Drawing.Size(290, 22)
+        Me.mnuViewer.Size = New System.Drawing.Size(289, 22)
         Me.mnuViewer.Text = "白地図・初期属性データ表示(&W)"
         '
         'mnuShapefile
         '
         Me.mnuShapefile.Name = "mnuShapefile"
-        Me.mnuShapefile.Size = New System.Drawing.Size(290, 22)
+        Me.mnuShapefile.Size = New System.Drawing.Size(289, 22)
         Me.mnuShapefile.Text = "シェープファイル読み込み(H)"
         '
         'mnuRecentUsedFile
         '
         Me.mnuRecentUsedFile.Name = "mnuRecentUsedFile"
-        Me.mnuRecentUsedFile.Size = New System.Drawing.Size(290, 22)
+        Me.mnuRecentUsedFile.Size = New System.Drawing.Size(289, 22)
         Me.mnuRecentUsedFile.Text = "最近使ったファイル(&F)"
         '
         'ToolStripMenuItem4
         '
         Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
-        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(287, 6)
+        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(286, 6)
         '
         'mnuSave
         '
         Me.mnuSave.Name = "mnuSave"
         Me.mnuSave.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.S), System.Windows.Forms.Keys)
-        Me.mnuSave.Size = New System.Drawing.Size(290, 22)
+        Me.mnuSave.Size = New System.Drawing.Size(289, 22)
         Me.mnuSave.Text = "上書き保存(&S)"
         '
         'mnuSaveAs
@@ -1214,19 +1202,19 @@ Partial Class frmMain
         Me.mnuSaveAs.Name = "mnuSaveAs"
         Me.mnuSaveAs.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
             Or System.Windows.Forms.Keys.S), System.Windows.Forms.Keys)
-        Me.mnuSaveAs.Size = New System.Drawing.Size(290, 22)
+        Me.mnuSaveAs.Size = New System.Drawing.Size(289, 22)
         Me.mnuSaveAs.Text = "名前を付けて保存(&A)"
         '
         'ToolStripMenuItem2
         '
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(287, 6)
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(286, 6)
         '
         'mnuImportData
         '
         Me.mnuImportData.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuImportFileFromMANDARAfile, Me.mnuImportFileFromClipBoard, Me.mnuImportFileFromViewer, Me.mnuImportFileFromShapefile})
         Me.mnuImportData.Name = "mnuImportData"
-        Me.mnuImportData.Size = New System.Drawing.Size(290, 22)
+        Me.mnuImportData.Size = New System.Drawing.Size(289, 22)
         Me.mnuImportData.Text = "データ挿入(&I)"
         '
         'mnuImportFileFromMANDARAfile
@@ -1256,24 +1244,24 @@ Partial Class frmMain
         'mnuShapeFileOut
         '
         Me.mnuShapeFileOut.Name = "mnuShapeFileOut"
-        Me.mnuShapeFileOut.Size = New System.Drawing.Size(290, 22)
+        Me.mnuShapeFileOut.Size = New System.Drawing.Size(289, 22)
         Me.mnuShapeFileOut.Text = "シェープファイル出力(&I)"
         '
         'mnuFileProperty
         '
         Me.mnuFileProperty.Name = "mnuFileProperty"
-        Me.mnuFileProperty.Size = New System.Drawing.Size(290, 22)
+        Me.mnuFileProperty.Size = New System.Drawing.Size(289, 22)
         Me.mnuFileProperty.Text = "プロパティ(&P)"
         '
         'ToolStripMenuItem3
         '
         Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
-        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(287, 6)
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(286, 6)
         '
         'mnuEnd
         '
         Me.mnuEnd.Name = "mnuEnd"
-        Me.mnuEnd.Size = New System.Drawing.Size(290, 22)
+        Me.mnuEnd.Size = New System.Drawing.Size(289, 22)
         Me.mnuEnd.Text = "終了(&X)"
         '
         'mnuEdit
@@ -1287,7 +1275,7 @@ Partial Class frmMain
         '
         Me.mnuProperty.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuPropertyEdit, Me.mnuPropertyNew})
         Me.mnuProperty.Name = "mnuProperty"
-        Me.mnuProperty.Size = New System.Drawing.Size(259, 22)
+        Me.mnuProperty.Size = New System.Drawing.Size(258, 22)
         Me.mnuProperty.Text = "属性データ編集(&E)"
         '
         'mnuPropertyEdit
@@ -1305,26 +1293,26 @@ Partial Class frmMain
         'mnuShowDataItems
         '
         Me.mnuShowDataItems.Name = "mnuShowDataItems"
-        Me.mnuShowDataItems.Size = New System.Drawing.Size(259, 22)
+        Me.mnuShowDataItems.Size = New System.Drawing.Size(258, 22)
         Me.mnuShowDataItems.Text = "データ項目一覧(&I)"
         '
         'mnuMapEditor
         '
         Me.mnuMapEditor.Name = "mnuMapEditor"
-        Me.mnuMapEditor.Size = New System.Drawing.Size(259, 22)
+        Me.mnuMapEditor.Size = New System.Drawing.Size(258, 22)
         Me.mnuMapEditor.Text = "マップエディタ(&M)"
         '
         'mnuClipOut
         '
         Me.mnuClipOut.Name = "mnuClipOut"
         Me.mnuClipOut.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.C), System.Windows.Forms.Keys)
-        Me.mnuClipOut.Size = New System.Drawing.Size(259, 22)
+        Me.mnuClipOut.Size = New System.Drawing.Size(258, 22)
         Me.mnuClipOut.Text = "クリップボードにデータのコピー(&C)"
         '
         'mnuDeleteInvisibleObject
         '
         Me.mnuDeleteInvisibleObject.Name = "mnuDeleteInvisibleObject"
-        Me.mnuDeleteInvisibleObject.Size = New System.Drawing.Size(259, 22)
+        Me.mnuDeleteInvisibleObject.Size = New System.Drawing.Size(258, 22)
         Me.mnuDeleteInvisibleObject.Text = "非表示オブジェクト削除(&D)"
         '
         'mnuAnalysis
@@ -1373,13 +1361,13 @@ Partial Class frmMain
         'mnuTimeSeriesGO
         '
         Me.mnuTimeSeriesGO.Name = "mnuTimeSeriesGO"
-        Me.mnuTimeSeriesGO.Size = New System.Drawing.Size(188, 22)
+        Me.mnuTimeSeriesGO.Size = New System.Drawing.Size(187, 22)
         Me.mnuTimeSeriesGO.Text = "時系列集計(&T)"
         '
         'mnuSyntheticObject
         '
         Me.mnuSyntheticObject.Name = "mnuSyntheticObject"
-        Me.mnuSyntheticObject.Size = New System.Drawing.Size(188, 22)
+        Me.mnuSyntheticObject.Size = New System.Drawing.Size(187, 22)
         Me.mnuSyntheticObject.Text = "合成オブジェクト一覧(&S)"
         '
         'mnuLayerObject
@@ -1405,6 +1393,12 @@ Partial Class frmMain
         Me.mnuAutocorrelation.Name = "mnuAutocorrelation"
         Me.mnuAutocorrelation.Size = New System.Drawing.Size(205, 22)
         Me.mnuAutocorrelation.Text = "空間的自己相関分析(&I)"
+        '
+        'mnuScatterplot
+        '
+        Me.mnuScatterplot.Name = "mnuScatterplot"
+        Me.mnuScatterplot.Size = New System.Drawing.Size(205, 22)
+        Me.mnuScatterplot.Text = "散布図(&F)"
         '
         'ToolStripMenuItem5
         '
@@ -1596,12 +1590,6 @@ Partial Class frmMain
         Me.ToolTip1.InitialDelay = 1
         Me.ToolTip1.ReshowDelay = 1
         '
-        'mnuScatterplot
-        '
-        Me.mnuScatterplot.Name = "mnuScatterplot"
-        Me.mnuScatterplot.Size = New System.Drawing.Size(205, 22)
-        Me.mnuScatterplot.Text = "散布図(&F)"
-        '
         'frmMain
         '
         Me.AcceptButton = Me.btnDraw
@@ -1618,6 +1606,7 @@ Partial Class frmMain
         Me.Name = "frmMain"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "frmMain"
+        AddHandler Load, AddressOf Me.frmMain_Load_1
         Me.pnlSettings.ResumeLayout(False)
         Me.pnlSettings.PerformLayout()
         CType(Me.picTotalModeOverPanel, System.ComponentModel.ISupportInitialize).EndInit()

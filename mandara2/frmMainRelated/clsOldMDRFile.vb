@@ -1,4 +1,13 @@
-﻿Public Class clsOldMDRFile
+﻿'
+' GIS Software MANDARA
+' Source Code File name  frmMain.vb
+'
+' (C) 2016 - 2022 TANI Kenji
+' License of this code is  CC BY-SA 4.0
+'
+' 2024  Errors and Warnings Collection by HORI Kazunari
+'
+Public Class clsOldMDRFile
 
     Public Structure RGBQUAD
         Public rgbBlue As Byte

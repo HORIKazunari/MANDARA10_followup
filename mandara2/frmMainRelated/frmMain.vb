@@ -3596,4 +3596,8 @@ Public Class frmMain
         form.ShowDialog(attrData)
         form.Dispose()
     End Sub
+
+    Private Sub frmMain_Load_1(sender As Object, e As EventArgs)
+
+    End Sub
 End Class
