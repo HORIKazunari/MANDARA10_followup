@@ -3,12 +3,10 @@
   "WorkspaceRootPath": "D:\\home\\GitHub\\HORIKazunari\\MANDARA10_followup\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E09079BE-21B2-476F-8786-34F2442DA7CE}|mandara2\\mandara10.vbproj|d:\\home\\github\\horikazunari\\mandara10_followup\\mandara2\\frmmainrelated\\frmmain.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{E09079BE-21B2-476F-8786-34F2442DA7CE}|mandara2\\mandara10.vbproj|solutionrelative:mandara2\\frmmainrelated\\frmmain.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|mandara10||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E09079BE-21B2-476F-8786-34F2442DA7CE}|mandara2\\mandara10.vbproj|d:\\home\\github\\horikazunari\\mandara10_followup\\mandara2\\frmmainrelated\\frmmain.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
-      "RelativeMoniker": "D:0:0:{E09079BE-21B2-476F-8786-34F2442DA7CE}|mandara2\\mandara10.vbproj|solutionrelative:mandara2\\frmmainrelated\\frmmain.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+      "AbsoluteMoniker": "D:0:0:{E09079BE-21B2-476F-8786-34F2442DA7CE}|mandara2\\mandara10.vbproj|d:\\home\\github\\horikazunari\\mandara10_followup\\mandara2\\||{B270807C-D8C6-49EB-8EBE-8E8D566637A1}|984ae51a-4b21-44e7-822c-dd5e046893ef"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,27 +25,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "frmMain.vb",
-              "DocumentMoniker": "D:\\home\\GitHub\\HORIKazunari\\MANDARA10_followup\\mandara2\\frmMainRelated\\frmMain.vb",
-              "RelativeDocumentMoniker": "mandara2\\frmMainRelated\\frmMain.vb",
-              "ToolTip": "D:\\home\\GitHub\\HORIKazunari\\MANDARA10_followup\\mandara2\\frmMainRelated\\frmMain.vb",
-              "RelativeToolTip": "mandara2\\frmMainRelated\\frmMain.vb",
-              "ViewState": "AQIAAPsNAAAAAAAAAAA1wBAOAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-03-21T08:35:45.439Z",
+              "Title": "mandara10",
+              "DocumentMoniker": "D:\\home\\GitHub\\HORIKazunari\\MANDARA10_followup\\mandara2\\mandara10.vbproj",
+              "RelativeDocumentMoniker": "mandara2\\mandara10.vbproj",
+              "ToolTip": "D:\\home\\GitHub\\HORIKazunari\\MANDARA10_followup\\mandara2\\mandara10.vbproj",
+              "RelativeToolTip": "mandara2\\mandara10.vbproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-03-26T02:46:31.685Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "frmMain.vb [\u30C7\u30B6\u30A4\u30F3]",
-              "DocumentMoniker": "D:\\home\\GitHub\\HORIKazunari\\MANDARA10_followup\\mandara2\\frmMainRelated\\frmMain.vb",
-              "RelativeDocumentMoniker": "mandara2\\frmMainRelated\\frmMain.vb",
-              "ToolTip": "D:\\home\\GitHub\\HORIKazunari\\MANDARA10_followup\\mandara2\\frmMainRelated\\frmMain.vb [\u30C7\u30B6\u30A4\u30F3]",
-              "RelativeToolTip": "mandara2\\frmMainRelated\\frmMain.vb [\u30C7\u30B6\u30A4\u30F3]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-03-21T08:35:31.871Z",
-              "EditorCaption": " [\u30C7\u30B6\u30A4\u30F3]"
             }
           ]
         }

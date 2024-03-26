@@ -749,12 +749,12 @@ Public Class frmMain
         End If
 
     End Sub
-    ''' <summary>
+    ''' 
     ''' MANDARAファイルを開く
-    ''' </summary>
-    ''' <param name="ClipBoardFlag"></param>
-    ''' <param name="FileFullPath"></param>
-    ''' <remarks></remarks>
+    ''' 
+    ''' 
+    ''' 
+    ''' 
     Private Sub OpenNewMandaraFile(ByVal ClipBoardFlag As Boolean, ByVal FileFullPath As String)
         Frm_Print.Visible = False
         Dim ObjectErrorMessage As String = ""
@@ -789,10 +789,10 @@ Public Class frmMain
         End If
         Me.Activate()
     End Sub
-    ''' <summary>
+    ''' 
     ''' 読み込み直後の初期表示
-    ''' </summary>
-    ''' <remarks></remarks>
+    ''' 
+    ''' 
     Private Sub initFirtScreen()
         Dim bcol As Color = Color.White
         lblClassMark.BackColor = bcol
@@ -855,12 +855,11 @@ Public Class frmMain
             cboLayer.Visible = True
         End If
     End Sub
-    ''' <summary>
+    ''' 
     ''' モードセレクタ入る
-    ''' </summary>
-    ''' <param name="sender"></param>
-    ''' <param name="e"></param>
-    ''' <remarks></remarks>
+    ''' 
+    ''' 
+    ''' 
     Private Sub View_MouseEnter(sender As Object, e As EventArgs) Handles lblClassMark.MouseEnter,
         lblGraph.MouseEnter, lblClassHatch.MouseEnter, lblLabel.MouseEnter, lblMarkSize.MouseEnter, lblMarkBlock.MouseEnter, lblMarkTurn.MouseEnter,
         lblClassOD.MouseEnter, lblOverlay.MouseEnter, lblClassPaint.MouseEnter, lblSeries.MouseEnter, lblTrip.MouseEnter, lblMarkBar.MouseEnter,
@@ -879,12 +878,12 @@ Public Class frmMain
 
 
     End Sub
-    ''' <summary>
+    ''' 
     ''' モードセレクタ離れた
-    ''' </summary>
-    ''' <param name="sender"></param>
-    ''' <param name="e"></param>
-    ''' <remarks></remarks>
+    ''' 
+    ''' 
+    ''' 
+    ''' 
     Private Sub View_MouseLeave(sender As Object, e As EventArgs) Handles lblClassMark.MouseLeave,
         lblGraph.MouseLeave, lblClassHatch.MouseLeave, lblLabel.MouseLeave, lblMarkSize.MouseLeave, lblMarkBlock.MouseLeave, lblMarkTurn.MouseLeave,
         lblClassOD.MouseLeave, lblOverlay.MouseLeave, lblClassPaint.MouseLeave, lblSeries.MouseLeave, lblTrip.MouseLeave, lblMarkBar.MouseLeave,
@@ -904,12 +903,12 @@ Public Class frmMain
 
 
     End Sub
-    ''' <summary>
+    ''' 
     ''' 表示モードをマウスクリック
-    ''' </summary>
-    ''' <param name="sender"></param>
-    ''' <param name="e"></param>
-    ''' <remarks></remarks>
+    ''' 
+    ''' 
+    ''' 
+    ''' 
     Private Sub View_MouseClick(sender As Object, e As EventArgs) Handles lblClassMark.MouseClick, lblContour.MouseClick,
         lblGraph.MouseClick, lblClassHatch.MouseClick, lblLabel.MouseClick, lblMarkSize.MouseClick, lblMarkBlock.MouseClick, lblMarkTurn.MouseClick,
         lblClassOD.MouseClick, lblOverlay.MouseClick, lblClassPaint.MouseClick, lblSeries.MouseClick, lblTrip.MouseClick, lblMarkBar.MouseClick,
@@ -1120,10 +1119,10 @@ Public Class frmMain
 
     End Sub
 
-    ''' <summary>
-    ''' '選択している単独モードがあった場合クリア
-    ''' </summary>
-    ''' <remarks></remarks>
+    ''' 
+    ''' 選択している単独モードがあった場合クリア
+    ''' 
+    ''' 
     Private Sub SelectedModeClear()
         Dim cs As Control()
         If SelectedMode <> enmSelectMode.noMode Then
@@ -1135,12 +1134,12 @@ Public Class frmMain
 
     End Sub
 
-    ''' <summary>
+    ''' 
     ''' レイヤボックスの選択変更イベント
-    ''' </summary>
-    ''' <param name="sender"></param>
-    ''' <param name="e"></param>
-    ''' <remarks></remarks>
+    ''' 
+    ''' 
+    ''' 
+    ''' 
     Private Sub cboLayer_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboLayer.SelectedIndexChanged
         Dim LayerNum As Integer = cboLayer.SelectedIndex
         attrData.TotalData.LV1.SelectedLayer = LayerNum
@@ -1191,12 +1190,12 @@ Public Class frmMain
                 btnSetSeries.Enabled = False
         End Select
     End Sub
-    ''' <summary>
+    ''' 
     ''' データ項目ボックスの選択変更イベント
-    ''' </summary>
-    ''' <param name="sender"></param>
-    ''' <param name="e"></param>
-    ''' <remarks></remarks>
+    ''' 
+    ''' 
+    ''' 
+    ''' 
     Private Sub cboDataItem_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboDataItem.SelectedIndexChanged
         Dim LayerNum As Integer = attrData.TotalData.LV1.SelectedLayer
         Dim DataNum As Integer = cboDataItem.SelectedIndex
@@ -1250,13 +1249,13 @@ Public Class frmMain
                 picTotalModeOverPanel.Visible = False
         End Select
     End Sub
-    ''' <summary>
+    ''' 
     ''' データ項目が変更された際に、単独表示モードの可否を調べ、コントロールを設定
-    ''' </summary>
-    ''' <param name="solomode"></param>
-    ''' <param name="LayerNum"></param>
-    ''' <param name="DataNum"></param>
-    ''' <remarks></remarks>
+    ''' 
+    ''' 
+    ''' 
+    ''' 
+    ''' 
     Private Sub SetPicPnlSoloDataEnabled(ByVal solomode As enmSoloMode_Number, ByVal LayerNum As Integer, ByVal DataNum As Integer)
         Dim f As Boolean = attrData.Check_Enable_SoloMode(solomode, LayerNum, DataNum)
 
@@ -1301,12 +1300,12 @@ Public Class frmMain
 
 
 
-    ''' <summary>
+    ''' 
     ''' コントロール名から表示モード列挙型を取得
-    ''' </summary>
-    ''' <param name="CName"></param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
+    ''' 
+    ''' 
+    ''' 
+    ''' 
     Private Function GetModeENUMfromControlName(ByVal CName As String) As enmSelectMode
         Select Case CName
             Case "ClassPaint"
@@ -1391,12 +1390,12 @@ Public Class frmMain
                 Return "ClassPaint"
         End Select
     End Function
-    ''' <summary>
+    ''' 
     ''' 選択モードから単独表示モードを取得
-    ''' </summary>
-    ''' <param name="SelMode"></param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
+    ''' 
+    ''' 
+    ''' 
+    ''' 
     Private Function GetSoloModeFromSelectMode(ByVal SelMode As enmSelectMode) As enmSoloMode_Number
         Select Case SelMode
             Case enmSelectMode.ClassPaintMode
@@ -1462,11 +1461,11 @@ Public Class frmMain
                 Return enmSelectMode.ClassPaintMode
         End Select
     End Function
-    ''' <summary>
+    ''' 
     ''' 画面の初期設定
-    ''' </summary>
-    ''' <param name="Non_Clear_Flag">出力画面の位置サイズを新しく設定する場合はfalse</param>
-    ''' <remarks></remarks>
+    ''' 
+    ''' param name="Non_Clear_Flag"　出力画面の位置サイズを新しく設定する場合はfalse
+    ''' 
     Private Sub Init_Screen_Set(ByVal Non_Clear_Flag As Boolean)
 
         If Non_Clear_Flag = False Then
@@ -1550,10 +1549,10 @@ Public Class frmMain
         Frm_Print.SetData(Me, attrData)
     End Sub
 
-    ''' <summary>
+    ''' 
     ''' 最近使ったファイルのメニュー項目の作成
-    ''' </summary>
-    ''' <remarks></remarks>
+    ''' 
+    ''' 
     Private Sub SetMDRFileHistorytoMenu()
         mnuRecentUsedFile.DropDownItems.Clear()
         Dim FileHistory() As String = clsSettings.Data.MDRFileHistory.Split("|")
@@ -1575,11 +1574,11 @@ Public Class frmMain
             mnuRecentUsedFile.DropDownItems.Add(menuRecentFile)
         Next
     End Sub
-    ''' <summary>
+    ''' 
     ''' 最近使ったファイルのオーダー変更
-    ''' </summary>
-    ''' <param name="NewTopPath">トップに来るファイルパス</param>
-    ''' <remarks></remarks>
+    ''' 
+    ''' param name="NewTopPath"　トップに来るファイルパス
+    ''' 
     Private Sub replaceMDRFileHistory(ByVal NewTopPath As String)
         Dim FileHistory() As String = clsSettings.Data.MDRFileHistory.Split("|")
         Dim lastp As Integer = FileHistory.GetUpperBound(0)
@@ -2105,10 +2104,10 @@ Public Class frmMain
         End If
 
     End Function
-    ''' <summary>
+    ''' 
     ''' メニュー選択の可否
-    ''' </summary>
-    ''' <remarks></remarks>
+    ''' 
+    ''' 
     Private Sub menu_Setting()
         Dim fv1 As Boolean
 

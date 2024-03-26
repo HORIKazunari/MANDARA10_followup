@@ -3638,28 +3638,25 @@ MANDARA10
  <remarks></remarks>
 </member>
 <member name="M:mandara10.frmGrid.Get_Data_Property_Value(mandara10.clsAttrData@,System.Int32,System.Int32)">
- <summary>
  
- </summary>
- <param name="_attrData"></param>
- <param name="Layernum"></param>
- <param name="DataNum"></param>
- <returns></returns>
- <remarks></remarks>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 </member>
 <member name="M:mandara10.frmGrid.ErrorCheck">
- <summary>
  データエラーのチェック
- </summary>
- <returns></returns>
- <remarks></remarks>
+ 
 </member>
 <member name="M:mandara10.frmGrid.ErrorCheckLayerMapFile(System.Collections.Generic.List{System.String}@)">
- <summary>
+ 
  レイヤ全体にかかわる項目エラーのチェック
- </summary>
- <returns></returns>
- <remarks></remarks>
+ 
+ 
+ 
 </member>
 <member name="M:mandara10.frmGrid.Set_LayerTypeShape">
  <summary>

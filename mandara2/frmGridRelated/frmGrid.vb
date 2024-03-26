@@ -1,4 +1,13 @@
-﻿Public Class frmGrid
+﻿'
+' GIS Software MANDARA
+' Source Code File name  frmGird.vb
+'
+' (C) 2016 - 2022 TANI Kenji
+' License of this code is  CC BY-SA 4.0
+'
+' 2024  Errors and Warnings Collection by HORI Kazunari
+'
+Public Class frmGrid
     Dim CloseCancelF As Boolean
     Public Structure Layer_Data_Info
         Public Data As Integer
@@ -211,23 +220,22 @@
         ErrorCheck()
         Return Me.ShowDialog()
     End Function
-    ''' <summary>
     ''' 
-    ''' </summary>
-    ''' <param name="_attrData"></param>
-    ''' <param name="Layernum"></param>
-    ''' <param name="DataNum"></param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
+    ''' 
+    ''' 
+    ''' 
+    ''' 
+    ''' 
+    ''' 
+    ''' 
     Private Function Get_Data_Property_Value(ByRef _attrData As clsAttrData, ByVal Layernum As Integer, ByVal DataNum As Integer) As Double
-
         With _attrData.LayerData(Layernum)
             Select Case .atrData.Data(DataNum).DataType
                 Case enmAttDataType.Normal
                     '平均値
                     Return .atrData.Data(DataNum).Statistics.Ave
                 Case enmAttDataType.Category
-                    Dim freq() As Integer
+                    Dim freq() As Integer = Nothing ' freqを初期化
                     Dim n As Integer = 0
                     _attrData.Get_ClassFrequency(Layernum, DataNum, False, freq, False)
                     For i As Integer = 0 To freq.Length - 1
@@ -243,14 +251,10 @@
                     '文字列の長さの平均値
                     Return n / .atrObject.ObjectNum
             End Select
-
         End With
     End Function
-    ''' <summary>
     ''' データエラーのチェック
-    ''' </summary>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
+    ''' 
     Private Function ErrorCheck() As Boolean
         Dim errorMes As New List(Of String)
         lbError.Items.Clear()
@@ -268,11 +272,11 @@
             Return True
         End If
     End Function
-    ''' <summary>
+    ''' 
     ''' レイヤ全体にかかわる項目エラーのチェック
-    ''' </summary>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
+    ''' 
+    ''' 
+    ''' 
     Private Function ErrorCheckLayerMapFile(ByRef errorMes As List(Of String)) As Boolean
         If newAttrData.GetNumOfMapFile = 0 Then
             errorMes.Add("地図ファイルが指定されていません。")
@@ -1708,7 +1712,7 @@
     ''' <param name="CheckedData"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Private Function Check_Data2(ByVal L As Integer, ByVal D As Integer, ByVal CheckLevel As Integer, _
+    Private Function Check_Data2(ByVal L As Integer, ByVal D As Integer, ByVal CheckLevel As Integer,
                     ByRef CheckedData As List(Of Boolean())) As Layer_Data_Info
         '平均値・合計値などがグリッド上のデータと同じ旧データを探す
         '
@@ -1944,7 +1948,7 @@
 
                 With newAttrData.TotalData.ViewStyle.MapLegend.Base
                     For i As Integer = 0 To .Legend_Num - 1
-                        If .LegendXY(i).X < WAKU.Left Or .LegendXY(i).X > WAKU.Right Or _
+                        If .LegendXY(i).X < WAKU.Left Or .LegendXY(i).X > WAKU.Right Or
                             .LegendXY(i).Y < WAKU.Top Or .LegendXY(i).Y > WAKU.Bottom Then
                             .LegendXY(i).X = MapRect.Right + (1 - i) * WAKU.Width / 50
                             .LegendXY(i).Y = (MapRect.Top + MapRect.Bottom) / 2 + (1 - i) * sz.Height / 50 ' + wy2) / 2 + (1 - i) * h / 50
@@ -1952,21 +1956,21 @@
                     Next
                 End With
                 With newAttrData.TotalData.ViewStyle.MapTitle.Position
-                    If .X < WAKU.Left Or .X > WAKU.Right Or _
+                    If .X < WAKU.Left Or .X > WAKU.Right Or
                         .Y < WAKU.Top Or .Y > WAKU.Bottom Then
                         .X = (MapRect.Left + MapRect.Right) / 2
                         .Y = MapRect.Bottom + sz.Height / 20
                     End If
                 End With
                 With newAttrData.TotalData.ViewStyle.MapScale.Position
-                    If .X < WAKU.Left Or .X > WAKU.Right Or _
+                    If .X < WAKU.Left Or .X > WAKU.Right Or
                         .Y < WAKU.Top Or .Y > WAKU.Bottom Then
                         .X = MapRect.Left + sz.Width * 4 / 5
                         .Y = MapRect.Bottom + sz.Height / 30
                     End If
                 End With
                 With newAttrData.TotalData.ViewStyle.AttMapCompass.Position
-                    If .X < WAKU.Left Or .X > WAKU.Right Or _
+                    If .X < WAKU.Left Or .X > WAKU.Right Or
                         .Y < WAKU.Top Or .Y > WAKU.Bottom Then
                         If .X >= MapRect.Right + sz.Width * 0.3 Then .X = MapRect.Right - sz.Width * 0.1
                         If .X <= MapRect.Left - sz.Width * 0.3 Then .X = MapRect.Left + sz.Width * 0.1
@@ -2380,7 +2384,7 @@
         End With
     End Sub
 
-  
+
     Private Sub btnHelp_Click(sender As Object, e As EventArgs) Handles btnHelp.Click
         clsGeneric.HelpShow(enmHelpFile.PropertyData, "propertyEditorWindows", Me)
     End Sub
@@ -2446,7 +2450,7 @@
         form.Dispose()
     End Sub
 
- 
+
     Private Sub SplitContainerUpper_Resize(sender As Object, e As EventArgs) Handles SplitContainerUpper.Resize, SplitContainerUpper.SplitterMoved
         '本来は不要だが、文字のサイズが100%より大きいと、RIGHT,BOTTOMのアンカーがきかなくなるため設定
         btnHelp.Top = 7
